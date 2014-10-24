@@ -7,6 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2801A48E19FAA5BE00BF3837 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A48D19FAA5BE00BF3837 /* MainMenu.m */; };
+		2801A4DC19FAA6B500BF3837 /* BandBuyPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4B819FAA6B500BF3837 /* BandBuyPoster.m */; };
+		2801A4DD19FAA6B500BF3837 /* BandGamePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4B919FAA6B500BF3837 /* BandGamePlay.m */; };
+		2801A4DE19FAA6B500BF3837 /* BandSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BA19FAA6B500BF3837 /* BandSprite.m */; };
+		2801A4DF19FAA6B500BF3837 /* BandStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BB19FAA6B500BF3837 /* BandStore.m */; };
+		2801A4E019FAA6B500BF3837 /* BandStoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BC19FAA6B500BF3837 /* BandStoreItem.m */; };
+		2801A4E119FAA6B500BF3837 /* BandStoreItemsCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BD19FAA6B500BF3837 /* BandStoreItemsCtrl.m */; };
+		2801A4E219FAA6B500BF3837 /* BandVault.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BE19FAA6B500BF3837 /* BandVault.m */; };
+		2801A4E319FAA6B500BF3837 /* BandVaultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BF19FAA6B500BF3837 /* BandVaultItem.m */; };
+		2801A4E419FAA6B500BF3837 /* CCParallaxNode-Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C019FAA6B500BF3837 /* CCParallaxNode-Extras.m */; };
+		2801A4E519FAA6B500BF3837 /* Credits.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C119FAA6B500BF3837 /* Credits.m */; };
+		2801A4E619FAA6B500BF3837 /* EndGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C219FAA6B500BF3837 /* EndGame.m */; };
+		2801A4E719FAA6B500BF3837 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C319FAA6B500BF3837 /* Enemy.m */; };
+		2801A4E819FAA6B500BF3837 /* EnemyParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C419FAA6B500BF3837 /* EnemyParams.m */; };
+		2801A4E919FAA6B500BF3837 /* GameHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C519FAA6B500BF3837 /* GameHud.m */; };
+		2801A4EA19FAA6B500BF3837 /* GameNaveBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C619FAA6B500BF3837 /* GameNaveBar.m */; };
+		2801A4EB19FAA6B500BF3837 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C719FAA6B500BF3837 /* GameOver.m */; };
+		2801A4EC19FAA6B500BF3837 /* GameStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C819FAA6B500BF3837 /* GameStoreObserver.m */; };
+		2801A4ED19FAA6B500BF3837 /* GarageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C919FAA6B500BF3837 /* GarageMenu.m */; };
+		2801A4EE19FAA6B500BF3837 /* HeroShoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CA19FAA6B500BF3837 /* HeroShoot.m */; };
+		2801A4EF19FAA6B500BF3837 /* ItemShelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CB19FAA6B500BF3837 /* ItemShelf.m */; };
+		2801A4F019FAA6B500BF3837 /* ItemShelfCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CC19FAA6B500BF3837 /* ItemShelfCtrl.m */; };
+		2801A4F119FAA6B500BF3837 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CD19FAA6B500BF3837 /* Level.m */; };
+		2801A4F219FAA6B500BF3837 /* LevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CE19FAA6B500BF3837 /* LevelController.m */; };
+		2801A4F319FAA6B500BF3837 /* MotherScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CF19FAA6B500BF3837 /* MotherScene.m */; };
+		2801A4F419FAA6B500BF3837 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D019FAA6B500BF3837 /* NSObject+SBJSON.m */; };
+		2801A4F519FAA6B500BF3837 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D119FAA6B500BF3837 /* NSString+SBJSON.m */; };
+		2801A4F619FAA6B500BF3837 /* Pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D219FAA6B500BF3837 /* Pause.m */; };
+		2801A4F719FAA6B500BF3837 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D319FAA6B500BF3837 /* PauseLayer.m */; };
+		2801A4F819FAA6B500BF3837 /* RobotBlaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D419FAA6B500BF3837 /* RobotBlaster.m */; };
+		2801A4F919FAA6B500BF3837 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D519FAA6B500BF3837 /* RootViewController.m */; };
+		2801A4FA19FAA6B500BF3837 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D619FAA6B500BF3837 /* SBJsonBase.m */; };
+		2801A4FB19FAA6B500BF3837 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D719FAA6B500BF3837 /* SBJsonParser.m */; };
+		2801A4FC19FAA6B500BF3837 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D819FAA6B500BF3837 /* SBJsonWriter.m */; };
+		2801A4FD19FAA6B500BF3837 /* ScrollingBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D919FAA6B500BF3837 /* ScrollingBG.m */; };
+		2801A4FE19FAA6B500BF3837 /* UniversalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4DA19FAA6B500BF3837 /* UniversalInfo.m */; };
+		2801A4FF19FAA6B500BF3837 /* Victory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4DB19FAA6B500BF3837 /* Victory.m */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -56,6 +93,83 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2801A48D19FAA5BE00BF3837 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
+		2801A49019FAA61700BF3837 /* BandBuyPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandBuyPoster.h; sourceTree = "<group>"; };
+		2801A49119FAA61700BF3837 /* BandGamePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandGamePlay.h; sourceTree = "<group>"; };
+		2801A49219FAA61700BF3837 /* BandSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandSprite.h; sourceTree = "<group>"; };
+		2801A49319FAA61700BF3837 /* BandStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandStore.h; sourceTree = "<group>"; };
+		2801A49419FAA61700BF3837 /* BandStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandStoreItem.h; sourceTree = "<group>"; };
+		2801A49519FAA61700BF3837 /* BandStoreItemsCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandStoreItemsCtrl.h; sourceTree = "<group>"; };
+		2801A49619FAA61700BF3837 /* BandVault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandVault.h; sourceTree = "<group>"; };
+		2801A49719FAA61700BF3837 /* BandVaultItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandVaultItem.h; sourceTree = "<group>"; };
+		2801A49819FAA61700BF3837 /* CCParallaxNode-Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCParallaxNode-Extras.h"; sourceTree = "<group>"; };
+		2801A49919FAA61700BF3837 /* Credits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credits.h; sourceTree = "<group>"; };
+		2801A49A19FAA61700BF3837 /* EndGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndGame.h; sourceTree = "<group>"; };
+		2801A49B19FAA61700BF3837 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		2801A49C19FAA61700BF3837 /* EnemyParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyParams.h; sourceTree = "<group>"; };
+		2801A49D19FAA61700BF3837 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		2801A49E19FAA61700BF3837 /* GameHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameHud.h; sourceTree = "<group>"; };
+		2801A49F19FAA61700BF3837 /* GameNaveBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNaveBar.h; sourceTree = "<group>"; };
+		2801A4A019FAA61700BF3837 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
+		2801A4A119FAA61700BF3837 /* GameStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStoreObserver.h; sourceTree = "<group>"; };
+		2801A4A219FAA61700BF3837 /* GarageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageMenu.h; sourceTree = "<group>"; };
+		2801A4A319FAA61700BF3837 /* HeroShoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroShoot.h; sourceTree = "<group>"; };
+		2801A4A419FAA61700BF3837 /* ItemShelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemShelf.h; sourceTree = "<group>"; };
+		2801A4A519FAA61700BF3837 /* ItemShelfCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemShelfCtrl.h; sourceTree = "<group>"; };
+		2801A4A619FAA61700BF3837 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		2801A4A719FAA61700BF3837 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		2801A4A819FAA61700BF3837 /* LevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelController.h; sourceTree = "<group>"; };
+		2801A4A919FAA61700BF3837 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
+		2801A4AA19FAA61700BF3837 /* MotherScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotherScene.h; sourceTree = "<group>"; };
+		2801A4AB19FAA61700BF3837 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		2801A4AC19FAA61700BF3837 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		2801A4AD19FAA61700BF3837 /* Pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pause.h; sourceTree = "<group>"; };
+		2801A4AE19FAA61700BF3837 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
+		2801A4AF19FAA61700BF3837 /* RobotBlaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotBlaster.h; sourceTree = "<group>"; };
+		2801A4B019FAA61700BF3837 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		2801A4B119FAA61700BF3837 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		2801A4B219FAA61700BF3837 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		2801A4B319FAA61700BF3837 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		2801A4B419FAA61700BF3837 /* ScrollingBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingBG.h; sourceTree = "<group>"; };
+		2801A4B519FAA61700BF3837 /* UniversalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalInfo.h; sourceTree = "<group>"; };
+		2801A4B619FAA61700BF3837 /* Victory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Victory.h; sourceTree = "<group>"; };
+		2801A4B719FAA61700BF3837 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		2801A4B819FAA6B500BF3837 /* BandBuyPoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandBuyPoster.m; sourceTree = "<group>"; };
+		2801A4B919FAA6B500BF3837 /* BandGamePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandGamePlay.m; sourceTree = "<group>"; };
+		2801A4BA19FAA6B500BF3837 /* BandSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandSprite.m; sourceTree = "<group>"; };
+		2801A4BB19FAA6B500BF3837 /* BandStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandStore.m; sourceTree = "<group>"; };
+		2801A4BC19FAA6B500BF3837 /* BandStoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandStoreItem.m; sourceTree = "<group>"; };
+		2801A4BD19FAA6B500BF3837 /* BandStoreItemsCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandStoreItemsCtrl.m; sourceTree = "<group>"; };
+		2801A4BE19FAA6B500BF3837 /* BandVault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandVault.m; sourceTree = "<group>"; };
+		2801A4BF19FAA6B500BF3837 /* BandVaultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandVaultItem.m; sourceTree = "<group>"; };
+		2801A4C019FAA6B500BF3837 /* CCParallaxNode-Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCParallaxNode-Extras.m"; sourceTree = "<group>"; };
+		2801A4C119FAA6B500BF3837 /* Credits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credits.m; sourceTree = "<group>"; };
+		2801A4C219FAA6B500BF3837 /* EndGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndGame.m; sourceTree = "<group>"; };
+		2801A4C319FAA6B500BF3837 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		2801A4C419FAA6B500BF3837 /* EnemyParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyParams.m; sourceTree = "<group>"; };
+		2801A4C519FAA6B500BF3837 /* GameHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameHud.m; sourceTree = "<group>"; };
+		2801A4C619FAA6B500BF3837 /* GameNaveBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameNaveBar.m; sourceTree = "<group>"; };
+		2801A4C719FAA6B500BF3837 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
+		2801A4C819FAA6B500BF3837 /* GameStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStoreObserver.m; sourceTree = "<group>"; };
+		2801A4C919FAA6B500BF3837 /* GarageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageMenu.m; sourceTree = "<group>"; };
+		2801A4CA19FAA6B500BF3837 /* HeroShoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroShoot.m; sourceTree = "<group>"; };
+		2801A4CB19FAA6B500BF3837 /* ItemShelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemShelf.m; sourceTree = "<group>"; };
+		2801A4CC19FAA6B500BF3837 /* ItemShelfCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemShelfCtrl.m; sourceTree = "<group>"; };
+		2801A4CD19FAA6B500BF3837 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		2801A4CE19FAA6B500BF3837 /* LevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelController.m; sourceTree = "<group>"; };
+		2801A4CF19FAA6B500BF3837 /* MotherScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotherScene.m; sourceTree = "<group>"; };
+		2801A4D019FAA6B500BF3837 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		2801A4D119FAA6B500BF3837 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		2801A4D219FAA6B500BF3837 /* Pause.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pause.m; sourceTree = "<group>"; };
+		2801A4D319FAA6B500BF3837 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
+		2801A4D419FAA6B500BF3837 /* RobotBlaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotBlaster.m; sourceTree = "<group>"; };
+		2801A4D519FAA6B500BF3837 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		2801A4D619FAA6B500BF3837 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		2801A4D719FAA6B500BF3837 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		2801A4D819FAA6B500BF3837 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		2801A4D919FAA6B500BF3837 /* ScrollingBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingBG.m; sourceTree = "<group>"; };
+		2801A4DA19FAA6B500BF3837 /* UniversalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalInfo.m; sourceTree = "<group>"; };
+		2801A4DB19FAA6B500BF3837 /* Victory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Victory.m; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
@@ -125,6 +239,83 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2801A4B819FAA6B500BF3837 /* BandBuyPoster.m */,
+				2801A4B919FAA6B500BF3837 /* BandGamePlay.m */,
+				2801A4BA19FAA6B500BF3837 /* BandSprite.m */,
+				2801A4BB19FAA6B500BF3837 /* BandStore.m */,
+				2801A4BC19FAA6B500BF3837 /* BandStoreItem.m */,
+				2801A4BD19FAA6B500BF3837 /* BandStoreItemsCtrl.m */,
+				2801A4BE19FAA6B500BF3837 /* BandVault.m */,
+				2801A4BF19FAA6B500BF3837 /* BandVaultItem.m */,
+				2801A4C019FAA6B500BF3837 /* CCParallaxNode-Extras.m */,
+				2801A4C119FAA6B500BF3837 /* Credits.m */,
+				2801A4C219FAA6B500BF3837 /* EndGame.m */,
+				2801A4C319FAA6B500BF3837 /* Enemy.m */,
+				2801A4C419FAA6B500BF3837 /* EnemyParams.m */,
+				2801A4C519FAA6B500BF3837 /* GameHud.m */,
+				2801A4C619FAA6B500BF3837 /* GameNaveBar.m */,
+				2801A4C719FAA6B500BF3837 /* GameOver.m */,
+				2801A4C819FAA6B500BF3837 /* GameStoreObserver.m */,
+				2801A4C919FAA6B500BF3837 /* GarageMenu.m */,
+				2801A4CA19FAA6B500BF3837 /* HeroShoot.m */,
+				2801A4CB19FAA6B500BF3837 /* ItemShelf.m */,
+				2801A4CC19FAA6B500BF3837 /* ItemShelfCtrl.m */,
+				2801A4CD19FAA6B500BF3837 /* Level.m */,
+				2801A4CE19FAA6B500BF3837 /* LevelController.m */,
+				2801A4CF19FAA6B500BF3837 /* MotherScene.m */,
+				2801A4D019FAA6B500BF3837 /* NSObject+SBJSON.m */,
+				2801A4D119FAA6B500BF3837 /* NSString+SBJSON.m */,
+				2801A4D219FAA6B500BF3837 /* Pause.m */,
+				2801A4D319FAA6B500BF3837 /* PauseLayer.m */,
+				2801A4D419FAA6B500BF3837 /* RobotBlaster.m */,
+				2801A4D519FAA6B500BF3837 /* RootViewController.m */,
+				2801A4D619FAA6B500BF3837 /* SBJsonBase.m */,
+				2801A4D719FAA6B500BF3837 /* SBJsonParser.m */,
+				2801A4D819FAA6B500BF3837 /* SBJsonWriter.m */,
+				2801A4D919FAA6B500BF3837 /* ScrollingBG.m */,
+				2801A4DA19FAA6B500BF3837 /* UniversalInfo.m */,
+				2801A4DB19FAA6B500BF3837 /* Victory.m */,
+				2801A49019FAA61700BF3837 /* BandBuyPoster.h */,
+				2801A49119FAA61700BF3837 /* BandGamePlay.h */,
+				2801A49219FAA61700BF3837 /* BandSprite.h */,
+				2801A49319FAA61700BF3837 /* BandStore.h */,
+				2801A49419FAA61700BF3837 /* BandStoreItem.h */,
+				2801A49519FAA61700BF3837 /* BandStoreItemsCtrl.h */,
+				2801A49619FAA61700BF3837 /* BandVault.h */,
+				2801A49719FAA61700BF3837 /* BandVaultItem.h */,
+				2801A49819FAA61700BF3837 /* CCParallaxNode-Extras.h */,
+				2801A49919FAA61700BF3837 /* Credits.h */,
+				2801A49A19FAA61700BF3837 /* EndGame.h */,
+				2801A49B19FAA61700BF3837 /* Enemy.h */,
+				2801A49C19FAA61700BF3837 /* EnemyParams.h */,
+				2801A49D19FAA61700BF3837 /* GameConfig.h */,
+				2801A49E19FAA61700BF3837 /* GameHud.h */,
+				2801A49F19FAA61700BF3837 /* GameNaveBar.h */,
+				2801A4A019FAA61700BF3837 /* GameOver.h */,
+				2801A4A119FAA61700BF3837 /* GameStoreObserver.h */,
+				2801A4A219FAA61700BF3837 /* GarageMenu.h */,
+				2801A4A319FAA61700BF3837 /* HeroShoot.h */,
+				2801A4A419FAA61700BF3837 /* ItemShelf.h */,
+				2801A4A519FAA61700BF3837 /* ItemShelfCtrl.h */,
+				2801A4A619FAA61700BF3837 /* JSON.h */,
+				2801A4A719FAA61700BF3837 /* Level.h */,
+				2801A4A819FAA61700BF3837 /* LevelController.h */,
+				2801A4A919FAA61700BF3837 /* MainMenu.h */,
+				2801A4AA19FAA61700BF3837 /* MotherScene.h */,
+				2801A4AB19FAA61700BF3837 /* NSObject+SBJSON.h */,
+				2801A4AC19FAA61700BF3837 /* NSString+SBJSON.h */,
+				2801A4AD19FAA61700BF3837 /* Pause.h */,
+				2801A4AE19FAA61700BF3837 /* PauseLayer.h */,
+				2801A4AF19FAA61700BF3837 /* RobotBlaster.h */,
+				2801A4B019FAA61700BF3837 /* RootViewController.h */,
+				2801A4B119FAA61700BF3837 /* SBJsonBase.h */,
+				2801A4B219FAA61700BF3837 /* SBJsonParser.h */,
+				2801A4B319FAA61700BF3837 /* SBJsonWriter.h */,
+				2801A4B419FAA61700BF3837 /* ScrollingBG.h */,
+				2801A4B519FAA61700BF3837 /* UniversalInfo.h */,
+				2801A4B619FAA61700BF3837 /* Victory.h */,
+				2801A4B719FAA61700BF3837 /* Prefix.pch */,
+				2801A48D19FAA5BE00BF3837 /* MainMenu.m */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				B7378992180767190076A88C /* MainScene.h */,
@@ -340,9 +531,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2801A4F819FAA6B500BF3837 /* RobotBlaster.m in Sources */,
+				2801A4E719FAA6B500BF3837 /* Enemy.m in Sources */,
+				2801A4DF19FAA6B500BF3837 /* BandStore.m in Sources */,
+				2801A4F719FAA6B500BF3837 /* PauseLayer.m in Sources */,
+				2801A4FF19FAA6B500BF3837 /* Victory.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				2801A4E119FAA6B500BF3837 /* BandStoreItemsCtrl.m in Sources */,
+				2801A4EA19FAA6B500BF3837 /* GameNaveBar.m in Sources */,
+				2801A4F219FAA6B500BF3837 /* LevelController.m in Sources */,
+				2801A4E019FAA6B500BF3837 /* BandStoreItem.m in Sources */,
+				2801A4E219FAA6B500BF3837 /* BandVault.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
+				2801A4EE19FAA6B500BF3837 /* HeroShoot.m in Sources */,
+				2801A4FE19FAA6B500BF3837 /* UniversalInfo.m in Sources */,
+				2801A4F919FAA6B500BF3837 /* RootViewController.m in Sources */,
+				2801A4F519FAA6B500BF3837 /* NSString+SBJSON.m in Sources */,
+				2801A4E619FAA6B500BF3837 /* EndGame.m in Sources */,
+				2801A4DD19FAA6B500BF3837 /* BandGamePlay.m in Sources */,
+				2801A4DE19FAA6B500BF3837 /* BandSprite.m in Sources */,
+				2801A4FA19FAA6B500BF3837 /* SBJsonBase.m in Sources */,
+				2801A4F619FAA6B500BF3837 /* Pause.m in Sources */,
+				2801A4F319FAA6B500BF3837 /* MotherScene.m in Sources */,
+				2801A4F419FAA6B500BF3837 /* NSObject+SBJSON.m in Sources */,
+				2801A4EB19FAA6B500BF3837 /* GameOver.m in Sources */,
+				2801A4E519FAA6B500BF3837 /* Credits.m in Sources */,
+				2801A4DC19FAA6B500BF3837 /* BandBuyPoster.m in Sources */,
+				2801A4EC19FAA6B500BF3837 /* GameStoreObserver.m in Sources */,
+				2801A4E819FAA6B500BF3837 /* EnemyParams.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				2801A4ED19FAA6B500BF3837 /* GarageMenu.m in Sources */,
+				2801A4FC19FAA6B500BF3837 /* SBJsonWriter.m in Sources */,
+				2801A4E419FAA6B500BF3837 /* CCParallaxNode-Extras.m in Sources */,
+				2801A4E319FAA6B500BF3837 /* BandVaultItem.m in Sources */,
+				2801A48E19FAA5BE00BF3837 /* MainMenu.m in Sources */,
+				2801A4F019FAA6B500BF3837 /* ItemShelfCtrl.m in Sources */,
+				2801A4E919FAA6B500BF3837 /* GameHud.m in Sources */,
+				2801A4FB19FAA6B500BF3837 /* SBJsonParser.m in Sources */,
+				2801A4F119FAA6B500BF3837 /* Level.m in Sources */,
+				2801A4FD19FAA6B500BF3837 /* ScrollingBG.m in Sources */,
+				2801A4EF19FAA6B500BF3837 /* ItemShelf.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
