@@ -29,8 +29,6 @@
 
 @implementation RobotBlaster
 
-CCScheduler *schedule;
-
 /*
  * Divides the animation into walking animation and attack animation
  */
@@ -164,10 +162,8 @@ CCScheduler *schedule;
         self.delegate = scnDelegate;
         //[[CCScheduler sharedScheduler] scheduleSelector:@selector(startMovement:) forTarget:self interval:time paused:NO];
     
-        schedule = [[CCScheduler alloc] init];
-        [schedule scheduleBlock:^(CCTimer *timer) {
-            [self startMovement];
-        } forTarget:self withDelay:time];
+        [self schedule:@selector(startMovement) interval:time];
+    
     //}
     return self;
 }
@@ -190,7 +186,7 @@ CCScheduler *schedule;
         self.isInMovement = YES;
     }
     
-    [schedule unscheduleTarget:self];
+   [self unscheduleAllSelectors];
     
     //[[CCScheduler sharedScheduler] unscheduleAllSelectorsForTarget:self];
     //check if this robot can fire according robot definition if so schedule a fire action
@@ -200,21 +196,14 @@ CCScheduler *schedule;
             if ((self.definedPosition == POS6) || (self.definedPosition == POS2)) {
                 // this is necessary to avoid the left and right enemies to invade the band space
                 // maybe there is another better solution
-                
-                [schedule scheduleBlock:^(CCTimer *timer) {
-                    [self fireWeapon];
-                } forTarget:self withDelay:1];
-                
+                [self schedule:@selector(fireWeapon:) interval:1];
                 //[[CCScheduler sharedScheduler] scheduleSelector:@selector(fireWeapon:) forTarget:self
                   //                                     interval:1 paused:NO];
             }else{
                 //[[CCScheduler sharedScheduler] scheduleSelector:@selector(fireWeapon:) forTarget:self
                 //                                     interval:0.5 + arc4random() % 11 * 0.1 paused:NO];
                 
-                [schedule scheduleBlock:^(CCTimer *timer) {
-                    [self fireWeapon];
-                } forTarget:self withDelay:0.5 + arc4random() % 11 * 0.1];
-            
+                [self schedule:@selector(fireWeapon) interval:0.5 + arc4random() % 11 * 0.1];
             }
          }
     }
@@ -273,7 +262,7 @@ CCScheduler *schedule;
     if ([[self delegate] isGameOver] == NO){
         [[self enemySprite] stopAllActions];
         [[self enemySprite] runAction:self.enemyAttack];
-        [schedule unscheduleTarget:self];
+        [self unscheduleAllSelectors];
         //[[CCScheduler sharedScheduler] unscheduleAllSelectorsForTarget:self];
     }
 }
@@ -281,7 +270,7 @@ CCScheduler *schedule;
 -(void)performDeath
 {
     [[self enemySprite] stopAllActions];
-    [schedule unscheduleTarget:self];
+    [self unscheduleAllSelectors];
     //[[CCScheduler sharedScheduler] unscheduleAllSelectorsForTarget:self];
     NSMutableArray *blastAnimFrames = [[NSMutableArray alloc] init];
     for(int i = 1; i <= 12; ++i) {
@@ -392,7 +381,7 @@ CCScheduler *schedule;
         //include a random factor maybe the robot cant reach the hero, if we dont put
         //this factor the hit will happen every time
         NSLog(@"Fire weapon in RobotBlaster fireeee");
-        NSLog(@"Game State %d",[[self delegate] state]);
+        //NSLog(@"Game State %ld",[[self delegate] state]);
         // put a parameter here to check if the robot stops before shoot
         // to stop the movement of the enemy it is required to ensure that
         // the enemy is on the screen, I will comment this for a while
@@ -402,7 +391,7 @@ CCScheduler *schedule;
         [[self enemySprite] runAction:self.enemyAttack];
     }else{
         NSLog(@"Turn of all timers for fire robot laser");
-        [schedule unscheduleTarget:self];
+        [self unscheduleAllSelectors];
         //[[CCScheduler sharedScheduler] unscheduleAllSelectorsForTarget:self];
     }
 }

@@ -20,14 +20,14 @@
 
 @synthesize appStoreId;
 @synthesize credits;
-@synthesize name;
+@synthesize itemName;
 @synthesize value;
 @synthesize itemType;
 @synthesize description;
 @synthesize duration;
 @synthesize assetName;
-@synthesize owned;
-@synthesize selected;
+@synthesize ownedBandItem;
+@synthesize selectedBandItem;
 @synthesize qtd;
 @synthesize itemSprt;
 @synthesize itemFrmName;

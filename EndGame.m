@@ -41,12 +41,17 @@
         
         label.position = labelposition;
         
-        CCMenuItemImage * menuItem1 = [CCMenuItemImage itemFromNormalImage:@"back.png"
-                                                             selectedImage: @"back.png"
-                                                                    target:self
-                                                                  selector:@selector(doBack:)];
+        //CCMenuItemImage * menuItem1 = [CCMenuItemImage itemFromNormalImage:@"back.png"
+        //                                                     selectedImage: @"back.png"
+        //                                                            target:self
+        //                                                          selector:@selector(doBack:)];
         
-        CCMenu * myMenu = [CCMenu menuWithItems:menuItem1, nil];
+        CCButton *menuItem1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"back.png"] highlightedSpriteFrame:        [CCSprite spriteWithImageNamed:@"back.png"] disabledSpriteFrame:nil];
+        
+        [menuItem1 setTarget:self selector:@selector(doBack:)];
+        
+        CCNode * myMenu = [[CCNode alloc] init];
+        [myMenu addChild:menuItem1];
         
         CGPoint menuposition;
         menuposition.x = 40;
@@ -62,7 +67,7 @@
 	return self;
 }
 
--(void)doBack:(CCMenuItem *)menuItem 
+-(void)doBack:(CCButton *)menuItem
 {
 	NSLog(@"Do Back");
     [[CCDirector sharedDirector] replaceScene: [MainMenu scene]];

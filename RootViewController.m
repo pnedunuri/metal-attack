@@ -120,14 +120,15 @@
 	
 	CCDirector *director = [CCDirector sharedDirector];
     
-	EAGLView *glView = [director openGLView];
+#warning "Review this EAGLVIEW does not exists"
+	//EAGLView *glView = [director openGLView];
 	float contentScaleFactor = [director contentScaleFactor];
 	
 	if( contentScaleFactor != 1 ) {
 		rect.size.width *= contentScaleFactor;
 		rect.size.height *= contentScaleFactor;
 	}
-	glView.frame = rect;
+	//glView.frame = rect;
 }
 #endif // GAME_AUTOROTATION == kGameAutorotationUIViewController
 
@@ -147,7 +148,7 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+    //[super dealloc];
 }
 
 

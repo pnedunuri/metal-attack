@@ -12,7 +12,7 @@
 #import "GameStoreObserver.h"
 #import <StoreKit/StoreKit.h>
 
-@interface BandStore : CCLayer <SKProductsRequestDelegate>
+@interface BandStore : CCNode <SKProductsRequestDelegate>
 
 {
     CCLabelTTF *labelCredits;

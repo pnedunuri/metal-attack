@@ -10,6 +10,7 @@
 //  once. This class will hadle some game utility
 
 #import "UniversalInfo.h"
+#import "CCAnimation.h"
 
 @implementation UniversalInfo
 
@@ -438,10 +439,10 @@
         [coinAnimFrames addObject:frame];
     }
     
-    CCAnimation *animation = [CCAnimation animationWithFrames:coinAnimFrames delay:0.09f];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:coinAnimFrames delay:0.09f];
     
-    id coinAnimation = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] retain];
+    id coinAnimation = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:animation]];
     
     
     CCSprite *coinSprite = [[CCSprite alloc] init];

@@ -63,7 +63,8 @@
  */
 
 #import "BandGamePlay.h"
-#import "CCTouchDispatcher.h"
+//#import "CCTouchDispatcher.h"
+#import "CCAnimation.h"
 #import "Pause.h"
 #import "UniversalInfo.h"
 #import "PauseLayer.h"
@@ -133,7 +134,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
 	CCScene *scene = [CCScene node];
     GameHud *hud = [GameHud node];
     //[scene addChild:hud z:1];
-	BandGamePlay *layer = [[[BandGamePlay alloc] initWithHudAndLevel:hud level:levelNumber wave:waveNumber] autorelease];
+	BandGamePlay *layer = [[BandGamePlay alloc] initWithHudAndLevel:hud level:levelNumber wave:waveNumber];
 	[scene addChild: layer];
 	return scene;
 }
@@ -169,7 +170,9 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
 {
     //NSLog(@"Clear Enemies");
     for (int j = 0; j< [[self activeEnemies] count]; j++){
-        [[CCScheduler sharedScheduler] unscheduleAllSelectorsForTarget: [[self activeEnemies] objectAtIndex:j]];
+        //[[CCScheduler sharedScheduler] unscheduleAllSelectorsForTarget: [[self activeEnemies] objectAtIndex:j]];
+    
+        [[[self activeEnemies] objectAtIndex:j] unscheduleAllSelectors];
     }
 }
 
@@ -180,23 +183,23 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     
     CCAnimation *ampAnim;
     
-    CCSprite *ampBackLeftSprt = [[[CCSprite alloc] init] autorelease];
-    CCAction *ampBackLeftAnim = [[[CCAction alloc] init] autorelease];
+    CCSprite *ampBackLeftSprt = [[CCSprite alloc] init];
+    CCAction *ampBackLeftAnim = [[CCAction alloc] init];
     
-    CCSprite *ampBackRightSprt = [[[CCSprite alloc] init] autorelease];
-    CCAction *ampBackRightAnim = [[[CCAction alloc] init] autorelease];
+    CCSprite *ampBackRightSprt = [[CCSprite alloc] init];
+    CCAction *ampBackRightAnim = [[CCAction alloc] init];
     
-    CCSprite *ampFrontLeftSprt = [[[CCSprite alloc] init] autorelease];
-    CCAction *ampFrontLeftAnim = [[[CCAction alloc] init] autorelease];
+    CCSprite *ampFrontLeftSprt = [[CCSprite alloc] init];
+    CCAction *ampFrontLeftAnim = [[CCAction alloc] init];
     
-    CCSprite *ampFrontRightSprt = [[[CCSprite alloc] init] autorelease];
-    CCAction *ampFrontRightAnim = [[[CCAction alloc] init] autorelease];
+    CCSprite *ampFrontRightSprt = [[CCSprite alloc] init];
+    CCAction *ampFrontRightAnim = [[CCAction alloc] init];
     
     
-    NSMutableArray *ampBackLeftFrms = [[[NSMutableArray alloc] init] autorelease];
-    NSMutableArray *ampBackRightFrms = [[[NSMutableArray alloc] init] autorelease];
-    NSMutableArray *ampFrontLeftFrms = [[[NSMutableArray alloc] init] autorelease];
-    NSMutableArray *ampFrontRightFrms = [[[NSMutableArray alloc] init] autorelease];
+    NSMutableArray *ampBackLeftFrms = [[NSMutableArray alloc] init];
+    NSMutableArray *ampBackRightFrms = [[NSMutableArray alloc] init];
+    NSMutableArray *ampFrontLeftFrms = [[NSMutableArray alloc] init];
+    NSMutableArray *ampFrontRightFrms = [[NSMutableArray alloc] init];
     
     for(int i = 1; i <= 3; ++i) {
         
@@ -218,20 +221,22 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         
     }
     
-    ampAnim = [CCAnimation animationWithFrames:ampBackLeftFrms delay:0.05f];
-    ampBackLeftAnim = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:ampAnim restoreOriginalFrame:NO]];
+
+    
+    ampAnim = [CCAnimation animationWithSpriteFrames:ampBackLeftFrms delay:0.05f];
+    ampBackLeftAnim = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:ampAnim]];
     [ampBackLeftSprt runAction:ampBackLeftAnim];
     
-    ampAnim = [CCAnimation animationWithFrames:ampBackRightFrms delay:0.05f];
-    ampBackRightAnim = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:ampAnim restoreOriginalFrame:NO]];
+    ampAnim = [CCAnimation animationWithSpriteFrames:ampBackRightFrms delay:0.05f];
+    ampBackRightAnim = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:ampAnim]];
     [ampBackRightSprt runAction:ampBackRightAnim];
     
-    ampAnim = [CCAnimation animationWithFrames:ampFrontRightFrms delay:0.05f];
-    ampFrontRightAnim = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:ampAnim restoreOriginalFrame:NO]];
+    ampAnim = [CCAnimation animationWithSpriteFrames:ampFrontRightFrms delay:0.05f];
+    ampFrontRightAnim = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:ampAnim]];
     [ampFrontRightSprt runAction:ampFrontRightAnim];
     
-    ampAnim = [CCAnimation animationWithFrames:ampFrontLeftFrms delay:0.05f];
-    ampFrontLeftAnim = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:ampAnim restoreOriginalFrame:NO]];
+    ampAnim = [CCAnimation animationWithSpriteFrames:ampFrontLeftFrms delay:0.05f];
+    ampFrontLeftAnim = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:ampAnim]];
     [ampFrontLeftSprt runAction:ampFrontLeftAnim];
     
     ampBackLeftSprt.position = backLPos;
@@ -249,7 +254,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
 -(void)reportScore:(int64_t)score forCategory:(NSString*)category
 {
     //NSLog(@"Reporting score");
-    GKScore *scoreReporter = [[[GKScore alloc] initWithCategory:category] autorelease];
+    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:category];
     scoreReporter.value = score;
     
     [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
@@ -267,8 +272,11 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
 
         [self initBandPositions];
     
-        [self schedule:@selector(nextFrame:)];
-        self.bandSprite = [[[BandSprite alloc] initBand]autorelease];
+        //[self schedule:@selector(nextFrame:)];
+        
+        [self schedule:@selector(nextFrame:) interval:0];
+        
+        self.bandSprite = [[BandSprite alloc] initBand];
         [self.bandSprite setPosition:[[UniversalInfo sharedInstance] screenCenter]];
         
         [[[self bandSprite] guitar1Sprite] setPosition:ccp([[self bandSprite]guita1_weaponRightx], [[self bandSprite] guita1_weaponyRight])];
@@ -314,7 +322,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:[[self bandSprite] vocalUpBodySprite] z:39];
         
         LevelController *lvcontroller = [LevelController sharedInstance];
-        self.activeEnemies = [[[NSMutableArray alloc] init] autorelease];
+        self.activeEnemies = [[NSMutableArray alloc] init];
         
         totalLevel = [lvcontroller totalLevels];
         
@@ -330,8 +338,8 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         // load the first value for the wave and level enemies counter.
         self.levelEnemiesLeft = currentLevel.totalLevelEnemies;
         self.waveEnemiesLeft = [(NSNumber *)[[currentLevel waves] objectAtIndex:[self waveNumber]] intValue];
-        self.isTouchEnabled = YES;
-        [self schedule:@selector(nextFrame:)];
+        //self.isTouchEnabled = YES;
+        //[self schedule:@selector(nextFrame:)];
         
         [self createScenarioDecoration:[currentLevel levelContext]];
         
@@ -356,14 +364,14 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         
         int waveNumberForHud = waveNumber + 1;
         
-        NSNumber *waveNumberValue = [[[NSNumber alloc] initWithInt:waveNumberForHud] autorelease];
+        NSNumber *waveNumberValue = [[NSNumber alloc] initWithInt:waveNumberForHud];
         [[hudLayer labelWaveValue] setString:[waveNumberValue stringValue]];
         
         
-        NSNumber *totalWaveNumber = [[[NSNumber alloc] initWithInt:[currentLevel totalWaveSPerLevel] ] autorelease];
+        NSNumber *totalWaveNumber = [[NSNumber alloc] initWithInt:[currentLevel totalWaveSPerLevel]];
         
         
-        NSString *waveNumberSeparator = [[[NSString alloc] initWithString:@"/"] autorelease];
+        NSString *waveNumberSeparator = [[NSString alloc] initWithString:@"/"];
         
         waveNumberSeparator = [waveNumberSeparator stringByAppendingString:[totalWaveNumber stringValue]];
         
@@ -380,6 +388,8 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         
         //[[self bandSprite] bandCoins];
         
+        self.userInteractionEnabled = TRUE;
+        
     }
 	return self;
 }
@@ -392,15 +402,15 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     
     
     switch (context) {
-        case 1:
+        case 1:{
         NSLog(@"TheGarageScenario");
-        background = [CCSprite spriteWithFile:@"IpadSt1BG.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"IpadSt1BG.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *leftWall = [[CCSprite alloc] initWithFile:@"leftWall.png"];
-        CCSprite *rightWall = [[CCSprite alloc] initWithFile:@"rightWall.png"];
-        CCSprite *garageDoor = [[CCSprite alloc] initWithFile:@"portaGaragem.png"];
+        CCSprite *leftWall = [[CCSprite alloc] initWithImageNamed:@"leftWall.png"];
+        CCSprite *rightWall = [[CCSprite alloc] initWithImageNamed:@"rightWall.png"];
+        CCSprite *garageDoor = [[CCSprite alloc] initWithImageNamed:@"portaGaragem.png"];
         
         leftWall.position = ccp(70,487);
         rightWall.position = ccp(690,470);
@@ -409,20 +419,20 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:leftWall z:45];
         [self addChild:rightWall z:45];
         [self addChild:garageDoor z:45];
-        
+        }
         
         break;
         
-        case 2:
+        case 2:{
         NSLog(@"TheSchoolScenario");
-        background = [CCSprite spriteWithFile:@"TheSchoolBgIpad.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"TheSchoolBgIpad.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *flags = [[CCSprite alloc] initWithFile:@"Flags.png"];
-        CCSprite *bus = [[CCSprite alloc] initWithFile:@"Bus.png"];
-        CCSprite *tree = [[CCSprite alloc] initWithFile:@"tree.png"];
-        CCSprite *rightBuildPart = [[CCSprite alloc] initWithFile:@"rightBuildPart.png"];
+        CCSprite *flags = [[CCSprite alloc] initWithImageNamed:@"Flags.png"];
+        CCSprite *bus = [[CCSprite alloc] initWithImageNamed:@"Bus.png"];
+        CCSprite *tree = [[CCSprite alloc] initWithImageNamed:@"tree.png"];
+        CCSprite *rightBuildPart = [[CCSprite alloc] initWithImageNamed:@"rightBuildPart.png"];
         
         flags.position = ccp(400,770);
         bus.position = ccp(180,160);
@@ -434,21 +444,21 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:tree z:45];
         // check why this asset does not fit.
         //[self addChild:rightBuildPart z:45];
-        
+        }
         
         break;
         
-        case 3:
+        case 3:{
         NSLog(@"TheBar");
         
-        background = [CCSprite spriteWithFile:@"TheBarBG.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"TheBarBG.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *tables = [[CCSprite alloc] initWithFile:@"tables.png"];
-        CCSprite *pool = [[CCSprite alloc] initWithFile:@"pool.png"];
-        CCSprite *counter = [[CCSprite alloc] initWithFile:@"counter.png"];
-        CCSprite *backwall = [[CCSprite alloc] initWithFile:@"BackWall.png"];
+        CCSprite *tables = [[CCSprite alloc] initWithImageNamed:@"tables.png"];
+        CCSprite *pool = [[CCSprite alloc] initWithImageNamed:@"pool.png"];
+        CCSprite *counter = [[CCSprite alloc] initWithImageNamed:@"counter.png"];
+        CCSprite *backwall = [[CCSprite alloc] initWithImageNamed:@"BackWall.png"];
         
         tables.position = ccp(384,512);
         pool.position = ccp(384,512);
@@ -461,19 +471,19 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         // check why this asset does not fit.
         [self addChild:backwall z:45];
         
-        
+        }
         break;
         
-        case 4:
+        case 4:{
         NSLog(@"ThePrision");
-        background = [CCSprite spriteWithFile:@"prisionBG.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"prisionBG.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *upwallright = [[CCSprite alloc] initWithFile:@"upwallright.png"];
-        CCSprite *upwallleft = [[CCSprite alloc] initWithFile:@"upwallleft.png"];
-        CCSprite *upwallcenter = [[CCSprite alloc] initWithFile:@"upwallcenter.png"];
-        CCSprite *walls = [[CCSprite alloc] initWithFile:@"walls.png"];
+        CCSprite *upwallright = [[CCSprite alloc] initWithImageNamed:@"upwallright.png"];
+        CCSprite *upwallleft = [[CCSprite alloc] initWithImageNamed:@"upwallleft.png"];
+        CCSprite *upwallcenter = [[CCSprite alloc] initWithImageNamed:@"upwallcenter.png"];
+        CCSprite *walls = [[CCSprite alloc] initWithImageNamed:@"walls.png"];
         
         upwallright.position = ccp(384,512);
         upwallleft.position = ccp(384,512);
@@ -485,21 +495,21 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:upwallcenter z:19];
         // check why this asset does not fit.
         [self addChild:walls z:45];
-        
+        }
         break;
         
-        case 5:
+        case 5:{
         NSLog(@"TheGasStation");
-        background = [CCSprite spriteWithFile:@"GasStationBG.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"GasStationBG.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *roofup = [[CCSprite alloc] initWithFile:@"roofup.png"];
-        CCSprite *roofdown = [[CCSprite alloc] initWithFile:@"roofdown.png"];
-        CCSprite *frontPlate = [[CCSprite alloc] initWithFile:@"frontPlate.png"];
-        CCSprite *carright = [[CCSprite alloc] initWithFile:@"carright.png"];
-        CCSprite *carleft = [[CCSprite alloc] initWithFile:@"carleft.png"];
-        CCSprite *backwalls = [[CCSprite alloc] initWithFile:@"backwalls.png"];
+        CCSprite *roofup = [[CCSprite alloc] initWithImageNamed:@"roofup.png"];
+        CCSprite *roofdown = [[CCSprite alloc] initWithImageNamed:@"roofdown.png"];
+        CCSprite *frontPlate = [[CCSprite alloc] initWithImageNamed:@"frontPlate.png"];
+        CCSprite *carright = [[CCSprite alloc] initWithImageNamed:@"carright.png"];
+        CCSprite *carleft = [[CCSprite alloc] initWithImageNamed:@"carleft.png"];
+        CCSprite *backwalls = [[CCSprite alloc] initWithImageNamed:@"backwalls.png"];
         
         roofup.position = ccp(384,512);
         roofdown.position = ccp(384,512);
@@ -514,14 +524,14 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:carright z:45];
         [self addChild:carleft z:19];
         [self addChild:backwalls z:18];
-        
+        }
         
         break;
         default:
         break;
     }
     
-    background.tag = 1;
+    //background.tag = 1;
     background.anchorPoint = CGPointMake(0, 0);
     [self addChild:background z:0];
     
@@ -555,15 +565,15 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     
     
     switch (context) {
-        case 1:
+        case 1:{
         NSLog(@"TheGarageScenario");
-        background = [CCSprite spriteWithFile:@"garageBgIphone5.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"garageBgIphone5.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *leftWall = [[CCSprite alloc] initWithFile:@"leftWall.png"];
-        CCSprite *rightWall = [[CCSprite alloc] initWithFile:@"rightWall.png"];
-        CCSprite *garageDoor = [[CCSprite alloc] initWithFile:@"portaGaragem.png"];
+        CCSprite *leftWall = [[CCSprite alloc] initWithImageNamed:@"leftWall.png"];
+        CCSprite *rightWall = [[CCSprite alloc] initWithImageNamed:@"rightWall.png"];
+        CCSprite *garageDoor = [[CCSprite alloc] initWithImageNamed:@"portaGaragem.png"];
         
         leftWall.position = ccp(20,255);
         rightWall.position = ccp(310,255);
@@ -573,19 +583,19 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:rightWall z:45];
         [self addChild:garageDoor z:45];
         
-        
+        }
         break;
         
-        case 2:
+        case 2:{
         NSLog(@"TheSchoolScenario");
-        background = [CCSprite spriteWithFile:@"schoolBgIphone5.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"schoolBgIphone5.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *flags = [[CCSprite alloc] initWithFile:@"Flags.png"];
-        CCSprite *bus = [[CCSprite alloc] initWithFile:@"Bus.png"];
-        CCSprite *tree = [[CCSprite alloc] initWithFile:@"tree.png"];
-        CCSprite *rightBuildPart = [[CCSprite alloc] initWithFile:@"rightBuildPart.png"];
+        CCSprite *flags = [[CCSprite alloc] initWithImageNamed:@"Flags.png"];
+        CCSprite *bus = [[CCSprite alloc] initWithImageNamed:@"Bus.png"];
+        CCSprite *tree = [[CCSprite alloc] initWithImageNamed:@"tree.png"];
+        CCSprite *rightBuildPart = [[CCSprite alloc] initWithImageNamed:@"rightBuildPart.png"];
         
         flags.position = ccp(200,385);
         bus.position = ccp(90,80);
@@ -598,20 +608,20 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         // check why this asset does not fit.
         //[self addChild:rightBuildPart z:45];
         
-        
+        }
         break;
         
-        case 3:
+        case 3:{
         NSLog(@"TheBar");
         
-        background = [CCSprite spriteWithFile:@"barBgIphone5.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"barBgIphone5.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *tables = [[CCSprite alloc] initWithFile:@"tablesIphone5.png"];
-        CCSprite *pool = [[CCSprite alloc] initWithFile:@"poolIphone5.png"];
-        CCSprite *counter = [[CCSprite alloc] initWithFile:@"counterIphone5.png"];
-        CCSprite *backwall = [[CCSprite alloc] initWithFile:@"BackWallIphone5.png"];
+        CCSprite *tables = [[CCSprite alloc] initWithImageNamed:@"tablesIphone5.png"];
+        CCSprite *pool = [[CCSprite alloc] initWithImageNamed:@"poolIphone5.png"];
+        CCSprite *counter = [[CCSprite alloc] initWithImageNamed:@"counterIphone5.png"];
+        CCSprite *backwall = [[CCSprite alloc] initWithImageNamed:@"BackWallIphone5.png"];
         
         tables.position = ccp(160,284);
         pool.position = ccp(160,284);
@@ -623,20 +633,20 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:counter z:45];
         // check why this asset does not fit.
         [self addChild:backwall z:45];
-        
+        }
         
         break;
         
-        case 4:
+        case 4:{
         NSLog(@"ThePrision");
-        background = [CCSprite spriteWithFile:@"prisionBGIphone5.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"prisionBGIphone5.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *upwallright = [[CCSprite alloc] initWithFile:@"upwallrightIphone5.png"];
-        CCSprite *upwallleft = [[CCSprite alloc] initWithFile:@"upwallleftIphone5.png"];
-        CCSprite *upwallcenter = [[CCSprite alloc] initWithFile:@"upwallcenterIphone5.png"];
-        CCSprite *walls = [[CCSprite alloc] initWithFile:@"wallsIphone5.png"];
+        CCSprite *upwallright = [[CCSprite alloc] initWithImageNamed:@"upwallrightIphone5.png"];
+        CCSprite *upwallleft = [[CCSprite alloc] initWithImageNamed:@"upwallleftIphone5.png"];
+        CCSprite *upwallcenter = [[CCSprite alloc] initWithImageNamed:@"upwallcenterIphone5.png"];
+        CCSprite *walls = [[CCSprite alloc] initWithImageNamed:@"wallsIphone5.png"];
         
         upwallright.position = ccp(160,284);
         upwallleft.position = ccp(160,284);
@@ -648,21 +658,21 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:upwallcenter z:19];
         // check why this asset does not fit.
         [self addChild:walls z:45];
-        
+        }
         break;
         
-        case 5:
+        case 5:{
         NSLog(@"TheGasStation");
-        background = [CCSprite spriteWithFile:@"gasStationBGIphone5.jpg"];
+        background = [CCSprite spriteWithImageNamed:@"gasStationBGIphone5.jpg"];
         
         // this is another point that will be required to change as the level
         // decorations will depend on wich level is loaded
-        CCSprite *roofup = [[CCSprite alloc] initWithFile:@"roofupIphone5.png"];
-        CCSprite *roofdown = [[CCSprite alloc] initWithFile:@"roofdownIphone5.png"];
-        CCSprite *frontPlate = [[CCSprite alloc] initWithFile:@"frontPlateIphone5.png"];
-        CCSprite *carright = [[CCSprite alloc] initWithFile:@"carrightIphone5.png"];
-        CCSprite *carleft = [[CCSprite alloc] initWithFile:@"carleftIphone5.png"];
-        CCSprite *backwalls = [[CCSprite alloc] initWithFile:@"backwallsIphone5.png"];
+        CCSprite *roofup = [[CCSprite alloc] initWithImageNamed:@"roofupIphone5.png"];
+        CCSprite *roofdown = [[CCSprite alloc] initWithImageNamed:@"roofdownIphone5.png"];
+        CCSprite *frontPlate = [[CCSprite alloc] initWithImageNamed:@"frontPlateIphone5.png"];
+        CCSprite *carright = [[CCSprite alloc] initWithImageNamed:@"carrightIphone5.png"];
+        CCSprite *carleft = [[CCSprite alloc] initWithImageNamed:@"carleftIphone5.png"];
+        CCSprite *backwalls = [[CCSprite alloc] initWithImageNamed:@"backwallsIphone5.png"];
         
         roofup.position = ccp(160,284);
         roofdown.position = ccp(160,284);
@@ -677,14 +687,14 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self addChild:carright z:45];
         [self addChild:carleft z:19];
         [self addChild:backwalls z:18];
-        
+        }
         
         break;
         default:
         break;
     }
     
-    background.tag = 1;
+    //background.tag = 1;
     background.anchorPoint = CGPointMake(0, 0);
     [self addChild:background z:0];
     [self scenarioSoundBox:ccp(60,335) backRightSprt:ccp(260,335) frontRightSprt:ccp(252,223) frontLeftSprt:ccp(68,223)];
@@ -728,19 +738,19 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [self.coinAnimFrames addObject:frame];
     }
 
-    CCAnimation *animation = [CCAnimation animationWithFrames:self.coinAnimFrames delay:0.09f];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:self.coinAnimFrames delay:0.09f];
     
-    self.coinAnimation = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] retain];
+    self.coinAnimation = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:animation]];
     
 }
 
 -(void)performPowerUp:(PowerUp)type initialPoint:(CGPoint)point;
 {
     CCSprite *powerUp;
-    CCFiniteTimeAction *jump;
-    CCFiniteTimeAction *fadeOut;
-    CCSequence *actionSequence;
+    id jump;
+    id fadeOut;
+    CCActionSequence *actionSequence;
     
     // force only coin for test purposes
     type = COIN;
@@ -748,46 +758,46 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     switch (type) {
         case HEALTHPOWER:
             //NSLog(@"Release HEALTHPOWER power up !!!");
-            powerUp = [[[CCSprite alloc] initWithFile:@"healthUp.png"]autorelease];
+            powerUp = [[CCSprite alloc] initWithImageNamed:@"healthUp.png"];
             powerUp.position = point;
             [self addChild:powerUp];
             //jump = [CCJumpTo actionWithDuration:1 position:ccp(160,240) height:250 jumps:1];
-            jump = [CCJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
-            fadeOut = [CCFadeOut actionWithDuration:0.5];
-            actionSequence = [CCSequence actions:jump,fadeOut, nil];
+            jump = [CCActionJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
+            fadeOut = [CCActionFadeOut actionWithDuration:0.5];
+            actionSequence = [CCActionSequence actions:jump,fadeOut, nil];
             [powerUp runAction:actionSequence];
             [[self bandSprite] receiveHealthPowerUp:20];
             break;
         case GUNPOWER_1:
             //NSLog(@"Release GUNPOWER_1 power up !!!");
-            powerUp = [[[CCSprite alloc] initWithFile:@"gunUp1.png"]autorelease];
+            powerUp = [[CCSprite alloc] initWithImageNamed:@"gunUp1.png"];
             powerUp.position = point;
             [self addChild:powerUp];
-            jump = [CCJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
-            fadeOut = [CCFadeOut actionWithDuration:0.5];
-            actionSequence = [CCSequence actions:jump,fadeOut, nil];
+            jump = [CCActionJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
+            fadeOut = [CCActionFadeOut actionWithDuration:0.5];
+            actionSequence = [CCActionSequence actions:jump,fadeOut, nil];
             [powerUp runAction:actionSequence];
             [[self bandSprite] setShootPower:30];
             break;
         case GUNPOWER_2:
             //NSLog(@"Release GUNPOWER_2 power up !!!");
-            powerUp = [[[CCSprite alloc] initWithFile:@"gunUp2.png"]autorelease];
+            powerUp = [[CCSprite alloc] initWithImageNamed:@"gunUp2.png"];
             powerUp.position = point;
             [self addChild:powerUp];
-            jump = [CCJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
-            fadeOut = [CCFadeOut actionWithDuration:0.5];
-            actionSequence = [CCSequence actions:jump,fadeOut, nil];
+            jump = [CCActionJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
+            fadeOut = [CCActionFadeOut actionWithDuration:0.5];
+            actionSequence = [CCActionSequence actions:jump,fadeOut, nil];
             [powerUp runAction:actionSequence];
             [[self bandSprite] setShootPower:60];
             break;
         case RADIOPOWER:
             //NSLog(@"Release RADIOPOWER power up !!!");
-            powerUp = [[[CCSprite alloc] initWithFile:@"radioUP.png"]autorelease];
+            powerUp = [[CCSprite alloc] initWithImageNamed:@"radioUP.png"];
             powerUp.position = point;
             [self addChild:powerUp];
-            jump = [CCJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
-            fadeOut = [CCFadeOut actionWithDuration:0.5];
-            actionSequence = [CCSequence actions:jump,fadeOut, nil];
+            jump = [CCActionJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
+            fadeOut = [CCActionFadeOut actionWithDuration:0.5];
+            actionSequence = [CCActionSequence actions:jump,fadeOut, nil];
             [powerUp runAction:actionSequence];
             [[self bandSprite] setBandBlast:1];
             break;
@@ -799,9 +809,9 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
             [powerUp setScale:0.30];
             powerUp.position = point;
             [self addChild:powerUp];
-            jump = [CCJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
-            fadeOut = [CCFadeOut actionWithDuration:0.5];
-            actionSequence = [CCSequence actions:jump,fadeOut, nil];
+            jump = [CCActionJumpTo actionWithDuration:1 position:[[UniversalInfo sharedInstance] screenCenter] height:250 jumps:1];
+            fadeOut = [CCActionFadeOut actionWithDuration:0.5];
+            actionSequence = [CCActionSequence actions:jump,fadeOut, nil];
             [powerUp runAction:actionSequence];
             self.bandSprite.bandCoins = self.bandSprite.bandCoins + 1;
             break;
@@ -1103,7 +1113,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     return YES;
 }
 
-- (void) nextFrame:(ccTime)dt
+- (void) nextFrame:(float)dt
 {
     [self shootCollidedToTarget];
     [self robotShootCollidedHero];
@@ -1115,9 +1125,9 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     
     [hudLayer setIsBandShooting:!self.touchEnded];
 
-    NSNumber *score = [[[NSNumber alloc] initWithInt:[self scoreCount]] autorelease];
-    NSNumber *armor = [[[NSNumber alloc] initWithFloat:[[self bandSprite] getTotalArmor]] autorelease];
-    NSNumber *heroCoins = [[[NSNumber alloc] initWithFloat:[[self bandSprite] bandCoins]] autorelease];
+    NSNumber *score = [[NSNumber alloc] initWithInt:[self scoreCount]];
+    NSNumber *armor = [[NSNumber alloc] initWithFloat:[[self bandSprite] getTotalArmor]];
+    NSNumber *heroCoins = [[NSNumber alloc] initWithFloat:[[self bandSprite] bandCoins]];
     
     [[hudLayer labelArmorPercent] setString:[armor stringValue]];
     [[hudLayer labelScore] setString:[score stringValue]];
@@ -1129,8 +1139,10 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     
     if ([[self bandSprite] getTotalArmor] <= 0) {
         [self setState:GAME_OVER];
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[GameOver sceneWithNextLevel:[self levelNumber]]]];
-        //clean all scheduled action for the left enemies
+        //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[GameOver sceneWithNextLevel:[self levelNumber]]]];
+        
+        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithNextLevel:[self levelNumber]] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+        
         [self clearEnemyFire];
     }
     
@@ -1152,7 +1164,8 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         
         if ([self levelNumber] == totalLevel) {
             // the player finished the game
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[EndGame scene]]];
+            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[EndGame scene]]];
+            [[CCDirector sharedDirector] replaceScene:[EndGame scene] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
         }else{
             // level cleared !!!
             //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[Victory sceneWithNextLevel:[self levelNumber]]]];
@@ -1165,7 +1178,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         [[self hudLayer] doWaveClearedAnimation];
         // show in the hud that the wave was cleared. At this point it necessary to load a new wave
         self.waveNumber = self.waveNumber + 1;
-        NSNumber *waveNumberValue = [[[NSNumber alloc] initWithInt:[self waveNumber] + 1] autorelease];
+        NSNumber *waveNumberValue = [[NSNumber alloc] initWithInt:[self waveNumber] + 1];
         
         
         
@@ -1231,11 +1244,11 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         targetPoint = [self fireCirclePoint];
         // only increase the shoot power
         if ([[self bandSprite] shootPower] == 20){
-            laserbean = [[[HeroShoot alloc] initWithFile:@"laser1.png"] autorelease];
+            laserbean = [[HeroShoot alloc] initWithImageNamed:@"laser1.png"];
         }else if ([[self bandSprite] shootPower] == 30){
-            laserbean = [[[HeroShoot alloc] initWithFile:@"bullet3.png"] autorelease];
+            laserbean = [[HeroShoot alloc] initWithImageNamed:@"bullet3.png"];
         }else{
-            laserbean = [[[HeroShoot alloc] initWithFile:@"bomb3.png"] autorelease];
+            laserbean = [[HeroShoot alloc] initWithImageNamed:@"bomb3.png"];
         }
         
         [[bandSprite activeShoots] addObject:laserbean];
@@ -1332,9 +1345,9 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
                 [self addChild:laserbean];
                 [laserbean stopAllActions];
                 
-                id actionFire = [CCMoveTo actionWithDuration:0.5 position:targetPoint];
-                id endFireCallBack = [CCCallFuncN actionWithTarget:self selector:@selector(doEndFire:)];
-                id actionSequence = [CCSequence actions:actionFire, endFireCallBack, nil];
+                id actionFire = [CCActionMoveTo actionWithDuration:0.5 position:targetPoint];
+                id endFireCallBack = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndFire:)];
+                id actionSequence = [CCActionSequence actions:actionFire, endFireCallBack, nil];
                 
                 [laserbean runAction:actionSequence];
                 //[[SimpleAudioEngine sharedEngine] playEffect:@"pew-pew-lei.caf"];
@@ -1358,15 +1371,18 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     }
 }
 
+/*
 -(void)registerWithTouchDispatcher
 {
 	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-}
+}*/
 
 -(void)performBandShoot:(UITouch *)touch
 {
     //NSLog(@"PerformBandShoot");
-    CGPoint location = [self convertTouchToNodeSpace: touch];
+    //CGPoint location = [self convertTouchToNodeSpace: touch];
+    CGPoint location = [touch locationInNode:self];
+    
     location.x = location.x - self.bandSprite.position.x;
     location.y = location.y - self.bandSprite.position.y;
     self.endTouch = location;
@@ -1375,12 +1391,11 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     
     //[[[self hudLayer] coolDownBar] setPercentage:5];
     
-
-    
     if ([[self bandSprite] guita1ReleaseFire] == YES) {
         [[self hudLayer] setIsBandShooting:YES];
         [self lowerCooldownBar];
-        [self fireLaser:[self convertTouchToNodeSpace:touch]];
+        //[self fireLaser:[self convertTouchToNodeSpace:touch]];
+        [self fireLaser:[touch locationInNode:self]];
     }
 }
 
@@ -1411,7 +1426,8 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     [self removeChild:enemySprite cleanup:YES];
     if ([[self bandSprite] getTotalArmor] <= 0) {
         [self setState:GAME_OVER];
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[GameOver sceneWithNextLevel:[self levelNumber]]]];
+        //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[GameOver sceneWithNextLevel:[self levelNumber]]]];
+        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithNextLevel:[self levelNumber]] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
     }
 }
 
@@ -1440,6 +1456,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
 
 -(void)triggerRadioExplosion
 {
+    /*
     NSLog(@"Trigger RadioExplosion");
     // it is possible to implement a partial explosion
     if ([[self bandSprite] bandBlast] > 0 ) {
@@ -1448,6 +1465,8 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         // kill all enemies
         for (int j = 0; j< [[self activeEnemies] count]; j++){
             //first destroy the target.
+#warning put receive hero shoot back
+            //int enemyScore = 0;
             int enemyScore = [[[self activeEnemies] objectAtIndex:j]
                               receiveHeroShoot:[[self bandSprite] shootPower] killNow:YES];
             self.scoreCount = self.scoreCount + enemyScore;
@@ -1455,18 +1474,19 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         }
         
     }
+     */
 }
 
 
 -(void)raiseCooldownBar
 {
-    CCProgressTimer *cooldown = [[self hudLayer] coolDownBar];
+    CCProgressNode *cooldown = [[self hudLayer] coolDownBar];
     cooldown.percentage = cooldown.percentage + 0.5;
 }
 
 -(void)lowerCooldownBar
 {
-    CCProgressTimer *cooldown = [[self hudLayer] coolDownBar];
+    CCProgressNode *cooldown = [[self hudLayer] coolDownBar];
     cooldown.percentage = cooldown.percentage - 0.5;
     
 }
@@ -1505,13 +1525,13 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
 - (void) dealloc
 {
     
-    NSLog(@"dealloc %d",activeEnemies.count);
+    //NSLog(@"dealloc %d",activeEnemies.count);
     // in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
-	[super dealloc];
+	//[super dealloc];
 }
 
 @end

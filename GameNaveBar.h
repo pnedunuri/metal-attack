@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GameNaveBar : CCLayerColor
+@interface GameNaveBar : CCNodeColor
 
 -(id)initWithDelegagte:(id)delegate;
 

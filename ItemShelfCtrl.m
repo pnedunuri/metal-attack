@@ -31,7 +31,7 @@ int currentShelf;
     NSLog(@"Draw next item Shelf");
 }
 
--(void)doNext:(CCMenuItem *)menuitem
+-(void)doNext:(CCButton *)menuitem
 {
     NSLog(@"Current shelf %d",currentShelf);
     // show multiples of 5 items
@@ -49,7 +49,7 @@ int currentShelf;
 
 -(id)initwithCoinLabel:(CCLabelTTF*)coinLabel;
 {
-    if( (self=[super initWithColor:ccc4(0, 0, 0, 0)])) {
+    if([super initWithColor:[[CCColor alloc] initWithCcColor4b:ccc4(0, 0, 0, 0)]]) {
         // create the itemshelf that represents the first 5
         // items and add it to this layer
         currentShelf = 0;
@@ -59,23 +59,28 @@ int currentShelf;
         [allItems addObjectsFromArray:[[BandStoreItemsCtrl sharedInstance] coinpacks]];
         allItems = [[NSMutableArray alloc] initWithArray:[allItems sortedArrayUsingDescriptors:@[sort]]];
         
-        CCSprite *shelfs = [[CCSprite alloc] initWithFile:@"shelfs.png"];
+        CCSprite *shelfs = [[CCSprite alloc] initWithImageNamed:@"shelfs.png"];
         [shelfs setPosition:ccp(480, 250)];
         [shelfs setScale:0.5];
         
         for (int i = 0 ; i < [allItems count] /5; i++) {
             shelf = [[ItemShelf alloc] initWithItems:allItems coinsLabel:coinLabel range:NSMakeRange(5*i, 5)];
-            [shelf setTag:i];
+            //[shelf setTag:i];
             [itemShelfs addObject:shelf];
         }
     
-        CCMenuItemImage *nextButton = [CCMenuItemImage itemFromNormalImage:@"moreItemsClosed.png"
-                                                             selectedImage: @"moreItensOPENED.png"
-                                                                    target:self
-                                                                  selector:@selector(doNext:)];
+        //CCMenuItemImage *nextButton = [CCMenuItemImage itemFromNormalImage:@"moreItemsClosed.png"
+        //                                                     selectedImage: @"moreItensOPENED.png"
+        //                                                            target:self
+        //                                                          selector:@selector(doNext:)];
+        
+        CCButton *nextButton = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"moreItemsClosed.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"moreItensOPENED.png"] disabledSpriteFrame:nil];
+        
         
         [nextButton setScale:0.5];
-        CCMenu *nextMenu = [CCMenu menuWithItems:nextButton, nil];
+        [nextButton setTarget:self selector:@selector(doNext:)];
+        CCNode *nextMenu = [[CCNode alloc] init];
+        [nextButton addChild:nextButton];
         [nextMenu setPosition:ccp(600,500)];
         [self addChild:shelfs];
         [self addChild:nextMenu];

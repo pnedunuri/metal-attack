@@ -54,36 +54,36 @@ NSSortDescriptor *sort;
     
     for (int i = 0; i < [[self drummers] count]; i++) {
         vaultItem = [bandVault getBandVaultByItemId:[[[self drummers] objectAtIndex:i] appStoreId]];
-        [[drummers objectAtIndex:i] setOwned:vaultItem.owned];
-        [[drummers objectAtIndex:i] setSelected:vaultItem.selected];
-        if (vaultItem.selected) {
+        [[drummers objectAtIndex:i] setOwnedBandItem:vaultItem.ownedVaultItem];
+        [[drummers objectAtIndex:i] setSelectedBandItem:vaultItem.selectedVaultItem];
+        if (vaultItem.selectedVaultItem) {
             [bandVault setDrummerIndex:i];
         }
     }
     
     for (int i = 0; i < [[self vocals] count]; i++) {
         vaultItem = [bandVault getBandVaultByItemId:[[[self vocals] objectAtIndex:i] appStoreId]];
-        [[vocals objectAtIndex:i] setOwned:vaultItem.owned];
-        [[vocals objectAtIndex:i] setSelected:vaultItem.selected];
-        if (vaultItem.selected) {
+        [[vocals objectAtIndex:i] setOwnedBandItem:vaultItem.ownedVaultItem];
+        [[vocals objectAtIndex:i] setSelectedBandItem:vaultItem.selectedVaultItem];
+        if (vaultItem.selectedVaultItem) {
             [bandVault setVocalIndex:i];
         }
     }
     
     for (int i = 0; i < [[self guitarrists] count]; i++) {
         vaultItem = [bandVault getBandVaultByItemId:[[[self guitarrists] objectAtIndex:i] appStoreId]];
-        [[guitarrists objectAtIndex:i] setOwned:vaultItem.owned];
-        [[guitarrists objectAtIndex:i] setSelected:vaultItem.selected];
-        if (vaultItem.selected) {
+        [[guitarrists objectAtIndex:i] setOwnedBandItem:vaultItem.ownedVaultItem];
+        [[guitarrists objectAtIndex:i] setSelectedBandItem:vaultItem.selectedVaultItem];
+        if (vaultItem.selectedVaultItem) {
             [bandVault setGuitar1Index:i];
         }
     }
     
     for (int i = 0; i < [[self basses] count]; i++) {
         vaultItem = [bandVault getBandVaultByItemId:[[[self basses] objectAtIndex:i] appStoreId]];
-        [[basses objectAtIndex:i] setOwned:vaultItem.owned];
-        [[basses objectAtIndex:i] setSelected:vaultItem.selected];
-        if (vaultItem.selected) {
+        [[basses objectAtIndex:i] setOwnedBandItem:vaultItem.ownedVaultItem];
+        [[basses objectAtIndex:i] setSelectedBandItem:vaultItem.selectedVaultItem];
+        if (vaultItem.selectedVaultItem) {
             [bandVault setBassIndex:i];
         }
     }
@@ -109,9 +109,9 @@ NSSortDescriptor *sort;
         NSDictionary *drummerInfo = [drummersDict valueForKey:drummer];
     
         // drummer info is null create it from JSON and store
-        item = [[[BandStoreItem alloc] init] autorelease];
+        item = [[BandStoreItem alloc] init];
         item.appStoreId = [drummerInfo valueForKey:@"appStoreId"];
-        item.name = [drummerInfo valueForKey:@"name"];
+        item.itemName = [drummerInfo valueForKey:@"name"];
         item.description = [drummerInfo valueForKey:@"description"];
         item.credits = [[drummerInfo valueForKey:@"credits"] intValue];
         item.value = [[drummerInfo valueForKey:@"value"] intValue];
@@ -120,7 +120,7 @@ NSSortDescriptor *sort;
         item.itemframes = [[drummerInfo valueForKey:@"frames"] intValue];
         item.storeItemFrmName = [drummerInfo valueForKey:@"storeItemFrmName"];
         item.armor = [[drummerInfo valueForKey:@"armor"] intValue];
-        item.owned = [[drummerInfo valueForKey:@"owner"] boolValue];
+        item.ownedBandItem = [[drummerInfo valueForKey:@"owner"] boolValue];
         item.itemType = DRUMMER;
         
         [drummers addObject:item];
@@ -137,7 +137,7 @@ NSSortDescriptor *sort;
         [bandVault selectBandGuy:[[drummers firstObject] appStoreId] bandGuyType:DRUMMER oldSelectedGuy:nil];
     }
     
-    NSLog(@"Drummer data size %d",[drummers count]);
+    NSLog(@"Drummer data size %lu",(unsigned long)[drummers count]);
 }
 
 -(void)populateVocalData
@@ -146,10 +146,10 @@ NSSortDescriptor *sort;
     NSDictionary *vocalsDict = [bandItemsDict valueForKey:@"VOCALS"];
     NSString *vocal;
     for (vocal in vocalsDict){
-        BandStoreItem *item = [[[BandStoreItem alloc] init] autorelease];
+        BandStoreItem *item = [[BandStoreItem alloc] init];
         NSDictionary *vocalInfo = [vocalsDict valueForKey:vocal];
         item.appStoreId = [vocalInfo valueForKey:@"appStoreId"];
-        item.name = [vocalInfo valueForKey:@"name"];
+        item.itemName = [vocalInfo valueForKey:@"name"];
         item.description = [vocalInfo valueForKey:@"description"];
         item.credits = [[vocalInfo valueForKey:@"credits"] intValue];
         item.value = [[vocalInfo valueForKey:@"value"] intValue];
@@ -173,7 +173,7 @@ NSSortDescriptor *sort;
         item.armsize = ccp([[vocalInfo valueForKey:@"armwidth"] intValue], [[vocalInfo valueForKey:@"armheight"] intValue]);
         item.armor = [[vocalInfo valueForKey:@"armor"] floatValue];
         item.shootPower = [[vocalInfo valueForKey:@"shootPower"] floatValue];
-        item.owned = [[vocalInfo valueForKey:@"owner"] boolValue];
+        item.ownedBandItem = [[vocalInfo valueForKey:@"owner"] boolValue];
         item.itemType = VOCALIST;
 
         [vocals addObject:item];
@@ -198,10 +198,10 @@ NSSortDescriptor *sort;
     NSDictionary *guitarristsDict = [bandItemsDict valueForKey:@"GUITARRISTS"];
     NSString *guitarrist;
     for (guitarrist in guitarristsDict){
-        BandStoreItem *item = [[[BandStoreItem alloc] init] autorelease];
+        BandStoreItem *item = [[BandStoreItem alloc] init];
         NSDictionary *guitarristInfo = [guitarristsDict valueForKey:guitarrist];
         item.appStoreId = [guitarristInfo valueForKey:@"appStoreId"];
-        item.name = [guitarristInfo valueForKey:@"name"];
+        item.itemName = [guitarristInfo valueForKey:@"name"];
         item.description = [guitarristInfo valueForKey:@"description"];
         item.credits = [[guitarristInfo valueForKey:@"credits"] intValue];
         item.value = [[guitarristInfo valueForKey:@"value"] intValue];
@@ -225,7 +225,7 @@ NSSortDescriptor *sort;
         item.armsize = ccp([[guitarristInfo valueForKey:@"armwidth"] intValue], [[guitarristInfo valueForKey:@"armheight"] intValue]);
         item.armor = [[guitarristInfo valueForKey:@"armor"] floatValue];
         item.shootPower = [[guitarristInfo valueForKey:@"shootPower"] floatValue];
-        item.owned = [[guitarristInfo valueForKey:@"owner"] boolValue];
+        item.ownedBandItem = [[guitarristInfo valueForKey:@"owner"] boolValue];
         item.itemType = GUITARRIST_1;
         
         [guitarrists addObject:item];
@@ -250,10 +250,10 @@ NSSortDescriptor *sort;
     NSDictionary *bassesDict = [bandItemsDict valueForKey:@"BASSES"];
     NSString *bass;
     for (bass in bassesDict){
-        BandStoreItem *item = [[[BandStoreItem alloc] init] autorelease];
+        BandStoreItem *item = [[BandStoreItem alloc] init];
         NSDictionary *bassistInfo = [bassesDict valueForKey:bass];
         item.appStoreId = [bassistInfo valueForKey:@"appStoreId"];
-        item.name = [bassistInfo valueForKey:@"name"];
+        item.itemName = [bassistInfo valueForKey:@"name"];
         item.description = [bassistInfo valueForKey:@"description"];
         item.credits = [[bassistInfo valueForKey:@"credits"] intValue];
         item.value = [[bassistInfo valueForKey:@"value"] intValue];
@@ -278,7 +278,7 @@ NSSortDescriptor *sort;
                            [[bassistInfo valueForKey:@"armheight"] intValue]);
         item.armor = [[bassistInfo valueForKey:@"armor"] floatValue];
         item.shootPower = [[bassistInfo valueForKey:@"shootPower"] floatValue];
-        item.owned = [[bassistInfo valueForKey:@"owner"] boolValue];
+        item.ownedBandItem = [[bassistInfo valueForKey:@"owner"] boolValue];
         item.itemType = BASSGUY;
      
         [basses addObject:item];
@@ -301,10 +301,10 @@ NSSortDescriptor *sort;
     NSDictionary *coinDict = [bandItemsDict valueForKey:@"COINPACK"];
     NSString *pack;
     for (pack in coinDict){
-        BandStoreItem *item = [[[BandStoreItem alloc] init] autorelease];
+        BandStoreItem *item = [[BandStoreItem alloc] init];
         NSDictionary *coinpackInfo = [coinDict valueForKey:pack];
         item.appStoreId = [coinpackInfo valueForKey:@"appStoreId"];
-        item.name = [coinpackInfo valueForKey:@"name"];
+        item.itemName = [coinpackInfo valueForKey:@"name"];
         item.description = [coinpackInfo valueForKey:@"description"];
         item.credits = [[coinpackInfo valueForKey:@"credits"] intValue];
         item.value = [[coinpackInfo valueForKey:@"value"] intValue];
@@ -324,16 +324,16 @@ NSSortDescriptor *sort;
     NSString *genericItem;
     
     for (genericItem in genericItemDict) {
-        BandStoreItem *item = [[[BandStoreItem alloc] init] autorelease];
+        BandStoreItem *item = [[BandStoreItem alloc] init];
         NSDictionary *genericItemInfo = [genericItemDict valueForKey:genericItem];
         item.appStoreId = [genericItemInfo valueForKey:@"appStoreId"];
-        item.name = [genericItemInfo valueForKey:@"name"];
+        item.itemName = [genericItemInfo valueForKey:@"name"];
         item.description = [genericItemInfo valueForKey:@"description"];
         item.credits = [[genericItemInfo valueForKey:@"credits"] intValue];
         item.value = [[genericItemInfo valueForKey:@"value"] intValue];
         item.storeItemFrmName = [genericItemInfo valueForKey:@"storeItemFrmName"];
         item.itemframes = [[genericItemInfo valueForKey:@"frames"] intValue];
-        item.owned = [[genericItemInfo valueForKey:@"owner"] boolValue];
+        item.ownedBandItem = [[genericItemInfo valueForKey:@"owner"] boolValue];
         item.itemType = GENERIC_ITEM;
         [self.generalItems addObject:item];
     }

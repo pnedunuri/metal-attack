@@ -46,9 +46,9 @@ CCSprite *clearText;
 
 -(void)createLevelCleared
 {
-    levelClearedBase = [[CCSprite alloc] initWithFile:@"StageClearbase.png"];
-    stageText = [[CCSprite alloc] initWithFile:@"StageClearSTAGE.png"];
-    clearText = [[CCSprite alloc] initWithFile:@"StageClearCLEAR.png"];
+    levelClearedBase = [[CCSprite alloc] initWithImageNamed:@"StageClearbase.png"];
+    stageText = [[CCSprite alloc] initWithImageNamed:@"StageClearSTAGE.png"];
+    clearText = [[CCSprite alloc] initWithImageNamed:@"StageClearCLEAR.png"];
     CGPoint basePosition = [[UniversalInfo sharedInstance] screenCenter];
     basePosition = ccpAdd(basePosition,ccp(20,0));
     [levelClearedBase setPosition:basePosition];
@@ -67,14 +67,14 @@ CCSprite *clearText;
 {
     
     [levelClearedBase setVisible:true];
-    id endMoveBaseLogo = [CCCallFuncN actionWithTarget:self selector:@selector(doEndMoveLogoBase:)];
+    id endMoveBaseLogo = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveLogoBase:)];
     
     CGPoint basePosition = [[UniversalInfo sharedInstance] screenCenter];
     basePosition = ccpAdd(basePosition,ccp(20,0));
     
-    id animateBaseLogo = [CCScaleTo actionWithDuration:0.4 scale:0.5];
-    id easeEffect = [CCEaseBounceInOut actionWithAction:animateBaseLogo];
-    id moveLogoBaseSequence = [CCSequence actions:easeEffect, endMoveBaseLogo, nil];
+    id animateBaseLogo = [CCActionScaleTo actionWithDuration:0.4 scale:0.5];
+    id easeEffect = [CCActionEaseBounceInOut actionWithAction:animateBaseLogo];
+    id moveLogoBaseSequence = [CCActionSequence actions:easeEffect, endMoveBaseLogo, nil];
     
     [levelClearedBase runAction:moveLogoBaseSequence];
 }
@@ -83,10 +83,10 @@ CCSprite *clearText;
 {
     CGPoint basePosition = [[UniversalInfo sharedInstance] screenCenter];
     basePosition = ccpAdd(basePosition,ccp(20,0));
-    id animateStageText = [CCMoveTo actionWithDuration:0.5 position:ccpAdd(basePosition,ccp(-10, 35))];
-    id endMoveStageText = [CCCallFuncN actionWithTarget:self selector:@selector(doEndMoveStageText:)];
-    id easeEffect = [CCEaseBounceInOut actionWithAction:animateStageText];
-    id moveStageTextSequence = [CCSequence actions:easeEffect, endMoveStageText, nil];
+    id animateStageText = [CCActionMoveTo actionWithDuration:0.5 position:ccpAdd(basePosition,ccp(-10, 35))];
+    id endMoveStageText = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveStageText:)];
+    id easeEffect = [CCActionEaseBounceInOut actionWithAction:animateStageText];
+    id moveStageTextSequence = [CCActionSequence actions:easeEffect, endMoveStageText, nil];
     [stageText runAction:moveStageTextSequence];
 }
 
@@ -94,10 +94,10 @@ CCSprite *clearText;
 {
     CGPoint basePosition = [[UniversalInfo sharedInstance] screenCenter];
     basePosition = ccpAdd(basePosition,ccp(20,0));
-    id animateClearText = [CCMoveTo actionWithDuration:0.5 position:ccpAdd(basePosition,ccp(0, -35))];
-    id endMoveClearText = [CCCallFuncN actionWithTarget:self selector:@selector(doEndMoveClearText:)];
-    id easeEffect = [CCEaseBounceInOut actionWithAction:animateClearText];
-    id moveClearTextSequence = [CCSequence actions:easeEffect, endMoveClearText, nil];
+    id animateClearText = [CCActionMoveTo actionWithDuration:0.5 position:ccpAdd(basePosition,ccp(0, -35))];
+    id endMoveClearText = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveClearText:)];
+    id easeEffect = [CCActionEaseBounceInOut actionWithAction:animateClearText];
+    id moveClearTextSequence = [CCActionSequence actions:easeEffect, endMoveClearText, nil];
     [clearText runAction:moveClearTextSequence];
 }
 
@@ -109,11 +109,11 @@ CCSprite *clearText;
 
 -(void)createPosterSprites
 {
-    drummerPoster = [[CCSprite alloc] initWithFile:@"Banda01.png"];
-    guita1Poster = [[CCSprite alloc] initWithFile:@"Banda02.png"];
-    guita2Poster = [[CCSprite alloc] initWithFile:@"Banda04.png"];
-    bassPoster = [[CCSprite alloc] initWithFile:@"Banda03.png"];
-    vocalPoster = [[CCSprite alloc] initWithFile:@"Banda05.png"];
+    drummerPoster = [[CCSprite alloc] initWithImageNamed:@"Banda01.png"];
+    guita1Poster = [[CCSprite alloc] initWithImageNamed:@"Banda02.png"];
+    guita2Poster = [[CCSprite alloc] initWithImageNamed:@"Banda04.png"];
+    bassPoster = [[CCSprite alloc] initWithImageNamed:@"Banda03.png"];
+    vocalPoster = [[CCSprite alloc] initWithImageNamed:@"Banda05.png"];
     
     [drummerPoster setScale:0.40];
     [guita1Poster setScale:0.40];
@@ -183,17 +183,17 @@ CCSprite *clearText;
 {
     // this method will create band poster figure animations
     
-    id moveDrummer = [CCMoveTo actionWithDuration:0.3 position:ccp(159, 420)];
-    id moveGuita1 = [CCMoveTo actionWithDuration:0.3 position:ccp(90, 270)];
-    id moveGuita2 = [CCMoveTo actionWithDuration:0.3 position:ccp(240, 120)];
-    id moveBass = [CCMoveTo actionWithDuration:0.3 position:ccp(270, 300)];
-    id moveVocal = [CCMoveTo actionWithDuration:0.3 position:ccp(90, 120)];
+    id moveDrummer = [CCActionMoveTo actionWithDuration:0.3 position:ccp(159, 420)];
+    id moveGuita1 = [CCActionMoveTo actionWithDuration:0.3 position:ccp(90, 270)];
+    id moveGuita2 = [CCActionMoveTo actionWithDuration:0.3 position:ccp(240, 120)];
+    id moveBass = [CCActionMoveTo actionWithDuration:0.3 position:ccp(270, 300)];
+    id moveVocal = [CCActionMoveTo actionWithDuration:0.3 position:ccp(90, 120)];
     
     // crate the easing and improve the moviment
     
-    id endAnimatePoster = [CCCallFuncN actionWithTarget:self selector:@selector(doEndAnimatePoster:)];
+    id endAnimatePoster = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndAnimatePoster:)];
     
-    id animatePosterSequence = [CCSequence actions:moveDrummer, endAnimatePoster, nil];
+    id animatePosterSequence = [CCActionSequence actions:moveDrummer, endAnimatePoster, nil];
     
     [guita1Poster runAction:moveGuita1];
     [guita2Poster runAction:moveGuita2];

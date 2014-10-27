@@ -16,7 +16,6 @@
 		2801A4E119FAA6B500BF3837 /* BandStoreItemsCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BD19FAA6B500BF3837 /* BandStoreItemsCtrl.m */; };
 		2801A4E219FAA6B500BF3837 /* BandVault.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BE19FAA6B500BF3837 /* BandVault.m */; };
 		2801A4E319FAA6B500BF3837 /* BandVaultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4BF19FAA6B500BF3837 /* BandVaultItem.m */; };
-		2801A4E419FAA6B500BF3837 /* CCParallaxNode-Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C019FAA6B500BF3837 /* CCParallaxNode-Extras.m */; };
 		2801A4E519FAA6B500BF3837 /* Credits.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C119FAA6B500BF3837 /* Credits.m */; };
 		2801A4E619FAA6B500BF3837 /* EndGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C219FAA6B500BF3837 /* EndGame.m */; };
 		2801A4E719FAA6B500BF3837 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C319FAA6B500BF3837 /* Enemy.m */; };
@@ -25,7 +24,6 @@
 		2801A4EA19FAA6B500BF3837 /* GameNaveBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C619FAA6B500BF3837 /* GameNaveBar.m */; };
 		2801A4EB19FAA6B500BF3837 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C719FAA6B500BF3837 /* GameOver.m */; };
 		2801A4EC19FAA6B500BF3837 /* GameStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C819FAA6B500BF3837 /* GameStoreObserver.m */; };
-		2801A4ED19FAA6B500BF3837 /* GarageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4C919FAA6B500BF3837 /* GarageMenu.m */; };
 		2801A4EE19FAA6B500BF3837 /* HeroShoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CA19FAA6B500BF3837 /* HeroShoot.m */; };
 		2801A4EF19FAA6B500BF3837 /* ItemShelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CB19FAA6B500BF3837 /* ItemShelf.m */; };
 		2801A4F019FAA6B500BF3837 /* ItemShelfCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4CC19FAA6B500BF3837 /* ItemShelfCtrl.m */; };
@@ -44,6 +42,8 @@
 		2801A4FD19FAA6B500BF3837 /* ScrollingBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4D919FAA6B500BF3837 /* ScrollingBG.m */; };
 		2801A4FE19FAA6B500BF3837 /* UniversalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4DA19FAA6B500BF3837 /* UniversalInfo.m */; };
 		2801A4FF19FAA6B500BF3837 /* Victory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4DB19FAA6B500BF3837 /* Victory.m */; };
+		284D159619FE547800F27374 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284D159519FE547800F27374 /* StoreKit.framework */; };
+		284D159819FE549F00F27374 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284D159719FE549F00F27374 /* GameKit.framework */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -112,7 +112,6 @@
 		2801A49F19FAA61700BF3837 /* GameNaveBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNaveBar.h; sourceTree = "<group>"; };
 		2801A4A019FAA61700BF3837 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		2801A4A119FAA61700BF3837 /* GameStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStoreObserver.h; sourceTree = "<group>"; };
-		2801A4A219FAA61700BF3837 /* GarageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageMenu.h; sourceTree = "<group>"; };
 		2801A4A319FAA61700BF3837 /* HeroShoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroShoot.h; sourceTree = "<group>"; };
 		2801A4A419FAA61700BF3837 /* ItemShelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemShelf.h; sourceTree = "<group>"; };
 		2801A4A519FAA61700BF3837 /* ItemShelfCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemShelfCtrl.h; sourceTree = "<group>"; };
@@ -142,7 +141,6 @@
 		2801A4BD19FAA6B500BF3837 /* BandStoreItemsCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandStoreItemsCtrl.m; sourceTree = "<group>"; };
 		2801A4BE19FAA6B500BF3837 /* BandVault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandVault.m; sourceTree = "<group>"; };
 		2801A4BF19FAA6B500BF3837 /* BandVaultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandVaultItem.m; sourceTree = "<group>"; };
-		2801A4C019FAA6B500BF3837 /* CCParallaxNode-Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCParallaxNode-Extras.m"; sourceTree = "<group>"; };
 		2801A4C119FAA6B500BF3837 /* Credits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credits.m; sourceTree = "<group>"; };
 		2801A4C219FAA6B500BF3837 /* EndGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndGame.m; sourceTree = "<group>"; };
 		2801A4C319FAA6B500BF3837 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 		2801A4C619FAA6B500BF3837 /* GameNaveBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameNaveBar.m; sourceTree = "<group>"; };
 		2801A4C719FAA6B500BF3837 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
 		2801A4C819FAA6B500BF3837 /* GameStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStoreObserver.m; sourceTree = "<group>"; };
-		2801A4C919FAA6B500BF3837 /* GarageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageMenu.m; sourceTree = "<group>"; };
 		2801A4CA19FAA6B500BF3837 /* HeroShoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroShoot.m; sourceTree = "<group>"; };
 		2801A4CB19FAA6B500BF3837 /* ItemShelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemShelf.m; sourceTree = "<group>"; };
 		2801A4CC19FAA6B500BF3837 /* ItemShelfCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemShelfCtrl.m; sourceTree = "<group>"; };
@@ -170,6 +167,8 @@
 		2801A4D919FAA6B500BF3837 /* ScrollingBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingBG.m; sourceTree = "<group>"; };
 		2801A4DA19FAA6B500BF3837 /* UniversalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalInfo.m; sourceTree = "<group>"; };
 		2801A4DB19FAA6B500BF3837 /* Victory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Victory.m; sourceTree = "<group>"; };
+		284D159519FE547800F27374 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		284D159719FE549F00F27374 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
@@ -211,6 +210,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284D159819FE549F00F27374 /* GameKit.framework in Frameworks */,
+				284D159619FE547800F27374 /* StoreKit.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
@@ -247,7 +248,6 @@
 				2801A4BD19FAA6B500BF3837 /* BandStoreItemsCtrl.m */,
 				2801A4BE19FAA6B500BF3837 /* BandVault.m */,
 				2801A4BF19FAA6B500BF3837 /* BandVaultItem.m */,
-				2801A4C019FAA6B500BF3837 /* CCParallaxNode-Extras.m */,
 				2801A4C119FAA6B500BF3837 /* Credits.m */,
 				2801A4C219FAA6B500BF3837 /* EndGame.m */,
 				2801A4C319FAA6B500BF3837 /* Enemy.m */,
@@ -256,7 +256,6 @@
 				2801A4C619FAA6B500BF3837 /* GameNaveBar.m */,
 				2801A4C719FAA6B500BF3837 /* GameOver.m */,
 				2801A4C819FAA6B500BF3837 /* GameStoreObserver.m */,
-				2801A4C919FAA6B500BF3837 /* GarageMenu.m */,
 				2801A4CA19FAA6B500BF3837 /* HeroShoot.m */,
 				2801A4CB19FAA6B500BF3837 /* ItemShelf.m */,
 				2801A4CC19FAA6B500BF3837 /* ItemShelfCtrl.m */,
@@ -293,7 +292,6 @@
 				2801A49F19FAA61700BF3837 /* GameNaveBar.h */,
 				2801A4A019FAA61700BF3837 /* GameOver.h */,
 				2801A4A119FAA61700BF3837 /* GameStoreObserver.h */,
-				2801A4A219FAA61700BF3837 /* GarageMenu.h */,
 				2801A4A319FAA61700BF3837 /* HeroShoot.h */,
 				2801A4A419FAA61700BF3837 /* ItemShelf.h */,
 				2801A4A519FAA61700BF3837 /* ItemShelfCtrl.h */,
@@ -376,6 +374,8 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				284D159719FE549F00F27374 /* GameKit.framework */,
+				284D159519FE547800F27374 /* StoreKit.framework */,
 				8392007918EE8E3300B6C429 /* GLKit.framework */,
 				B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */,
 				B77F1B3117B978D7009739AE /* QuartzCore.framework */,
@@ -560,9 +560,7 @@
 				2801A4EC19FAA6B500BF3837 /* GameStoreObserver.m in Sources */,
 				2801A4E819FAA6B500BF3837 /* EnemyParams.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				2801A4ED19FAA6B500BF3837 /* GarageMenu.m in Sources */,
 				2801A4FC19FAA6B500BF3837 /* SBJsonWriter.m in Sources */,
-				2801A4E419FAA6B500BF3837 /* CCParallaxNode-Extras.m in Sources */,
 				2801A4E319FAA6B500BF3837 /* BandVaultItem.m in Sources */,
 				2801A48E19FAA5BE00BF3837 /* MainMenu.m in Sources */,
 				2801A4F019FAA6B500BF3837 /* ItemShelfCtrl.m in Sources */,

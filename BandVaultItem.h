@@ -11,15 +11,15 @@
 @interface BandVaultItem : NSObject
 {
     NSString *appId;
-    NSNumber *owned;
-    NSNumber *selected;
+    NSNumber *ownedVaultItem;
+    NSNumber *selectedVaultItem;
     NSNumber *qtd;
     NSNumber *indexPosition;
 }
 
 @property (nonatomic,retain) NSString *appId;
-@property (nonatomic,retain) NSNumber *owned;
-@property (nonatomic,retain) NSNumber *selected;
+@property (nonatomic,retain) NSNumber *ownedVaultItem;
+@property (nonatomic,retain) NSNumber *selectedVaultItem;
 @property (nonatomic,retain) NSNumber *qtd;
 @property (nonatomic,retain) NSNumber *indexPosition;
 

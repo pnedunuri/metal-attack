@@ -15,7 +15,7 @@
 -(id)initWithFile:(NSString *)filename
 {
     
-    self = [super initWithFile:filename];
+    self = [super initWithImageNamed:filename];
     
     if(self) {
         self.removeObject = NO;

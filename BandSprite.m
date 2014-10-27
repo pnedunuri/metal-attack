@@ -8,6 +8,7 @@
 
 #import "BandSprite.h"
 #import "UniversalInfo.h"
+#import "CCAnimation.h"
 
 @implementation BandSprite
 
@@ -151,7 +152,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 
 -(void)createDrummer;
 {
-    self.drummerSprite = [[[CCSprite alloc] init] autorelease];
+    self.drummerSprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     NSMutableArray *hitFrames = [NSMutableArray array];
     NSMutableArray *deathFrames = [NSMutableArray array];
@@ -181,18 +182,18 @@ const float SPRITE_SCALE_FACTOR = 0.55;
                                 spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.05f];
-    self.drummerAnim = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] retain];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.05f];
+    self.drummerAnim = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:animation]];
     // hit animation
     for(int i = 1; i <= 2; i++) {
         CCSpriteFrame *hitframe = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:hitFrmName,i]];
         [hitFrames addObject:hitframe];
     }
-    CCAnimation *hitanimation = [[CCAnimation animationWithFrames:hitFrames delay:0.15f] retain];
-    id hit1anim = [CCAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCCallFuncN actionWithTarget:self selector: @selector(doEndDrummerHitAnim:)];
-    self.drummerHitAnim = [CCSequence actions: hit1anim, hitcallback, nil];
+    CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
+    id hit1anim = [CCActionAnimate actionWithAnimation: hitanimation];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndDrummerHitAnim:)];
+    self.drummerHitAnim = [CCActionSequence actions: hit1anim, hitcallback, nil];
     
     //death animation
     for(int i = 2; i <= 3; i++) {
@@ -200,10 +201,10 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [deathFrames addObject:deathframe];
     }
     
-    CCAnimation *deathanimation = [[CCAnimation animationWithFrames:deathFrames delay:0.15f] retain];
+    CCAnimation *deathanimation = [CCAnimation animationWithSpriteFrames:deathFrames delay:0.15f];
     
-    self.drummerDeathAnim = [[CCRepeat actionWithAction:
-                              [CCAnimate actionWithAnimation:deathanimation restoreOriginalFrame:NO] times:1] retain];
+    self.drummerDeathAnim = [CCActionRepeat actionWithAction:
+                              [CCActionAnimate actionWithAnimation:deathanimation] times:1];
     
     
     [[self drummerSprite] runAction:[self drummerAnim]];
@@ -218,7 +219,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 
 -(void)createGtBody1
 {
-    self.gtBody1Sprite = [[[CCSprite alloc] init] autorelease];
+    self.gtBody1Sprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     NSMutableArray *hitFrames = [NSMutableArray array];
     NSMutableArray *deathFrames = [NSMutableArray array];
@@ -246,9 +247,9 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.10f];
-    self.gtBody1Anim = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] retain];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.10f];
+    self.gtBody1Anim = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:animation]];
     
     // hit animation
     for(int i = 1; i <= 1; i++) {
@@ -256,11 +257,11 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [hitFrames addObject:hitframe];
     }
     
-    CCAnimation *hitanimation = [[CCAnimation animationWithFrames:hitFrames delay:0.15f] retain];
+    CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     
-    id hit1anim = [CCAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCCallFuncN actionWithTarget:self selector: @selector(doEndGuita1Anim:)];
-    self.gt1HitAnim = [CCSequence actions: hit1anim, hitcallback, nil];
+    id hit1anim = [CCActionAnimate actionWithAnimation:hitanimation];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGuita1Anim:)];
+    self.gt1HitAnim = [CCActionSequence actions: hit1anim, hitcallback, nil];
     
     
     // death animation
@@ -269,10 +270,10 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [deathFrames addObject:deathframe];
     }
     
-    CCAnimation *deathanimation = [[CCAnimation animationWithFrames:deathFrames delay:0.15f] retain];
+    CCAnimation *deathanimation = [CCAnimation animationWithSpriteFrames:deathFrames delay:0.15f];
     
-    self.gt1DeathAnim = [[CCRepeat actionWithAction:
-                          [CCAnimate actionWithAnimation:deathanimation restoreOriginalFrame:NO] times:1] retain];
+    self.gt1DeathAnim = [CCActionRepeat actionWithAction:
+                          [CCActionAnimate actionWithAnimation:deathanimation] times:1];
     
     [[self gtBody1Sprite] runAction:[self gtBody1Anim]];
     
@@ -301,7 +302,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 -(void)createBassPlayerBody
 {
     
-    self.bassBodySprite = [[[CCSprite alloc] init] autorelease];
+    self.bassBodySprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     NSMutableArray *hitFrames = [NSMutableArray array];
     NSMutableArray *deathFrames = [NSMutableArray array];
@@ -331,9 +332,9 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.04f];
-    self.bassBodyAnim = [[CCRepeatForever actionWithAction:
-                          [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] retain];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.04f];
+    self.bassBodyAnim = [CCActionRepeatForever actionWithAction:
+                          [CCActionAnimate actionWithAnimation:animation]];
     
     // hit animation
     for(int i = 1; i <= 1; i++) {
@@ -341,11 +342,11 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [hitFrames addObject:hitframe];
     }
     
-    CCAnimation *hitanimation = [[CCAnimation animationWithFrames:hitFrames delay:0.15f] retain];
+    CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     
-    id hit2anim = [CCAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCCallFuncN actionWithTarget:self selector: @selector(doEndBassAnim:)];
-    self.bassHitAnim = [CCSequence actions: hit2anim, hitcallback, nil];
+    id hit2anim = [CCActionAnimate actionWithAnimation: hitanimation];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndBassAnim:)];
+    self.bassHitAnim = [CCActionSequence actions: hit2anim, hitcallback, nil];
     
     // death animation
     for(int i = 1; i <= 3; i++) {
@@ -353,10 +354,10 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [deathFrames addObject:deathframe];
     }
     
-    CCAnimation *deathanimation = [[CCAnimation animationWithFrames:deathFrames delay:0.15f] retain];
+    CCAnimation *deathanimation = [CCAnimation animationWithSpriteFrames:deathFrames delay:0.15f];
     
-    self.bassDeathAnim = [[CCRepeat actionWithAction:
-                           [CCAnimate actionWithAnimation:deathanimation restoreOriginalFrame:NO] times:1] retain];
+    self.bassDeathAnim = [CCActionRepeat actionWithAction:
+                           [CCActionAnimate actionWithAnimation:deathanimation] times:1];
     
     
     [[self bassBodySprite] runAction:[self bassBodyAnim]];
@@ -386,7 +387,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 
 -(void)createGtBody2
 {
-    self.gtBody2Sprite = [[[CCSprite alloc] init] autorelease];
+    self.gtBody2Sprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     NSMutableArray *hitFrames = [NSMutableArray array];
     NSMutableArray *deathFrames = [NSMutableArray array];
@@ -418,9 +419,9 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [animFrames addObject:frame];
     }
     
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.07f];
-    self.gtBody2Anim = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] retain];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.07f];
+    self.gtBody2Anim = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:animation]];
     
     // hit animation
     for(int i = 1; i <= 1; i++) {
@@ -428,11 +429,11 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [hitFrames addObject:hitframe];
     }
     
-    CCAnimation *hitanimation = [[CCAnimation animationWithFrames:hitFrames delay:0.15f] retain];
+    CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     
-    id hit2anim = [CCAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCCallFuncN actionWithTarget:self selector: @selector(doEndGuita2Anim:)];
-    self.gt2HitAnim = [CCSequence actions: hit2anim, hitcallback, nil];
+    id hit2anim = [CCActionAnimate actionWithAnimation: hitanimation];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGuita2Anim:)];
+    self.gt2HitAnim = [CCActionSequence actions: hit2anim, hitcallback, nil];
     
     // death animation
     for(int i = 1; i <= 3; i++) {
@@ -440,10 +441,10 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [deathFrames addObject:deathframe];
     }
     
-    CCAnimation *deathanimation = [[CCAnimation animationWithFrames:deathFrames delay:0.15f] retain];
+    CCAnimation *deathanimation = [CCAnimation animationWithSpriteFrames:deathFrames delay:0.15f];
     
-    self.gt2DeathAnim = [[CCRepeat actionWithAction:
-                          [CCAnimate actionWithAnimation:deathanimation restoreOriginalFrame:NO] times:1] retain];
+    self.gt2DeathAnim = [CCActionRepeat actionWithAction:
+                          [CCActionAnimate actionWithAnimation:deathanimation] times:1];
     
     
     [[self gtBody2Sprite] runAction:[self gtBody2Anim]];
@@ -474,7 +475,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 
 -(void)createGuitar1
 {
-    self.guitar1Sprite = [[[CCSprite alloc] init] autorelease];
+    self.guitar1Sprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     
     BandStoreItem *itemGuitar1;
@@ -499,9 +500,9 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.09f];
-    self.guitar1Anim = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] autorelease];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.09f];
+    self.guitar1Anim = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:animation]];
     
     self.guitar1Sprite.scaleX = SPRITE_SCALE_FACTOR;
     self.guitar1Sprite.scaleY = SPRITE_SCALE_FACTOR;
@@ -528,7 +529,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 
 -(void)createGuitar2
 {
-    self.guitar2Sprite = [[[CCSprite alloc] init] autorelease];
+    self.guitar2Sprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     
     BandStoreItem *itemGuitar2;
@@ -551,9 +552,9 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.1f];
-    self.guitar2Anim = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] autorelease];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.1f];
+    self.guitar2Anim = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:animation]];
     
     self.guitar2Sprite.scaleX = SPRITE_SCALE_FACTOR;
     self.guitar2Sprite.scaleY = SPRITE_SCALE_FACTOR;
@@ -576,7 +577,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 -(void)createBass
 {
     
-    self.bassSprite = [[[CCSprite alloc] init] autorelease];
+    self.bassSprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     
     BandStoreItem *itemBass;
@@ -600,10 +601,10 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.08f];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.08f];
     
-    self.bassAnim = [[CCRepeatForever actionWithAction:
-                      [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] retain];
+    self.bassAnim = [CCActionRepeatForever actionWithAction:
+                      [CCActionAnimate actionWithAnimation:animation]];
     
     self.bassSprite.scaleX = SPRITE_SCALE_FACTOR;
     self.bassSprite.scaleY = SPRITE_SCALE_FACTOR;
@@ -624,7 +625,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 
 -(void)createVocalUpper
 {
-    self.vocalUpBodySprite = [[[CCSprite alloc] init] autorelease];
+    self.vocalUpBodySprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     NSMutableArray *hitFrames = [NSMutableArray array];
     NSMutableArray *deathFrames = [NSMutableArray array];
@@ -655,20 +656,20 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.05f];
-    self.vocalUpBodyAnim = [[CCRepeatForever actionWithAction:
-                             [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] retain];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.05f];
+    self.vocalUpBodyAnim = [CCActionRepeatForever actionWithAction:
+                             [CCActionAnimate actionWithAnimation:animation]];
     // hit animation
     for(int i = 1; i <= 1; i++) {
         CCSpriteFrame *hitframe = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:hitFrmName,i]];
         [hitFrames addObject:hitframe];
     }
     
-    CCAnimation *hitanimation = [[CCAnimation animationWithFrames:hitFrames delay:0.15f] retain];
+    CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     
-    id hitanim = [CCAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCCallFuncN actionWithTarget:self selector: @selector(doEndVocalAnim:)];
-    self.vocalHitAnim = [CCSequence actions: hitanim, hitcallback, nil];
+    id hitanim = [CCActionAnimate actionWithAnimation: hitanimation];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndVocalAnim:)];
+    self.vocalHitAnim = [CCActionSequence actions: hitanim, hitcallback, nil];
     
 
     
@@ -678,14 +679,14 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         [deathFrames addObject:deathframe];
     }
     
-    CCAnimation *deathanimation = [[CCAnimation animationWithFrames:deathFrames delay:0.15f] retain];
+    CCAnimation *deathanimation = [CCAnimation animationWithSpriteFrames:deathFrames delay:0.15f];
     
-    id deathanim = [[CCRepeat actionWithAction:
-                            [CCAnimate actionWithAnimation:deathanimation restoreOriginalFrame:NO] times:1] retain];
+    id deathanim = [CCActionRepeat actionWithAction:
+                            [CCActionAnimate actionWithAnimation:deathanimation] times:1];
     
-    id deathcallback = [CCCallFuncN actionWithTarget:self selector: @selector(doEndDeathVocalAnim:)];
+    id deathcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndDeathVocalAnim:)];
    
-    self.vocalDeathAnim = [CCSequence actions: deathanim, deathcallback, nil];
+    self.vocalDeathAnim = [CCActionSequence actions: deathanim, deathcallback, nil];
     
     self.vocalUpBodySprite.scaleX = SPRITE_SCALE_FACTOR;
     self.vocalUpBodySprite.scaleY = SPRITE_SCALE_FACTOR;
@@ -707,7 +708,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 -(void)createVocalLower
 {
     
-    self.vocalLwBodySprite = [[[CCSprite alloc] init] autorelease];
+    self.vocalLwBodySprite = [[CCSprite alloc] init];
     NSMutableArray *animFrames = [NSMutableArray array];
     
     BandStoreItem *itemVocalLower;
@@ -731,9 +732,9 @@ const float SPRITE_SCALE_FACTOR = 0.55;
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.07f];
-    self.vocalLwBodyAnim = [[CCRepeatForever actionWithAction:
-                             [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]] autorelease];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.07f];
+    self.vocalLwBodyAnim = [CCActionRepeatForever actionWithAction:
+                             [CCActionAnimate actionWithAnimation:animation]];
     [[self vocalLwBodySprite] runAction:[self vocalLwBodyAnim]];
     
     
@@ -927,11 +928,11 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 
 -(void)performGeneralHitAnimation:(CGPoint) hitPoint
 {
-    CCSprite *hitSprite = [[[CCSprite alloc] init] autorelease];
+    CCSprite *hitSprite = [[CCSprite alloc] init];
     hitSprite.position = hitPoint;
     [[self delegate] addChild:hitSprite z:50];
     
-    NSMutableArray *blastAnimFrames = [[[NSMutableArray alloc] init] autorelease];
+    NSMutableArray *blastAnimFrames = [[NSMutableArray alloc] init];
     for(int i = 1; i <= 7; ++i) {
         [blastAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
@@ -939,11 +940,11 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     }
     
     CCAnimation *blastAnim = [CCAnimation
-                              animationWithFrames:blastAnimFrames delay:0.03f];
+                              animationWithSpriteFrames:blastAnimFrames delay:0.03f];
     
-    id animation = [CCAnimate actionWithAnimation: blastAnim];
-    id callback = [CCCallFuncN actionWithTarget:self selector: @selector(doEndGenHitAnim:)];
-    id sequence = [CCSequence actions: animation, callback, nil];
+    id animation = [CCActionAnimate actionWithAnimation: blastAnim];
+    id callback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGenHitAnim:)];
+    id sequence = [CCActionSequence actions: animation, callback, nil];
     
     hitSprite.scaleY = 0.5;
     hitSprite.scaleX = 0.5;
@@ -1074,7 +1075,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     }else{
         //NSLog(@"Play shoot animation can be spark particles");
         self.bandParticle = [CCParticleSmoke node];
-        self.bandParticle.texture = [[CCTextureCache sharedTextureCache] addImage: @"smoke.png"];
+        //self.bandParticle.texture = [[CCTextureCache sharedTextureCache] addImage: @"smoke.png"];
         self.bandParticle.position = [self position];
         self.bandParticle.startSize = 0.00001;
         self.bandParticle.endSize = 1.5;
@@ -1087,7 +1088,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 -(void)performBandBlast
 {
     //NSLog(@"Band Blast Explosion");
-    self.bandParticleBlaster = [CCParticleSystemQuad particleWithFile:@"ExplodingRing.plist"];
+    //self.bandParticleBlaster = [CCParticleSystemQuad particleWithFile:@"ExplodingRing.plist"];
     self.bandParticleBlaster.position = ccp(160,240);
     [[self delegate] addChild:[self bandParticleBlaster]];
 }

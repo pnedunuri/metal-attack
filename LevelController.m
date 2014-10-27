@@ -145,7 +145,7 @@
     
     NSMutableArray *enemyArray;
     Enemy *newEnemy1;
-    enemyArray = [[[NSMutableArray alloc] init] autorelease];
+    enemyArray = [[NSMutableArray alloc] init];
     
     int delay = 5;
     Level *loadlevel = [[self loadedLevels] objectAtIndex:levelNumber];
@@ -175,10 +175,10 @@
         eparams = [[self enemyDictMutable] objectForKey:enemyName];
         eparams.typeOfPowerUp = [self checkForPowerUp];
         
-        newEnemy1 = [[[RobotBlaster alloc]
+        newEnemy1 = [[RobotBlaster alloc]
                       initwithStartPosition:[[UniversalInfo sharedInstance]enemyPosition7] actionTime:1.7*i+delay
                       delegate:scnDelegate enemyParams:eparams enemyPosition:POS7
-                      shootEndPos:[[UniversalInfo sharedInstance]enemyPosition3]] autorelease];
+                      shootEndPos:[[UniversalInfo sharedInstance]enemyPosition3]];
         
         [enemyArray addObject:newEnemy1];
         // Position 8
@@ -187,9 +187,9 @@
         eparams = [[self enemyDictMutable] objectForKey:enemyName];
         eparams.typeOfPowerUp = [self checkForPowerUp];
         
-        newEnemy1 = [[[RobotBlaster alloc]
+        newEnemy1 = [[RobotBlaster alloc]
                       initwithStartPosition:[[UniversalInfo sharedInstance]enemyPosition8] actionTime:2.9*i+delay
-                      delegate:scnDelegate enemyParams:eparams enemyPosition:POS8 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition4]] autorelease];
+                      delegate:scnDelegate enemyParams:eparams enemyPosition:POS8 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition4]];
         
         [enemyArray addObject:newEnemy1];
         // Position 4
@@ -198,9 +198,9 @@
         eparams = [[self enemyDictMutable] objectForKey:enemyName];
         eparams.typeOfPowerUp = [self checkForPowerUp];
         
-        newEnemy1 = [[[RobotBlaster alloc]
+        newEnemy1 = [[RobotBlaster alloc]
                       initwithStartPosition:[[UniversalInfo sharedInstance]enemyPosition4] actionTime:2.5*i+delay
-                      delegate:scnDelegate enemyParams:eparams enemyPosition:POS4 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition8]] autorelease];
+                     delegate:scnDelegate enemyParams:eparams enemyPosition:POS4 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition8]];
         
         [enemyArray addObject:newEnemy1];
         // Position 2
@@ -209,9 +209,9 @@
         eparams = [[self enemyDictMutable] objectForKey:enemyName];
         eparams.typeOfPowerUp = [self checkForPowerUp];
         
-        newEnemy1 = [[[RobotBlaster alloc]
+        newEnemy1 = [[RobotBlaster alloc]
                       initwithStartPosition:[[UniversalInfo sharedInstance]enemyPosition2] actionTime:1*i+delay
-                      delegate:scnDelegate enemyParams:eparams enemyPosition:POS2 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition6]] autorelease];
+                     delegate:scnDelegate enemyParams:eparams enemyPosition:POS2 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition6]];
         
         [enemyArray addObject:newEnemy1];
         // Position 6
@@ -220,9 +220,9 @@
         eparams = [[self enemyDictMutable] objectForKey:enemyName];
         eparams.typeOfPowerUp = [self checkForPowerUp];
         
-        newEnemy1 = [[[RobotBlaster alloc]
+        newEnemy1 = [[RobotBlaster alloc]
                       initwithStartPosition:[[UniversalInfo sharedInstance]enemyPosition6] actionTime:1.8*i+delay
-                      delegate:scnDelegate enemyParams:eparams enemyPosition:POS6 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition2]] autorelease];
+                     delegate:scnDelegate enemyParams:eparams enemyPosition:POS6 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition2]];
         
         [enemyArray addObject:newEnemy1];
         // Position 1
@@ -231,9 +231,9 @@
         eparams = [[self enemyDictMutable] objectForKey:enemyName];
         eparams.typeOfPowerUp = [self checkForPowerUp];
         
-        newEnemy1 = [[[RobotBlaster alloc]
+        newEnemy1 = [[RobotBlaster alloc]
                       initwithStartPosition:[[UniversalInfo sharedInstance]enemyPosition1] actionTime:0.3*i+delay
-                      delegate:scnDelegate enemyParams:eparams enemyPosition:POS1 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition5]] autorelease];
+                     delegate:scnDelegate enemyParams:eparams enemyPosition:POS1 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition5]];
         
         [enemyArray addObject:newEnemy1];
         // Position 3
@@ -242,9 +242,9 @@
         eparams = [[self enemyDictMutable] objectForKey:enemyName];
         eparams.typeOfPowerUp = [self checkForPowerUp];
         
-        newEnemy1 = [[[RobotBlaster alloc]
+        newEnemy1 = [[RobotBlaster alloc]
                       initwithStartPosition:[[UniversalInfo sharedInstance]enemyPosition3] actionTime:0.3*i+5+delay
-                      delegate:scnDelegate enemyParams:eparams enemyPosition:POS3 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition7]] autorelease];
+                     delegate:scnDelegate enemyParams:eparams enemyPosition:POS3 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition7]];
         
         [enemyArray addObject:newEnemy1];
         // Position 5
@@ -253,9 +253,9 @@
         eparams = [[self enemyDictMutable] objectForKey:enemyName];
         eparams.typeOfPowerUp = [self checkForPowerUp];
         
-        newEnemy1 = [[[RobotBlaster alloc]
+        newEnemy1 = [[RobotBlaster alloc]
                       initwithStartPosition:[[UniversalInfo sharedInstance]enemyPosition5] actionTime:0.3*i+5+delay
-                      delegate:scnDelegate enemyParams:eparams enemyPosition:POS5 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition1]] autorelease];
+                     delegate:scnDelegate enemyParams:eparams enemyPosition:POS5 shootEndPos:[[UniversalInfo sharedInstance]enemyPosition1]];
         
         [enemyArray addObject:newEnemy1];
 
@@ -281,17 +281,17 @@
     NSNumber *numberWaves;
     NSNumber *enemyAvaliables;
     
-    self.loadedLevels = [[[NSMutableArray alloc] init] autorelease];
+    self.loadedLevels = [[NSMutableArray alloc] init];
     
     for (level in results){
         
         NSDictionary *levelInfo = [results valueForKey:level];
         
-        Level *readLevel = [[[Level alloc] init] autorelease];
+        Level *readLevel = [[Level alloc] init];
         [readLevel setTotalLevelEnemies:0];
         
-        numberWaves = [[[NSNumber alloc] initWithInt:[[levelInfo valueForKey:@"numberOfWaves"] intValue]] autorelease];
-        enemyAvaliables = [[[NSNumber alloc] initWithInt:[[levelInfo valueForKey:@"avaliableEnemies"] intValue]] autorelease];
+        numberWaves = [[NSNumber alloc] initWithInt:[[levelInfo valueForKey:@"numberOfWaves"] intValue]];
+        enemyAvaliables = [[NSNumber alloc] initWithInt:[[levelInfo valueForKey:@"avaliableEnemies"] intValue]];
         
         [readLevel setLevelContext:[[levelInfo valueForKey:@"levelContext"] intValue]];
         
@@ -300,7 +300,7 @@
         for ( int i = 0; i < [numberWaves intValue]; i++) {
             int waveEnemies = [[levelInfo valueForKey:[NSString stringWithFormat:@"wave%d", i+1]] intValue];
             readLevel.totalLevelEnemies = readLevel.totalLevelEnemies + waveEnemies;
-            [[readLevel waves] addObject:[[[NSNumber alloc] initWithInt:waveEnemies] autorelease]];
+            [[readLevel waves] addObject:[[NSNumber alloc] initWithInt:waveEnemies]];
                                     
         }
         

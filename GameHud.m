@@ -60,7 +60,7 @@
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super initWithColor:ccc4(0, 0, 0, 0)])) {
+	if( (self=[super initWithColor:[[CCColor alloc] initWithCcColor4b:ccc4(236, 56, 57, 0)]])) {
 
         CGPoint labelposition;
         labelposition.x = 160;
@@ -68,23 +68,23 @@
         
         //self.equipBG = [[CCSprite alloc] initWithSpriteFrameName:@"equip.png"];
         
-        self.hud1 = [CCSprite spriteWithFile:@"hud.png"];
+        self.hud1 = [CCSprite spriteWithImageNamed:@"hud.png"];
         self.hud1.position = ccp(260,60);
         
-        self.hud2 = [CCSprite spriteWithFile:@"hud2.png"];
+        self.hud2 = [CCSprite spriteWithImageNamed:@"hud2.png"];
         self.hud2.position = ccp(120,457);
 
-        self.coin = [CCSprite spriteWithFile:@"coin.png"];
+        self.coin = [CCSprite spriteWithImageNamed:@"coin.png"];
         self.coin.position = ccp(10,445);
         
         
-        self.inAppArmor = [CCSprite spriteWithFile:@"armorInApp.png"];
+        self.inAppArmor = [CCSprite spriteWithImageNamed:@"armorInApp.png"];
         self.inAppArmor.position = ccp(300,60);
         
-        self.inAppAmmo  = [CCSprite spriteWithFile:@"ammoUpInApp.png"];
+        self.inAppAmmo  = [CCSprite spriteWithImageNamed:@"ammoUpInApp.png"];
         self.inAppAmmo.position = ccp(300,80);
         
-        self.inAppGenereal = [CCSprite spriteWithFile:@"coinMultInApp.png"];
+        self.inAppGenereal = [CCSprite spriteWithImageNamed:@"coinMultInApp.png"];
         self.inAppGenereal.position = ccp(300,100);
         
         
@@ -120,34 +120,22 @@
         [[self labelLevel] setPosition:ccp(160,350)];
         [labelLevel setVisible:NO];
         
+
+        self.menuItem1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"skull-01.png"] highlightedSpriteFrame:        [CCSprite spriteWithImageNamed:@"skull-01.png"] disabledSpriteFrame:nil];
+        [self.menuItem1 setTarget:self selector:@selector(doRadioBlast:)];
         
-        
-        //blast button
-        self.menuItem1 = [CCMenuItemImage itemFromNormalImage:@"skull-01.png"
-                                                             selectedImage: @"skull-01.png"
-                                                                    target:self
-                                                                  selector:@selector(doRadioBlast:)];
-        
-        self.myMenu = [CCMenu menuWithItems:menuItem1, nil];
-        
+        self.myMenu = [[CCNode alloc] init];
+        [self.myMenu addChild:menuItem1];
    
+        self.menuItem2 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"pause01.png"] highlightedSpriteFrame:        [CCSprite spriteWithImageNamed:@"pause02.png"] disabledSpriteFrame:nil];
+        
+        [self.menuItem2 setTarget:self selector:@selector(doPause:)];
+        
+        
+        self.myMenu2 = [[CCNode alloc] init];
+        [self.myMenu2 addChild:menuItem2];
+        
 
-
-        
-        // pause button
-        self.menuItem2 = [CCMenuItemImage itemFromNormalImage:@"pause01.png"
-                                                             selectedImage: @"pause02.png"
-                                                                    target:self
-                                                                  selector:@selector(doPause:)];
-        
-        self.myMenu2 = [CCMenu menuWithItems:menuItem2, nil];
-        
-        /*
-        CGPoint menuposition;
-        menuposition.x = 270;
-        menuposition.y = 40;
-        */
-         
          
         //blast button Iphone 5
         self.myMenu.position = ccp(190,390); // 190,390
@@ -188,8 +176,6 @@
         //[self addChild:equipBG];
         [self createCoolDownBar];
 
-
-
         [self addChild:myMenu];
         [self addChild:myMenu2];
 
@@ -197,8 +183,12 @@
         [self mockCreateSnakeToolBar];
         [self createBandLifeIcons];
         [self createBandLifeBar];
-        [[CCScheduler sharedScheduler] scheduleSelector:@selector(raiseCooldownBar:) forTarget:self interval:0.01 paused:NO];
-        [[CCScheduler sharedScheduler] scheduleSelector:@selector(mockDoComboPresentation:) forTarget:self interval:2 paused:NO];
+
+        [self schedule:@selector(raiseCooldownBar:) interval:0.01];
+        [self schedule:@selector(mockDoComboPresentation:) interval:2];
+        
+        //[[CCScheduler sharedScheduler] scheduleSelector:@selector(raiseCooldownBar:) forTarget:self interval:0.01 paused:NO];
+        //[[CCScheduler sharedScheduler] scheduleSelector:@selector(mockDoComboPresentation:) forTarget:self interval:2 paused:NO];
 
         
         self.isBandShooting = NO;
@@ -209,7 +199,7 @@
 
 -(void)initHudCoin
 {
-    CCSprite *coinBg = [[CCSprite alloc] initWithFile:@"coin-board.png"];
+    CCSprite *coinBg = [[CCSprite alloc] initWithImageNamed:@"coin-board.png"];
     [coinBg setScale:0.45];
     [coinBg setPosition:ccp(205,532)];
     [self addChild:coinBg];
@@ -226,15 +216,16 @@
 {
     NSLog(@"Create Snake tool bar");
     
-    self.snakeHead = [[CCSprite alloc] initWithFile:@"snake-color-opened.png"];
+    self.snakeHead = [[CCSprite alloc] initWithImageNamed:@"snake-color-opened.png"];
     [self.snakeHead setScale:0.38];
     [self.snakeHead setPosition:ccp(240,540)];
     [self addChild:self.snakeHead];
     
-    self.snakeBG = [[CCSprite alloc] initWithFile:@"snake-flesh-body.png"];
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    self.snakeBar = [CCProgressTimer progressWithFile:@"snake-color-body.png"];
-    self.snakeBar.type = kCCProgressTimerTypeHorizontalBarRL;
+    self.snakeBG = [[CCSprite alloc] initWithImageNamed:@"snake-flesh-body.png"];
+    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+    
+    self.snakeBar = [CCProgressNode progressWithSprite:[[CCSprite alloc] initWithImageNamed:@"snake-color-body.png"]];
+    //self.snakeBar.type = kCCProgressTimerTypeHorizontalBarRL;
     
     self.snakeBar.percentage = 100;
     
@@ -263,11 +254,11 @@
 
 -(void)createCoolDownBar
 {
-    CCSprite *coolDownBarBoard = [[CCSprite alloc] initWithFile:@"guitar-normal.png"];
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    self.coolDownBar = [CCProgressTimer progressWithFile:@"guitar-color.png"];
+    CCSprite *coolDownBarBoard = [[CCSprite alloc] initWithImageNamed:@"guitar-normal.png"];
+    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+    self.coolDownBar = [CCProgressNode progressWithSprite:[[CCSprite alloc] initWithImageNamed:@"guitar-color.png"]];
     
-    self.coolDownBar.type = kCCProgressTimerTypeHorizontalBarLR;
+    //self.coolDownBar.type = kCCProgressTimerTypeHorizontalBarLR;
     self.coolDownBar.percentage = 100;
     
     if ([[UniversalInfo sharedInstance] getDeviceType] == IPHONE_5) {
@@ -290,17 +281,17 @@
 -(void)mockCreateCombo
 {
     // NSLog(@"mockCreateCombo");
-    self.comboBG = [[CCSprite alloc] initWithSpriteFrameName:@"backcombo.png"];
+    self.comboBG = [[CCSprite alloc] initWithImageNamed:@"backcombo.png"];
     [comboBG setScale:0.5];
     
-    self.comboValue = [[CCSprite alloc] initWithSpriteFrameName:@"como teste.png"];
+    self.comboValue = [[CCSprite alloc] initWithImageNamed:@"como teste.png"];
     [comboValue setScale:0.5];
     [self.comboBG setPosition:ccp(-50,-50)];
     [self.comboValue setPosition:ccp(-50,-40)];
     
     
     self.comboLabelValue = [CCLabelTTF labelWithString:@"Combo x 3" fontName:@"28DaysLater" fontSize:40];
-    [self.comboLabelValue setColor:ccc3(255, 0, 0)];
+    //[self.comboLabelValue setColor:ccc3(255, 0, 0)];
     
     
     [comboLabelValue setPosition:ccpAdd([self.comboBG position], ccp(300,200))];
@@ -312,37 +303,41 @@
     
 }
 
--(void)reverseComboPresentation:(ccTime)dt
+-(void)reverseComboPresentation
 {
     //NSLog(@"reverseComboPresentation");
-    id removeCombo = [CCMoveTo actionWithDuration:0.1 position:ccp(-50,-50)];
+    id removeCombo = [CCActionMoveTo actionWithDuration:0.1 position:ccp(-50,-50)];
     [self.comboBG runAction:removeCombo];
-    [[CCScheduler sharedScheduler] unscheduleSelector:@selector(reverseComboPresentation:) forTarget:self];
+    [self unscheduleAllSelectors];
+    //[[CCScheduler sharedScheduler] unscheduleSelector:@selector(reverseComboPresentation:) forTarget:self];
 }
 
 -(void)doEndComboBgAnim:(id)node
 {
     //NSLog(@"doEndComboBgAnim");
-    [[CCScheduler sharedScheduler] scheduleSelector:@selector(reverseComboPresentation:) forTarget:self interval:1 paused:NO];
+    
+    [self schedule:@selector(reverseComboPresentation:) interval:1];
+    
+    //[[CCScheduler sharedScheduler] scheduleSelector:@selector(reverseComboPresentation:) forTarget:self interval:1 paused:NO];
 }
 
--(void)mockDoComboPresentation:(ccTime)dt
+-(void)mockDoComboPresentation
 {
     //NSLog(@"mockDoComboPresentation");
-    moveComboToScreen = [CCMoveBy actionWithDuration:0.1 position:ccp(80,80)];
-    endMoveCombo = [CCCallFuncN actionWithTarget:self selector:@selector(doEndComboBgAnim:)];
-    comboBGSequence = [CCSequence actions:moveComboToScreen, endMoveCombo, nil];
+    moveComboToScreen = [CCActionMoveBy actionWithDuration:0.1 position:ccp(80,80)];
+    endMoveCombo = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndComboBgAnim:)];
+    comboBGSequence = [CCActionSequence actions:moveComboToScreen, endMoveCombo, nil];
     [self.comboBG runAction:self.comboBGSequence];
     self.snakeBar.percentage = self.snakeBar.percentage - 10;
 }
 
 -(void)createBandLifeIcons
 {
-    self.guita1LifeIcon = [[CCSprite alloc] initWithSpriteFrameName:@"life_rash01.png"];
-    self.guita2LifeIcon = [[CCSprite alloc] initWithSpriteFrameName:@"life_evil01.png"];
-    self.bassLifeIcon = [[CCSprite alloc] initWithSpriteFrameName:@"life_war01.png"];
-    self.drummerLifeIcon = [[CCSprite alloc] initWithSpriteFrameName:@"life_ace01.png"];
-    self.vocalLifeIcon = [[CCSprite alloc] initWithSpriteFrameName:@"life_laxe01.png"];
+    self.guita1LifeIcon = [[CCSprite alloc] initWithImageNamed:@"life_rash01.png"];
+    self.guita2LifeIcon = [[CCSprite alloc] initWithImageNamed:@"life_evil01.png"];
+    self.bassLifeIcon = [[CCSprite alloc] initWithImageNamed:@"life_war01.png"];
+    self.drummerLifeIcon = [[CCSprite alloc] initWithImageNamed:@"life_ace01.png"];
+    self.vocalLifeIcon = [[CCSprite alloc] initWithImageNamed:@"life_laxe01.png"];
     
     [self.guita1LifeIcon setScale:0.35];
     [self.guita2LifeIcon setScale:0.35];
@@ -364,7 +359,7 @@
 }
 
 
--(void)raiseCooldownBar:(ccTime)dt
+-(void)raiseCooldownBar
 {
     // this will be a parameter of the band
     if (!self.isBandShooting) {
@@ -375,19 +370,19 @@
 -(void)createBandLifeBar
 {
     
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    CGSize winSize = [[CCDirector sharedDirector] viewSize];
     
-    self.guita1Life = [CCProgressTimer progressWithFile:@"lifebar.jpg"];
-    self.guita2Life = [CCProgressTimer progressWithFile:@"lifebar.jpg"];
-    self.bassLife = [CCProgressTimer progressWithFile:@"lifebar.jpg"];
-    self.drummerLife = [CCProgressTimer progressWithFile:@"lifebar.jpg"];
-    self.vocalLife = [CCProgressTimer progressWithFile:@"lifebar.jpg"];
+    self.guita1Life = [CCProgressNode progressWithSprite:[[CCSprite alloc] initWithImageNamed:@"lifebar.jpg"]];
+    self.guita2Life = [CCProgressNode progressWithSprite:[[CCSprite alloc] initWithImageNamed:@"lifebar.jpg"]];
+    self.bassLife = [CCProgressNode progressWithSprite:[[CCSprite alloc] initWithImageNamed:@"lifebar.jpg"]];
+    self.drummerLife = [CCProgressNode progressWithSprite:[[CCSprite alloc] initWithImageNamed:@"lifebar.jpg"]];
+    self.vocalLife = [CCProgressNode progressWithSprite:[[CCSprite alloc] initWithImageNamed:@"lifebar.jpg"]];
     
-    self.guita1Life.type = kCCProgressTimerTypeHorizontalBarLR;
-    self.guita2Life.type = kCCProgressTimerTypeHorizontalBarLR;
-    self.bassLife.type = kCCProgressTimerTypeHorizontalBarLR;
-    self.drummerLife.type = kCCProgressTimerTypeHorizontalBarLR;
-    self.vocalLife.type = kCCProgressTimerTypeHorizontalBarLR;
+    //self.guita1Life.type = kCCProgressTimerTypeHorizontalBarLR;
+    //self.guita2Life.type = kCCProgressTimerTypeHorizontalBarLR;
+    //self.bassLife.type = kCCProgressTimerTypeHorizontalBarLR;
+    //self.drummerLife.type = kCCProgressTimerTypeHorizontalBarLR;
+    //self.vocalLife.type = kCCProgressTimerTypeHorizontalBarLR;
     
     [self.guita1Life setScale:0.25];
     [self.guita2Life setScale:0.25];
@@ -428,13 +423,13 @@
 }
 
 
--(void)doRadioBlast:(CCMenuItem *)menuItem 
+-(void)doRadioBlast
 {
     NSLog(@"Trigger Radio Blast");
     //[[self delegate] triggerRadioExplosion];
 }
 
--(void)doPause:(CCMenuItem *) menuItem
+-(void)doPause
 {
     NSLog(@"Pause game");
     [[self delegate] pauseGame];
@@ -445,9 +440,9 @@
 {
     NSLog(@"do wave cleared.");
     [[self labelWaveCleared] setVisible:YES];
-    id fadeIn = [CCFadeIn actionWithDuration:1]; 
-    id fadeOut = [CCFadeOut actionWithDuration:1];
-    id sequence = [CCSequence actions: fadeIn, fadeOut, nil];
+    id fadeIn = [CCActionFadeIn actionWithDuration:1];
+    id fadeOut = [CCActionFadeOut actionWithDuration:1];
+    id sequence = [CCActionSequence actions: fadeIn, fadeOut, nil];
     [[self labelWaveCleared] runAction:sequence];
 }
 
@@ -457,14 +452,14 @@
     
     levelNumber++;
     
-    NSNumber *level = [[[NSNumber alloc] initWithInt:levelNumber]autorelease];
-    NSString *levelString = [[[NSString alloc] initWithFormat:@"Level %d",[level intValue]]autorelease];
+    NSNumber *level = [[NSNumber alloc] initWithInt:levelNumber];
+    NSString *levelString = [[NSString alloc] initWithFormat:@"Level %d",[level intValue]];
     
     [[self labelLevel] setString:levelString];
     [[self labelLevel] setVisible:YES];
-    id fadeIn = [CCFadeIn actionWithDuration:1]; 
-    id fadeOut = [CCFadeOut actionWithDuration:1];
-    id sequence = [CCSequence actions: fadeIn, fadeOut, nil];
+    id fadeIn = [CCActionFadeIn actionWithDuration:1];
+    id fadeOut = [CCActionFadeOut actionWithDuration:1];
+    id sequence = [CCActionSequence actions: fadeIn, fadeOut, nil];
     [[self labelLevel] runAction:sequence];
 }
 

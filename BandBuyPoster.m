@@ -8,6 +8,7 @@
 
 #import "BandBuyPoster.h"
 #import "BandStoreItemsCtrl.h"
+#import "CCAnimation.h"
 
 @implementation BandBuyPoster
 @synthesize itemsToShow;
@@ -31,9 +32,10 @@ CGPoint const storeSpritePosition = {340, 360};
 
 -(id)init
 {
+    self = [super init];
     NSLog(@"Init BandBuyPoster");
-    [super init];
-    ownedTag = [[CCSprite alloc] initWithFile:@"owned.png"];
+    //[super init];
+    ownedTag = [[CCSprite alloc] initWithImageNamed:@"owned.png"];
     return self;
 }
 
@@ -45,20 +47,20 @@ CGPoint const storeSpritePosition = {340, 360};
     [bandBuy addChild:ownedTag];
 }
 
--(void)doScrRigh:(CCMenuItem *)menuItem
+-(void)doScrRigh:(CCButton *)menuItem
 {
     NSLog(@"doScrRigh");
     itemCount++;
     if (itemCount < [itemsToShow count]) {
         [bandBuy removeChild:storeSprite cleanup:YES];
         
-        storeSprite = [[[CCSprite alloc] init] autorelease];
+        storeSprite = [[CCSprite alloc] init];
         [storeSprite runAction:[self loadSpriteAnimation:[[itemsToShow objectAtIndex:itemCount] storeItemFrmName] numberOfFrames:1]];
     
-        ownedTag.visible = [[itemsToShow objectAtIndex:itemCount] owned];
+        ownedTag.visible = [[itemsToShow objectAtIndex:itemCount] ownedBandItem];
         
-        [buyMenu setVisible:![[itemsToShow objectAtIndex:itemCount] owned]];
-        [selectMenu setVisible:[[itemsToShow objectAtIndex:itemCount] owned]];
+        [buyMenu setVisible:![[itemsToShow objectAtIndex:itemCount] ownedBandItem]];
+        [selectMenu setVisible:[[itemsToShow objectAtIndex:itemCount] ownedBandItem]];
         
         [storeSprite setPosition:storeSpritePosition];
         [storeSprite setScale:1.5];
@@ -73,21 +75,21 @@ CGPoint const storeSpritePosition = {340, 360};
     NSLog(@"doScrRigh %d",itemCount);
 }
 
--(void)doScrLeft:(CCMenuItem *)menuItem
+-(void)doScrLeft:(CCButton *)menuItem
 {
     NSLog(@"doScrLeft");
     itemCount--;
     if (itemCount < [itemsToShow count]) {
         [bandBuy removeChild:storeSprite cleanup:YES];
         
-        storeSprite = [[[CCSprite alloc] init] autorelease];
+        storeSprite = [[CCSprite alloc] init];
         
         [storeSprite runAction:[self loadSpriteAnimation:[[itemsToShow objectAtIndex:itemCount] storeItemFrmName] numberOfFrames:1]];
         
-        ownedTag.visible = [[itemsToShow objectAtIndex:itemCount] owned];
+        ownedTag.visible = [[itemsToShow objectAtIndex:itemCount] ownedBandItem];
         
-        [buyMenu setVisible:![[itemsToShow objectAtIndex:itemCount] owned]];
-        [selectMenu setVisible:[[itemsToShow objectAtIndex:itemCount] owned]];
+        [buyMenu setVisible:![[itemsToShow objectAtIndex:itemCount] ownedBandItem]];
+        [selectMenu setVisible:[[itemsToShow objectAtIndex:itemCount] ownedBandItem]];
         [storeSprite setPosition:storeSpritePosition];
         [storeSprite setScale:1.5];
         [bandBuy addChild:storeSprite];
@@ -111,13 +113,13 @@ CGPoint const storeSpritePosition = {340, 360};
     BandStoreItemsCtrl *itemsCtrl = [BandStoreItemsCtrl sharedInstance];
     
     itemsToShow = [itemsCtrl guitarrists];
-    storeSprite = [[[CCSprite alloc] init] autorelease];
+    storeSprite = [[CCSprite alloc] init];
     [storeSprite runAction:[self loadSpriteAnimation:[[itemsToShow objectAtIndex:0] storeItemFrmName] numberOfFrames:1]];
     
-    ownedTag.visible = [[itemsToShow objectAtIndex:0] owned];
+    ownedTag.visible = [[itemsToShow objectAtIndex:0] ownedBandItem];
     
-    [buyMenu setVisible:![[itemsToShow objectAtIndex:0] owned]];
-    [selectMenu setVisible:[[itemsToShow objectAtIndex:0] owned]];
+    [buyMenu setVisible:![[itemsToShow objectAtIndex:0] ownedBandItem]];
+    [selectMenu setVisible:[[itemsToShow objectAtIndex:0] ownedBandItem]];
     
     [storeSprite setPosition:storeSpritePosition];
     [storeSprite setScale:1.5];
@@ -126,7 +128,7 @@ CGPoint const storeSpritePosition = {340, 360};
     [self updateText:[itemsToShow objectAtIndex:0]];
 }
 
--(void)doShowVocalist:(CCMenuItem *)menuItem
+-(void)doShowVocalist:(CCButton *)menuItem
 {
     [bandBuy removeChild:storeSprite cleanup:YES];
     
@@ -137,16 +139,16 @@ CGPoint const storeSpritePosition = {340, 360};
     BandStoreItemsCtrl *itemsCtrl = [BandStoreItemsCtrl sharedInstance];
     itemsToShow = [itemsCtrl vocals];
     
-    storeSprite = [[[CCSprite alloc] init] autorelease];
+    storeSprite = [[CCSprite alloc] init];
     
     [self loadSpriteAnimation:[[itemsToShow objectAtIndex:0] storeItemFrmName] numberOfFrames:0];
     
     [storeSprite runAction:[self loadSpriteAnimation:[[itemsToShow objectAtIndex:0] storeItemFrmName] numberOfFrames:1]];
     
-    ownedTag.visible = [[itemsToShow objectAtIndex:0] owned];
+    ownedTag.visible = [[itemsToShow objectAtIndex:0] ownedBandItem];
     
-    [buyMenu setVisible:![[itemsToShow objectAtIndex:0] owned]];
-    [selectMenu setVisible:[[itemsToShow objectAtIndex:0] owned]];
+    [buyMenu setVisible:![[itemsToShow objectAtIndex:0] ownedBandItem]];
+    [selectMenu setVisible:[[itemsToShow objectAtIndex:0] ownedBandItem]];
     
     [storeSprite setPosition:storeSpritePosition];
     [storeSprite setScale:1.5];
@@ -155,7 +157,7 @@ CGPoint const storeSpritePosition = {340, 360};
     [self updateText:[itemsToShow objectAtIndex:0]];
 }
 
--(void)doShowDrummer:(CCMenuItem *)menuItem
+-(void)doShowDrummer:(CCButton *)menuItem
 {
     [bandBuy removeChild:storeSprite cleanup:YES];
     
@@ -166,14 +168,14 @@ CGPoint const storeSpritePosition = {340, 360};
     BandStoreItemsCtrl *itemsCtrl = [BandStoreItemsCtrl sharedInstance];
     itemsToShow = [itemsCtrl drummers];
     
-    storeSprite = [[[CCSprite alloc] init] autorelease];
+    storeSprite = [[CCSprite alloc] init];
     
     [storeSprite runAction:[self loadSpriteAnimation:[[itemsToShow objectAtIndex:0] storeItemFrmName] numberOfFrames:1]];
     
-    ownedTag.visible = [[itemsToShow objectAtIndex:0] owned];
+    ownedTag.visible = [[itemsToShow objectAtIndex:0] ownedBandItem];
     
-    [buyMenu setVisible:![[itemsToShow objectAtIndex:0] owned]];
-    [selectMenu setVisible:[[itemsToShow objectAtIndex:0] owned]];
+    [buyMenu setVisible:![[itemsToShow objectAtIndex:0] ownedBandItem]];
+    [selectMenu setVisible:[[itemsToShow objectAtIndex:0] ownedBandItem]];
     
     [storeSprite setPosition:storeSpritePosition];
     //[storeSprite setScale:1.5];
@@ -184,7 +186,7 @@ CGPoint const storeSpritePosition = {340, 360};
 
 }
 
--(void)doShowBass:(CCMenuItem *)menuItem;
+-(void)doShowBass:(CCButton *)menuItem;
 {
 
     [bandBuy removeChild:storeSprite cleanup:YES];
@@ -196,16 +198,16 @@ CGPoint const storeSpritePosition = {340, 360};
     BandStoreItemsCtrl *itemsCtrl = [BandStoreItemsCtrl sharedInstance];
     itemsToShow = [itemsCtrl basses];
     
-    storeSprite = [[[CCSprite alloc] init] autorelease];
+    storeSprite = [[CCSprite alloc] init];
     
     [self loadSpriteAnimation:[[itemsToShow objectAtIndex:0] storeItemFrmName] numberOfFrames:0];
     
     [storeSprite runAction:[self loadSpriteAnimation:[[itemsToShow objectAtIndex:0] storeItemFrmName] numberOfFrames:1]];
     
-    ownedTag.visible = [[itemsToShow objectAtIndex:0] owned];
+    ownedTag.visible = [[itemsToShow objectAtIndex:0] ownedBandItem];
     
-    [buyMenu setVisible:![[itemsToShow objectAtIndex:0] owned]];
-    [selectMenu setVisible:[[itemsToShow objectAtIndex:0] owned]];
+    [buyMenu setVisible:![[itemsToShow objectAtIndex:0] ownedBandItem]];
+    [selectMenu setVisible:[[itemsToShow objectAtIndex:0] ownedBandItem]];
     
     [storeSprite setPosition:storeSpritePosition];
     [storeSprite setScale:1.5];
@@ -223,9 +225,9 @@ CGPoint const storeSpritePosition = {340, 360};
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.2f];
-    CCAction *itemAction = [CCRepeatForever actionWithAction:
-                            [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.2f];
+    CCAction *itemAction = [CCActionRepeatForever actionWithAction:
+                            [CCActionAnimate actionWithAnimation:animation]];
     return itemAction;
 }
 
@@ -238,16 +240,13 @@ CGPoint const storeSpritePosition = {340, 360};
     
     
     // band component max name chars is 20
-    itemLabel = [CCLabelTTF labelWithString:[[itemsToShow objectAtIndex:itemCount] name] dimensions:CGSizeMake(470, 390) alignment:UITextAlignmentCenter fontName:@"28DaysLater" fontSize:50];
+    itemLabel = [CCLabelTTF labelWithString:[[itemsToShow objectAtIndex:itemCount] itemName] fontName:@"28DaysLater" fontSize:50 dimensions:CGSizeMake(470, 390)];
     
+    itemArmor = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Armor %@",[[[NSNumber alloc] initWithInt:[[itemsToShow objectAtIndex:itemCount] armor]] stringValue]] fontName:@"28DaysLater" fontSize:43 dimensions:CGSizeMake(470, 200)];
     
-    itemArmor = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Armor %@",[[[NSNumber alloc] initWithInt:[[itemsToShow objectAtIndex:itemCount] armor]] stringValue]] dimensions:CGSizeMake(470, 200) alignment:UITextAlignmentCenter fontName:@"28DaysLater" fontSize:43];
+    itemDamage = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Damage %@",[[[NSNumber alloc] initWithInt:[[itemsToShow objectAtIndex:itemCount] shootPower]] stringValue]] fontName:@"28DaysLater" fontSize:43 dimensions:CGSizeMake(470, 200)];
     
-    itemDamage = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Damage %@",[[[NSNumber alloc] initWithInt:[[itemsToShow objectAtIndex:itemCount] shootPower]] stringValue]] dimensions:CGSizeMake(470, 200) alignment:UITextAlignmentCenter fontName:@"28DaysLater" fontSize:43];
-    
-    
-    itemPrice = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Cost %@",[[[NSNumber alloc] initWithInt:[[itemsToShow objectAtIndex:itemCount] credits]] stringValue]] dimensions:CGSizeMake(470, 200) alignment:UITextAlignmentCenter fontName:@"28DaysLater" fontSize:43];
-    
+    itemPrice = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Cost %@",[[[NSNumber alloc] initWithInt:[[itemsToShow objectAtIndex:itemCount] credits]] stringValue]] fontName:@"28DaysLater" fontSize:43  dimensions:CGSizeMake(470, 200)];
     
     [itemLabel setPosition:ccp(240,350)];
     [itemArmor setPosition:ccp(140,340)];

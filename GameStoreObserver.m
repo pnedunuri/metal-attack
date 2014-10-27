@@ -35,7 +35,7 @@
     SKPaymentTransaction *storeTransaction = [transactions objectAtIndex:0];
     
     switch (storeTransaction.transactionState) {
-        case SKPaymentTransactionStatePurchased:
+        case SKPaymentTransactionStatePurchased:{
             NSLog(@"Item Purchased !");
             [[SKPaymentQueue defaultQueue] finishTransaction:storeTransaction];            
             NSLog(@"Transaction product id %@",[[storeTransaction payment] productIdentifier]);
@@ -55,17 +55,20 @@
             NSNumber *numberOfCoins = [[NSNumber alloc] initWithInt:[vault bandCoins]];
             
             [[(BandStore *)[self uiDelegate] labelCredits] setString:[numberOfCoins stringValue]];
-            
+        }
             break;
-        case SKPaymentTransactionStateFailed:
+        case SKPaymentTransactionStateFailed:{
             NSLog(@"Item Purchase Failed !");
             [[SKPaymentQueue defaultQueue] finishTransaction:storeTransaction];
+        }
             break;
-        case SKPaymentTransactionStatePurchasing:
+        case SKPaymentTransactionStatePurchasing:{
             NSLog(@"Purchasing");
+        }
             break;
-        case SKPaymentTransactionStateRestored:
+        case SKPaymentTransactionStateRestored:{
             NSLog(@"Restored");
+        }
             break;
         default:
             break;

@@ -22,8 +22,8 @@
     self = [super init];
     
     if(self) {
-        self.waves = [[[NSMutableArray alloc] init] autorelease];
-        self.avaliableEnemies = [[[NSMutableArray alloc] init] autorelease];
+        self.waves = [[NSMutableArray alloc] init];
+        self.avaliableEnemies = [[NSMutableArray alloc] init];
     }
     
     return self;

@@ -11,13 +11,13 @@
 #import "BandGamePlay.h"
 
 
-@interface Pause : CCLayerColor
+@interface Pause : CCNodeColor
 {
     BandGamePlay *gameplayController;
 }
 
 //+(CCScene *) scene;
-+(CCLayerColor *) pauseWithGamePlay:(BandGamePlay *) gamePlayScene;
++(CCNodeColor *) pauseWithGamePlay:(BandGamePlay *) gamePlayScene;
 -(id)initWithGamePlay:(BandGamePlay *)gamePlayScene;
 
 @property (nonatomic, retain) BandGamePlay *gameplayController;

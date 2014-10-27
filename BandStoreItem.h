@@ -34,7 +34,7 @@ typedef enum {
     // it will be used inside the game as key for the item.
     NSString *appStoreId;
     // Name of the item to be showed on at the game store
-    NSString *name;
+    NSString *itemName;
     // Price of the item in game credits
     int credits;
     // points of the item that will affect the game play, lets say for a weapon power up
@@ -52,9 +52,9 @@ typedef enum {
     // frm is the frame
     NSString *assetName;
     // flag to show if the item is owned or not
-    bool owned;
+    bool ownedBandItem;
     // flag that indicates if the item is selected
-    bool selected;
+    bool selectedBandItem;
     // this attribute represents how much of the item the user has
     int qtd;
     // sprite that represents the item
@@ -101,15 +101,15 @@ typedef enum {
 }
 
 @property (nonatomic,retain) NSString *appStoreId;
-@property (nonatomic,retain) NSString *name;
+@property (nonatomic,retain) NSString *itemName;
 @property (nonatomic) int credits;
 @property (nonatomic) int value;
 @property (nonatomic) BandItemType itemType;
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic) int duration;
 @property (nonatomic, retain) NSString *assetName;
-@property (nonatomic) bool owned;
-@property (nonatomic) bool selected;
+@property (nonatomic) bool ownedBandItem;
+@property (nonatomic) bool selectedBandItem;
 @property (nonatomic) int qtd;
 @property (nonatomic,retain) CCSprite *itemSprt;
 @property (nonatomic,retain) NSString *itemFrmName;

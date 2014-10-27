@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "MainMenu.h"
 
-@interface EndGame : CCLayer
+@interface EndGame : CCNode
 
 +(CCScene *)scene;
 

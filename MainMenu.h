@@ -21,7 +21,7 @@
 #import "BandStore.h"
 #import "BandVault.h"
 
-@interface MainMenu : CCLayer
+@interface MainMenu : CCNode
 {
     
     CCSpriteBatchNode *_batchNode;
@@ -36,7 +36,7 @@
     CCSprite *_spacialanomaly;
     CCSprite *_spacialanomaly2;
     float _shipPointsPerSecY;
-    CCArray *_asteroids;
+    NSArray *_asteroids;
     int _nextAsteroid;
     double _nextAsteroidSpawn;
     CCLabelTTF *distanceX;

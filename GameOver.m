@@ -46,12 +46,17 @@ int levelNumber;
         
         label.position = labelposition;
         
-        CCMenuItemImage * menuItem1 = [CCMenuItemImage itemFromNormalImage:@"back.png"
-                                                             selectedImage: @"back.png"
-                                                                    target:self
-                                                                  selector:@selector(doBack:)];
+        //CCMenuItemImage * menuItem1 = [CCMenuItemImage itemFromNormalImage:@"back.png"
+        //                                                     selectedImage: @"back.png"
+        //                                                            target:self
+        //                                                          selector:@selector(doBack:)];
         
-        CCMenu * myMenu = [CCMenu menuWithItems:menuItem1, nil];
+        CCButton *menuItem1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"back.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"back.png"] disabledSpriteFrame:nil];
+        
+        [menuItem1 setTarget:self selector:@selector(doBack:)];
+        
+        CCNode *myMenu = [[CCNode alloc] init];
+        [myMenu addChild:menuItem1];
         
         CGPoint menuposition;
         menuposition.x = 40;
@@ -59,12 +64,17 @@ int levelNumber;
         
         myMenu.position = menuposition;
         
-        CCMenuItemImage * menuItem2 = [CCMenuItemImage itemFromNormalImage:@"reload.png"
-                                                             selectedImage: @"reloadClicked.png"
-                                                                    target:self
-                                                                  selector:@selector(doRestartLevel:)];
+        //CCMenuItemImage * menuItem2 = [CCMenuItemImage itemFromNormalImage:@"reload.png"
+        //                                                     selectedImage: @"reloadClicked.png"
+        //                                                            target:self
+        //                                                          selector:@selector(doRestartLevel:)];
         
-        CCMenu * myMenu2 = [CCMenu menuWithItems:menuItem2, nil];
+        CCButton *menuItem2 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"reload.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"reload.png"] disabledSpriteFrame:nil];
+        
+        [menuItem2 setTarget:self selector:@selector(doRestartLevel:)];
+        
+        CCNode *myMenu2 = [[CCNode alloc] init];
+        [myMenu2 addChild:menuItem2];
         
         CGPoint menuposition2;
         menuposition2.x = 280;
@@ -79,17 +89,19 @@ int levelNumber;
 	return self;
 }
 
--(void)doBack:(CCMenuItem *)menuItem 
+-(void)doBack:(CCButton *)menuItem
 {
     NSLog(@"Do Back");
     [[CCDirector sharedDirector] replaceScene: [MainMenu scene]];
 }
 
--(void)doRestartLevel:(CCMenuItem *)menuItem
+-(void)doRestartLevel:(CCButton *)menuItem
 {
     NSLog(@"Do Restart Level");
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f 
-                                        scene:[BandGamePlay sceneWithLevel:levelNumber wave:0]]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransition transitionFadeWithDuration:0.5f
+    //                                    scene:[BandGamePlay sceneWithLevel:levelNumber wave:0]]];
+    
+    [[CCDirector sharedDirector] replaceScene:[BandGamePlay sceneWithLevel:levelNumber wave:0] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 @end

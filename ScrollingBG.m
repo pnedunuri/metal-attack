@@ -49,43 +49,45 @@ CCSprite *lowerLeftBG;
     [fixBg setAnchorPoint:ccp(0,0)];
     //[self addChild:fixBg z:-1];
     
-    visibleBG = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5.jpg"];
+    visibleBG = [[CCSprite alloc] initWithImageNamed:@"doodlefinal_iphone5.jpg"];
     //background1 = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_paint.png"];
     [visibleBG setAnchorPoint:ccp(0,0)];
     [visibleBG setPosition:ccp(0,0)]; // this solves the first flicker problem
     [self addChild:visibleBG z:-1];
     
-    rightBG = [[CCSprite alloc] initWithFile:@"doodlefinalmark_iphone5.jpg"];
+    rightBG = [[CCSprite alloc] initWithImageNamed:@"doodlefinalmark_iphone5.jpg"];
     //background2 = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_paint.png"];
     [rightBG setAnchorPoint:ccp(0,0)];
     [rightBG setPosition:ccp(320,0)];
     [self addChild:rightBG z:-1];
     
-    leftBG = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_blue.jpg"];
+    leftBG = [[CCSprite alloc] initWithImageNamed:@"doodlefinal_iphone5_blue.jpg"];
     //background2 = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_paint.png"];
     [leftBG setAnchorPoint:ccp(0,0)];
     [leftBG setPosition:ccp(-320,0)];
     [self addChild:leftBG z:-1];
     
-    upperBG = [[CCSprite alloc] initWithFile:@"doodlefinalmark_iphone5.jpg"];
+    upperBG = [[CCSprite alloc] initWithImageNamed:@"doodlefinalmark_iphone5.jpg"];
     //background2 = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_paint.png"];
     [upperBG setAnchorPoint:ccp(0,0)];
     [upperBG setPosition:ccp(0,568)];
     [self addChild:upperBG z:-1];
     
-    lowerBG = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_yellow.jpg"];
+    lowerBG = [[CCSprite alloc] initWithImageNamed:@"doodlefinal_iphone5_yellow.jpg"];
     //background2 = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_paint.png"];
     [lowerBG setAnchorPoint:ccp(0,0)];
     [lowerBG setPosition:ccp(0,-568)];
     [self addChild:lowerBG z:-1];
     
-    lowerLeftBG = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_green.jpg"];
+    lowerLeftBG = [[CCSprite alloc] initWithImageNamed:@"doodlefinal_iphone5_green.jpg"];
     //background2 = [[CCSprite alloc] initWithFile:@"doodlefinal_iphone5_paint.png"];
     [lowerLeftBG setAnchorPoint:ccp(0,0)];
     [lowerLeftBG setPosition:ccp(-320,-568)];
     [self addChild:lowerLeftBG z:-1];
     
-    [self scheduleUpdate];
+    //[self scheduleUpdate];
+    
+    [self schedule:@selector(update) interval:0];
 
 }
 
@@ -162,7 +164,7 @@ CCSprite *lowerLeftBG;
     }
 }
 
-- (void)update:(ccTime)dt
+- (void)update
 {
     //NSLog(@"Update Scrolling BG") Right movement;
     

@@ -11,6 +11,7 @@
 #import "BandStoreItemsCtrl.h"
 #import "ItemShelfCtrl.h"
 #import "BandBuyPoster.h"
+#import "CCAnimation.h"
 
 
 @implementation BandStore
@@ -19,8 +20,8 @@ CCSprite *storeSprite;
 CCSprite *usrMoneyBg;
 CCLabelTTF *bandCoinsLabel;
 CCSprite *ownedTag;
-CCMenu *selectMenu;
-CCMenu *buyMenu;
+CCNode *selectMenu;
+CCNode *buyMenu;
 int itemCount;
 int labelfontSize;
 CGSize winsize;
@@ -54,9 +55,9 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
         CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:itemFrame,i]];
         [animFrames addObject:frame];
     }
-    CCAnimation *animation = [CCAnimation animationWithFrames:animFrames delay:0.2f];
-    CCAction *itemAction = [CCRepeatForever actionWithAction:
-                            [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]];
+    CCAnimation *animation = [CCAnimation animationWithSpriteFrames:animFrames delay:0.2f];
+    CCAction *itemAction = [CCActionRepeatForever actionWithAction:
+                            [CCActionAnimate actionWithAnimation:animation]];
     return itemAction;
 }
 
@@ -82,8 +83,8 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
         BandStoreItem *item = (BandStoreItem *)[[bandBuyPoster itemsToShow] objectAtIndex:i];
         if (item.itemType == itemType){
             
-            if (item.selected == YES){
-                item.selected = NO;
+            if (item.selectedBandItem == YES){
+                item.selectedBandItem = NO;
                 return item.appStoreId;
             }
         }
@@ -91,7 +92,7 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
     return nil;
 }
 
--(void)doBuy:(CCMenuItem *)menuItem
+-(void)doBuy:(CCButton *)menuItem
 {
     //#### found a crash solve it 20/10/2014 ######//
     
@@ -100,12 +101,12 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
     NSString *previousSelectedGuy;
     BandStoreItem *bandStoreItem = [[bandBuyPoster itemsToShow] objectAtIndex:itemCount];
     
-    if (bandStoreItem.owned == YES) {
+    if (bandStoreItem.ownedBandItem == YES) {
         // the item is owned by the user so just select it
         NSLog(@"Active the item on the hero !");
         switch ([bandStoreItem itemType]) {
             case DRUMMER:
-                bandStoreItem.selected = YES;
+                bandStoreItem.selectedBandItem = YES;
                 previousSelectedGuy = [self unselectBandGuy:DRUMMER];
                 [vault selectBandGuy:bandStoreItem.appStoreId bandGuyType:DRUMMER oldSelectedGuy:previousSelectedGuy];
                 [vault setDrummerIndex:itemCount];
@@ -166,10 +167,10 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
                 //vault.bandCoins = vault.bandCoins - [[[bandBuyPoster itemsToShow] objectAtIndex:itemCount] credits];
                 //[userdef setInteger:vault.bandCoins forKey:@"coins"];
                 //[userdef setBool:YES forKey:[[[bandBuyPoster itemsToShow] objectAtIndex:itemCount] appStoreId]];
-                bandStoreItem.owned = YES;
+                bandStoreItem.ownedBandItem = YES;
                 //[[[bandBuyPoster itemsToShow] objectAtIndex:itemCount] setOwned:YES];
                 ownedTag.visible = YES;
-                NSNumber *bandCoins = [[[NSNumber alloc] initWithInt:[vault bandCoins]] autorelease];
+                NSNumber *bandCoins = [[NSNumber alloc] initWithInt:[vault bandCoins]];
                 [bandCoinsLabel setString:[[UniversalInfo sharedInstance] addZeroesToNumber:[bandCoins stringValue]]];
                 [buyMenu setVisible:YES];
                 [selectMenu setVisible:YES];
@@ -183,7 +184,7 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
     [self replaceBandMenu];
 }
 
--(void)doBack:(CCMenuItem *)menuItem
+-(void)doBack:(CCButton *)menuItem
 {
     NSLog(@"Do Back");
     [[CCDirector sharedDirector] replaceScene: [MainMenu scene]];
@@ -252,43 +253,66 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
     [bandBuyPoster doShowGuitarrist];
 }
 
--(CCMenu *)createBandSelectionMenu
+-(CCNode *)createBandSelectionMenu
 {
     
-    CCMenuItemImage *guitar1MenuBnt = [CCMenuItemImage itemFromNormalImage:@"Guitar01ON.png"
-                                                             selectedImage: @"Guitar01OFF.png"
-                                                                    target:self
-                                                                  selector:@selector(doBandSelect:)];
+    //CCMenuItemImage *guitar1MenuBnt = [CCMenuItemImage itemFromNormalImage:@"Guitar01ON.png"
+    //                                                         selectedImage: @"Guitar01OFF.png"
+    //                                                                target:self
+    //                                                              selector:@selector(doBandSelect:)];
     
-    [guitar1MenuBnt setTag:1];
+
     
-    CCMenuItemImage *guitar2MenuBnt = [CCMenuItemImage itemFromNormalImage:@"Guitar02ON.png"
-                                                             selectedImage: @"Guitar02OFF.png"
-                                                                    target:self
-                                                                  selector:@selector(doBandSelect:)];
+    CCButton *guitar1MenuBnt = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"Guitar01ON.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"Guitar01OFF.png"] disabledSpriteFrame:nil];
     
-    [guitar2MenuBnt setTag:2];
     
-    CCMenuItemImage *drummerMenuBnt = [CCMenuItemImage itemFromNormalImage:@"DrumerON.png"
-                                                             selectedImage: @"DrumerOFF.png"
-                                                                    target:self
-                                                                  selector:@selector(doBandSelect:)];
+    [guitar1MenuBnt setTarget:self selector:@selector(doBandSelect:)];
+    //[guitar1MenuBnt setTag:1];
     
-    [drummerMenuBnt setTag:3];
+    //CCMenuItemImage *guitar2MenuBnt = [CCMenuItemImage itemFromNormalImage:@"Guitar02ON.png"
+    //                                                         selectedImage: @"Guitar02OFF.png"
+    //                                                                target:self
+    //                                                              selector:@selector(doBandSelect:)];
     
-    CCMenuItemImage *bassMenuBnt = [CCMenuItemImage itemFromNormalImage:@"BassON.png"
-                                                             selectedImage: @"BassOFF.png"
-                                                                    target:self
-                                                                  selector:@selector(doBandSelect:)];
     
-    [bassMenuBnt setTag:4];
+    CCButton *guitar2MenuBnt = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"Guitar02ON.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"Guitar02OFF.png"] disabledSpriteFrame:nil];
     
-    CCMenuItemImage *vocalMenuBnt = [CCMenuItemImage itemFromNormalImage:@"VocalON.png"
-                                                             selectedImage: @"VocalOFF.png"
-                                                                    target:self
-                                                                  selector:@selector(doBandSelect:)];
+    [guitar2MenuBnt setTarget:self selector:@selector(doBandSelect:)];
     
-    [vocalMenuBnt setTag:5];
+    //[guitar2MenuBnt setTag:2];
+    
+    //CCMenuItemImage *drummerMenuBnt = [CCMenuItemImage itemFromNormalImage:@"DrumerON.png"
+    //                                                         selectedImage: @"DrumerOFF.png"
+    //                                                                target:self
+    //                                                              selector:@selector(doBandSelect:)];
+    
+    //[drummerMenuBnt setTag:3];
+    
+    CCButton *drummerMenuBnt = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"DrumerON.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"DrumerOFF.png"] disabledSpriteFrame:nil];
+    
+    [drummerMenuBnt setTarget:self selector:@selector(doBandSelect:)];
+    
+    //CCMenuItemImage *bassMenuBnt = [CCMenuItemImage itemFromNormalImage:@"BassON.png"
+    //                                                         selectedImage: @"BassOFF.png"
+    //                                                                target:self
+    //                                                              selector:@selector(doBandSelect:)];
+    
+    CCButton *bassMenuBnt = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"BassON.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"BassOFF.png"] disabledSpriteFrame:nil];
+    
+    [bassMenuBnt setTarget:self selector:@selector(doBandSelect:)];
+    
+    //[bassMenuBnt setTag:4];
+    
+    //CCMenuItemImage *vocalMenuBnt = [CCMenuItemImage itemFromNormalImage:@"VocalON.png"
+    //                                                         selectedImage: @"VocalOFF.png"
+    //                                                                target:self
+    //                                                              selector:@selector(doBandSelect:)];
+    
+    CCButton *vocalMenuBnt = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"VocalON.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"VocalOFF.png"] disabledSpriteFrame:nil];
+    
+    [vocalMenuBnt setTarget:self selector:@selector(doBandSelect:)];
+    
+    //[vocalMenuBnt setTag:5];
     
     [vocalMenuBnt setPosition:ccp(-130,-130)];
     [guitar1MenuBnt setPosition:ccp(-130,75)];
@@ -296,20 +320,29 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
     [bassMenuBnt setPosition:ccp(85, 55)];
     [guitar2MenuBnt setPosition:ccp(82,-125)];
     
-    CCMenu *bandSelectMenu = [CCMenu menuWithItems:guitar1MenuBnt, guitar2MenuBnt, drummerMenuBnt, bassMenuBnt, vocalMenuBnt, nil];
+    //CCMenu *bandSelectMenu = [CCMenu menuWithItems:guitar1MenuBnt, guitar2MenuBnt, drummerMenuBnt, bassMenuBnt, vocalMenuBnt, nil];
+    
+    CCNode *bandSelectMenu = [[CCNode alloc] init];
+    
+    [bandSelectMenu addChild:guitar1MenuBnt];
+    [bandSelectMenu addChild:guitar2MenuBnt];
+    [bandSelectMenu addChild:drummerMenuBnt];
+    [bandSelectMenu addChild:bassMenuBnt];
+    [bandSelectMenu addChild:vocalMenuBnt];
     
     return bandSelectMenu;
     
 }
 
--(void)doBandSelect:(CCMenuItem *)menuItem
+-(void)doBandSelect:(CCButton *)menuItem
 {
     NSLog(@"Band component select");
-    id moveOutBandMenu = [CCMoveTo actionWithDuration:1.2 position:bandSelectionMenuHidePosition];
-    id moveOutBandMenuElastic = [CCEaseBackInOut actionWithAction:moveOutBandMenu];
+    id moveOutBandMenu = [CCActionMoveTo actionWithDuration:1.2 position:bandSelectionMenuHidePosition];
+    id moveOutBandMenuElastic = [CCActionEaseBackInOut actionWithAction:moveOutBandMenu];
     [bandMenuBg runAction:moveOutBandMenuElastic];
     
-    
+#warning menuItem.tag needs to be replaced
+    /*
     switch (menuItem.tag) {
         case 1:
             NSLog(@"show guitarrist 1");
@@ -334,10 +367,11 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
             
         default:
             break;
-    }
-    
-    id moveInBandBuy = [CCMoveTo actionWithDuration:1.2 position:bandSelectionMenuShowPosition];
-    id moveInBandBuyElastic = [CCEaseBackInOut actionWithAction:moveInBandBuy];
+     
+    }*/
+
+    id moveInBandBuy = [CCActionMoveTo actionWithDuration:1.2 position:bandSelectionMenuShowPosition];
+    id moveInBandBuyElastic = [CCActionEaseBackInOut actionWithAction:moveInBandBuy];
     [bandBuy runAction:moveInBandBuyElastic];
     
 }
@@ -346,20 +380,22 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
 -(void)showBandMenu
 {
     // this method will create the menu for the band componetns to be buyed
-    bandMenuBg = [[CCSprite alloc] initWithFile:@"posterBand.png"];
+    bandMenuBg = [[CCSprite alloc] initWithImageNamed:@"posterBand.png"];
     [bandMenuBg setScale:0.5];
     [bandMenuBg setPosition:bandSelectionMenuHidePosition];
     [storeBackground addChild:bandMenuBg z:5];
 
     
-    id moveBandMenu = [CCMoveTo actionWithDuration:1.2 position:bandSelectionMenuShowPosition];
-    id moveBandMenuElastic = [CCEaseBackInOut actionWithAction:moveBandMenu];
+    id moveBandMenu = [CCActionMoveTo actionWithDuration:1.2 position:bandSelectionMenuShowPosition];
+    id moveBandMenuElastic = [CCActionEaseBackInOut actionWithAction:moveBandMenu];
 
-    bandBuy = [[CCSprite alloc] initWithFile:@"posterBand.png"];
+    bandBuy = [[CCSprite alloc] initWithImageNamed:@"posterBand.png"];
     [bandBuy setScale:0.5];
     [bandBuy setPosition:bandSelectionMenuHidePosition];
     [storeBackground addChild:bandBuy z:5];
+#warning uncoment the menuitems and convert to buttons
     
+    /*
     CCMenuItemImage *selectRightButton = [CCMenuItemImage itemFromNormalImage:@"rightArrow.png"
                                                                   selectedImage: @"rightArrow.png"
                                                                          target:self
@@ -395,25 +431,28 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
     
     CCMenuItemImage *selectButton = [CCMenuItemImage itemFromNormalImage:@"selectItem.png"
                                           selectedImage: @"selectItem.png" target:self selector:@selector(doBuy:)];
+    */
+    CCNode *bandSelectMenu = [self createBandSelectionMenu];
     
-    CCMenu *bandSelectMenu = [self createBandSelectionMenu];
+    //selectMenu = [CCMenu menuWithItems:selectLeftButton,selectButton, selectRightButton, nil];
+    //buyMenu = [CCMenu menuWithItems:buyLeftButton,buyButton, buyRightButton, nil];
     
-    selectMenu = [CCMenu menuWithItems:selectLeftButton,selectButton, selectRightButton, nil];
-    buyMenu = [CCMenu menuWithItems:buyLeftButton,buyButton, buyRightButton, nil];
+    selectMenu = [[CCNode alloc] init];
+    buyMenu = [[CCNode alloc] init];
     
     [buyMenu setVisible:NO];
     
     [bandSelectMenu setPosition:ccp(260, 295)];
     
-    [selectMenu alignItemsHorizontallyWithPadding:1];
+    //[selectMenu alignItemsHorizontallyWithPadding:1];
     [selectMenu setPosition:ccp(316, 150)];
     
-    [buyMenu alignItemsHorizontallyWithPadding:1];
+    //[buyMenu alignItemsHorizontallyWithPadding:1];
     [buyMenu setPosition:ccp(316, 150)];
     
     bandBuyPoster = [[BandBuyPoster alloc] init];
-    [bandBuyPoster setSelectMenu:selectMenu];
-    [bandBuyPoster setBuyMenu:buyMenu];
+    //[bandBuyPoster setSelectMenu:selectMenu];
+    //[bandBuyPoster setBuyMenu:buyMenu];
     [bandBuyPoster setBandBuy:bandBuy];
     
     
@@ -424,13 +463,13 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
 
 }
 
--(void)doBandSelectLeft:(CCMenuItem *)menuItem
+-(void)doBandSelectLeft:(CCButton *)menuItem
 {
     NSLog(@"doBandSelectLeft");
     [bandBuyPoster doScrLeft:menuItem];
 }
 
--(void)doBandSelectRight:(CCMenuItem *)menuItem
+-(void)doBandSelectRight:(CCButton *)menuItem
 {
     NSLog(@"doBandSelectRight");
     [bandBuyPoster doScrRigh:menuItem];
@@ -440,12 +479,12 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
 {
     NSLog(@"replaceBandMenu");
     
-    id moveInBandBuy = [CCMoveTo actionWithDuration:1.2 position:bandSelectionMenuHidePosition];
-    id moveInBandBuyElastic = [CCEaseBackInOut actionWithAction:moveInBandBuy];
+    id moveInBandBuy = [CCActionMoveTo actionWithDuration:1.2 position:bandSelectionMenuHidePosition];
+    id moveInBandBuyElastic = [CCActionEaseBackInOut actionWithAction:moveInBandBuy];
     [bandBuy runAction:moveInBandBuyElastic];
     
-    id moveOutBandMenu = [CCMoveTo actionWithDuration:1.2 position:bandSelectionMenuShowPosition];
-    id moveOutBandMenuElastic = [CCEaseBackInOut actionWithAction:moveOutBandMenu];
+    id moveOutBandMenu = [CCActionMoveTo actionWithDuration:1.2 position:bandSelectionMenuShowPosition];
+    id moveOutBandMenuElastic = [CCActionEaseBackInOut actionWithAction:moveOutBandMenu];
     [bandMenuBg runAction:moveOutBandMenuElastic];
 }
 
@@ -458,8 +497,8 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
 {
     
     
-    CCSprite *cachier = [[CCSprite alloc] initWithFile:@"cachier.png"];
-    CCSprite *punk = [[CCSprite alloc] initWithFile:@"punk.png"];
+    CCSprite *cachier = [[CCSprite alloc] initWithImageNamed:@"cachier.png"];
+    CCSprite *punk = [[CCSprite alloc] initWithImageNamed:@"punk.png"];
     
     [cachier setPosition:ccp(180,220)];
     [punk setPosition:ccp(580,200)];
@@ -467,8 +506,8 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
     [cachier setScale:0.48];
     [punk setScale:0.5];
     
-    storeBackground = [CCSprite spriteWithFile:@"storebg_iphone5.jpg"];
-    storeFrontBackGround = [CCSprite spriteWithFile:@"storeFrontBG_iphone5.png"];
+    storeBackground = [CCSprite spriteWithImageNamed:@"storebg_iphone5.jpg"];
+    storeFrontBackGround = [CCSprite spriteWithImageNamed:@"storeFrontBG_iphone5.png"];
     
     
     [storeBackground setPosition:ccp([[UniversalInfo sharedInstance] screenCenter].x + winsize.width/2,
@@ -478,31 +517,44 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
                                      [[UniversalInfo sharedInstance] screenCenter].y)];
     
     
-    CCMenuItemImage * backMenuItem = [CCMenuItemImage itemFromNormalImage:@"Button back ON.png"
-                                                         selectedImage: @"Button back OFF.png"
-                                                                target:self
-                                                              selector:@selector(doBack:)];
+    //CCMenuItemImage * backMenuItem = [CCMenuItemImage itemFromNormalImage:@"Button back ON.png"
+    //                                                     selectedImage: @"Button back OFF.png"
+    //                                                            target:self
+    //                                                          selector:@selector(doBack:)];
+    
+    CCButton *backMenuItem = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"Button back ON.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"Button back OFF.png"] disabledSpriteFrame:nil];
+    
+    [backMenuItem setTarget:self selector:@selector(doBack:)];
     [backMenuItem setScale:0.5];
     [backMenuItem setPosition:ccp(-110,-232)];
     
-    CCMenuItemImage *handMenu1 = [CCMenuItemImage itemFromNormalImage:@"handbutton01.png"
-                                                        selectedImage: @"handbutton01.png"
-                                                               target:self
-                                                             selector:@selector(doLeftSlide:)];
+    //CCMenuItemImage *handMenu1 = [CCMenuItemImage itemFromNormalImage:@"handbutton01.png"
+    //                                                    selectedImage: @"handbutton01.png"
+    //                                                           target:self
+    //                                                         selector:@selector(doLeftSlide:)];
     
+    CCButton *handMenu1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"handbutton01.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"handbutton01.png"] disabledSpriteFrame:nil];
+    
+    [handMenu1 setTarget:self selector:@selector(doLeftSlide:)];
     [handMenu1 setPosition:ccp(430, -232)];
     
-    CCMenuItemImage *handMenu2 = [CCMenuItemImage itemFromNormalImage:@"handbutton02.png"
-                                                        selectedImage: @"handbutton02.png"
-                                                               target:self
-                                                             selector:@selector(doRightSlide:)];
+    //CCMenuItemImage *handMenu2 = [CCMenuItemImage itemFromNormalImage:@"handbutton02.png"
+    //                                                    selectedImage: @"handbutton02.png"
+    //                                                           target:self
+    //                                                         selector:@selector(doRightSlide:)];
     
+    CCButton *handMenu2 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"handbutton02.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"handbutton02.png"] disabledSpriteFrame:nil];
+    
+    [handMenu2 setTarget:self selector:@selector(doRightSlide:)];
     [handMenu2 setPosition:ccp(winsize.width * 0.328, - winsize.height * 0.409)];
 
-    CCMenu * storeButtons = [CCMenu menuWithItems:handMenu1, handMenu2, backMenuItem,  nil];
+    CCNode *storeButtons = [[CCNode alloc] init];
     
+    [storeButtons addChild:backMenuItem];
+    [storeButtons addChild:handMenu1];
+    [storeButtons addChild:handMenu2];
     
-    usrMoneyBg = [[CCSprite alloc] initWithFile:@"userMoney.png"];
+    usrMoneyBg = [[CCSprite alloc] initWithImageNamed:@"userMoney.png"];
     [usrMoneyBg setScale:0.25];
     [usrMoneyBg setPosition:ccp(155, 10)];
     
@@ -513,9 +565,8 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
     
     NSString *strCoins = [[NSString alloc] initWithFormat:@"%d",vault.bandCoins];
     
-    bandCoinsLabel = [CCLabelTTF labelWithString:[[UniversalInfo sharedInstance] addZeroesToNumber:strCoins] dimensions:CGSizeMake(470, 200) alignment:UITextAlignmentCenter fontName:@"28DaysLater" fontSize:78];
-    
-    
+    [CCLabelTTF labelWithString:[[UniversalInfo sharedInstance] addZeroesToNumber:strCoins] fontName:@"28DaysLater" fontSize:78 dimensions:CGSizeMake(470, 200)];
+
     [bandCoinsLabel setPosition:ccp(300,15)];
     
     ItemShelfCtrl *itemShelfCtrl = [[ItemShelfCtrl alloc] initwithCoinLabel:bandCoinsLabel];
@@ -534,24 +585,24 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
 }
 
 
--(void)doLeftSlide:(CCMenuItem *)menuItem
+-(void)doLeftSlide:(CCButton *)menuItem
 {
     NSLog(@"Do Left Slide");
-    id actionMove = [CCMoveTo actionWithDuration:2.5 position:ccp([[UniversalInfo sharedInstance] screenCenter].x + winsize.width/2,
+    id actionMove = [CCActionMoveTo actionWithDuration:2.5 position:ccp([[UniversalInfo sharedInstance] screenCenter].x + winsize.width/2,
                                                                   [[UniversalInfo sharedInstance] screenCenter].y)];
-    id actionElastic = [CCEaseExponentialOut actionWithAction:actionMove];
+    id actionElastic = [CCActionEaseElasticOut actionWithAction:actionMove];
     storeBgOrient = -1;
     [storeBackground runAction:actionElastic];
     
     
 }
 
--(void)doRightSlide:(CCMenuItem *)menuItem
+-(void)doRightSlide:(CCButton *)menuItem
 {
     NSLog(@"Do Right Slide");
-    id actionMove = [CCMoveTo actionWithDuration:2.5 position:ccp([[UniversalInfo sharedInstance] screenCenter].x - winsize.width/2,
+    id actionMove = [CCActionMoveTo actionWithDuration:2.5 position:ccp([[UniversalInfo sharedInstance] screenCenter].x - winsize.width/2,
                                                                   [[UniversalInfo sharedInstance] screenCenter].y)];
-    id actionElastic = [CCEaseExponentialOut actionWithAction:actionMove];
+    id actionElastic = [CCActionEaseElasticOut actionWithAction:actionMove];
     storeBgOrient = 1;
     [storeBackground runAction:actionElastic];
 }
@@ -563,7 +614,7 @@ CGPoint const bandSelectionMenuShowPosition = {150, 400};
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
-        winsize = [[CCDirector sharedDirector] winSize];
+        winsize = [[CCDirector sharedDirector] viewSize];
         
         DeviceType devtype = [[UniversalInfo sharedInstance] getDeviceType];
         

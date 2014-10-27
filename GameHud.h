@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "BandSprite.h"
 
-@interface GameHud : CCLayerColor
+@interface GameHud : CCNodeColor
 
 {
     id delegate;
@@ -31,18 +31,18 @@
     CCLabelTTF *labelArmor;
     CCLabelTTF *labelArmorPercent;
     CCLabelTTF *labelWaveCleared;
-    CCMenuItemImage * menuItem1;
-    CCMenu * myMenu;
-    CCMenuItemImage * menuItem2;
-    CCMenu * myMenu2;
+    CCButton * menuItem1;
+    CCNode * myMenu;
+    CCButton * menuItem2;
+    CCNode * myMenu2;
     CCLabelTTF *labelScore;
-    CCProgressTimer *coolDownBar;
+    CCProgressNode *coolDownBar;
     
-    CCProgressTimer *guita1Life;
-    CCProgressTimer *guita2Life;
-    CCProgressTimer *vocalLife;
-    CCProgressTimer *drummerLife;
-    CCProgressTimer *bassLife;
+    CCProgressNode *guita1Life;
+    CCProgressNode *guita2Life;
+    CCProgressNode *vocalLife;
+    CCProgressNode *drummerLife;
+    CCProgressNode *bassLife;
     
     CCSprite *guita1LifeIcon;
     CCSprite *guita2LifeIcon;
@@ -72,10 +72,10 @@
 @property (nonatomic, retain) CCLabelTTF *labelWaveTotal;
 @property (nonatomic, retain) CCLabelTTF *labelArmor;
 @property (nonatomic, retain) CCLabelTTF *labelArmorPercent;
-@property (nonatomic, retain) CCMenuItemImage * menuItem1;
-@property (nonatomic, retain) CCMenu * myMenu;
-@property (nonatomic, retain) CCMenuItemImage * menuItem2;
-@property (nonatomic, retain) CCMenu * myMenu2;
+@property (nonatomic, retain) CCButton * menuItem1;
+@property (nonatomic, retain) CCNode * myMenu;
+@property (nonatomic, retain) CCButton * menuItem2;
+@property (nonatomic, retain) CCNode * myMenu2;
 @property (nonatomic, retain) CCLabelTTF *labelScore;
 @property (nonatomic, retain) CCLabelTTF *labelWaveCleared;
 @property (nonatomic, retain) CCLabelTTF *labelLevel;
@@ -84,13 +84,13 @@
 @property (nonatomic, retain) CCSprite *inAppArmor;
 @property (nonatomic, retain) CCSprite *inAppAmmo;
 @property (nonatomic, retain) CCSprite *inAppGenereal;
-@property (nonatomic, retain) CCProgressTimer *coolDownBar;
+@property (nonatomic, retain) CCProgressNode *coolDownBar;
 @property (nonatomic) bool isBandShooting;
-@property (nonatomic, retain) CCProgressTimer *guita1Life;
-@property (nonatomic, retain) CCProgressTimer *guita2Life;
-@property (nonatomic, retain) CCProgressTimer *vocalLife;
-@property (nonatomic, retain) CCProgressTimer *drummerLife;
-@property (nonatomic, retain) CCProgressTimer *bassLife;
+@property (nonatomic, retain) CCProgressNode *guita1Life;
+@property (nonatomic, retain) CCProgressNode *guita2Life;
+@property (nonatomic, retain) CCProgressNode *vocalLife;
+@property (nonatomic, retain) CCProgressNode *drummerLife;
+@property (nonatomic, retain) CCProgressNode *bassLife;
 
 @property (nonatomic, retain) CCSprite *guita1LifeIcon;
 @property (nonatomic, retain) CCSprite *guita2LifeIcon;
@@ -102,13 +102,13 @@
 @property (nonatomic, retain) CCSprite *comboValue;
 @property (nonatomic, retain) CCSprite *bgLifeIcon;
 
-@property (nonatomic, retain) CCSequence *comboBGSequence;
-@property (nonatomic, retain) CCMoveBy *moveComboToScreen;
+@property (nonatomic, retain) CCActionSequence *comboBGSequence;
+@property (nonatomic, retain) CCActionMoveBy *moveComboToScreen;
 @property (nonatomic, retain) id endMoveCombo;
 @property (nonatomic, retain) id moveComboOffScreen;
 
 @property (nonatomic, retain) CCSprite *snakeBG;
-@property (nonatomic, retain) CCProgressTimer *snakeBar;
+@property (nonatomic, retain) CCProgressNode *snakeBar;
 @property (nonatomic, retain) CCSprite *equipBG;
 
 @property (nonatomic, retain) CCLabelTTF *comboLabelValue;
@@ -121,7 +121,7 @@
 -(void)doLevelPresentation:(int)levelNumber;
 -(void)doEndComboBgAnim:(id)node;
 -(void)updateBandLifeBar:(BandSprite *)bandSprite;
--(void)reverseComboPresentation:(ccTime)dt;
+-(void)reverseComboPresentation;
 
 @end
 

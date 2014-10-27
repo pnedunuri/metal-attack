@@ -27,9 +27,9 @@
 // I don't know why but it seams that an attribute declared as not a @property has a static
 // behavior.
 
-CCMenu *shelf1;
-CCMenu *shelf2;
-CCMenu *shelf3;
+CCNode *shelf1;
+CCNode *shelf2;
+CCNode *shelf3;
 
 CCSprite *itemSummaryBG;
 CCLabelTTF *bandCoinsLabel;
@@ -44,7 +44,7 @@ CGPoint const itemSummaryPositionShow = {485, 300};
 
 -(id)initWithItems:(NSArray *)allItems coinsLabel:(CCLabelTTF*)coinsLabel range:(NSRange)itemsRange;
 {
-    if( (self=[super initWithColor:ccc4(0, 0, 0, 0)])) {
+    if([super initWithColor:[[CCColor alloc] initWithCcColor4b:ccc4(0, 0, 0, 0)]]) {
     
         //iterate over items array to produce the items for the
         //menus to make the UI feasible it is possible to
@@ -55,21 +55,33 @@ CGPoint const itemSummaryPositionShow = {485, 300};
         
         for (int i = 0; i < [shelfItems count]; i++) {
             BandStoreItem *item = (BandStoreItem *)[shelfItems objectAtIndex:i];
-            CCMenuItem *menuItem = [CCMenuItemImage itemFromNormalImage:item.storeItemFrmName selectedImage: item.storeItemFrmName target:self selector:@selector(doShowItemSummary:)];
+            //CCMenuItem *menuItem = [CCMenuItemImage itemFromNormalImage:item.storeItemFrmName selectedImage: item.storeItemFrmName target:self selector:@selector(doShowItemSummary:)];
             
-            [menuItem setTag:i];
+            CCButton *menuItem = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:item.storeItemFrmName] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:item.storeItemFrmName] disabledSpriteFrame:nil];
+            
+            [menuItem setTarget:self selector:@selector(doShowItemSummary:)];
+#warning find a way to replace the use of setTag
+            //[menuItem setTag:i];
             [menuItem setScale:0.5];
             [menuItems addObject:menuItem];
         }
     }
     
-    shelf1 = [CCMenu menuWithItems:[menuItems objectAtIndex:0], [menuItems objectAtIndex:1], nil];
-    shelf2 = [CCMenu menuWithItems:[menuItems objectAtIndex:2], [menuItems objectAtIndex:3], nil];
-    shelf3 = [CCMenu menuWithItems:[menuItems objectAtIndex:4], nil];
+    //shelf1 = [CCMenu menuWithItems:[menuItems objectAtIndex:0], [menuItems objectAtIndex:1], nil];
+    //shelf2 = [CCMenu menuWithItems:[menuItems objectAtIndex:2], [menuItems objectAtIndex:3], nil];
+    //shelf3 = [CCMenu menuWithItems:[menuItems objectAtIndex:4], nil];
     
-    [shelf1 alignItemsHorizontallyWithPadding:20];
-    [shelf2 alignItemsHorizontallyWithPadding:20];
-    [shelf3 alignItemsHorizontally];
+    [shelf1 addChild:[menuItems objectAtIndex:0]];
+    [shelf1 addChild:[menuItems objectAtIndex:1]];
+    
+    [shelf2 addChild:[menuItems objectAtIndex:2]];
+    [shelf2 addChild:[menuItems objectAtIndex:3]];
+    
+    [shelf3 addChild:[menuItems objectAtIndex:4]];
+  
+    //[shelf1 alignItemsHorizontallyWithPadding:20];
+    //[shelf2 alignItemsHorizontallyWithPadding:20];
+    //[shelf3 alignItemsHorizontally];
     
     [shelf1 setPosition:ccp(470,398)];
     [self addChild:shelf1];
@@ -84,45 +96,64 @@ CGPoint const itemSummaryPositionShow = {485, 300};
     return self;
 }
 
--(void)doShowItemSummary:(CCMenuItem *)menuItem
+-(void)doShowItemSummary:(CCButton *)menuItem
 {
     NSLog(@"doShowItemSummary");
-    BandStoreItem *selectedItem = [shelfItems objectAtIndex:menuItem.tag];
-    NSLog(@"Buy Item %@",selectedItem.name);
+    //BandStoreItem *selectedItem = [shelfItems objectAtIndex:menuItem.tag];
+    BandStoreItem *selectedItem = [shelfItems objectAtIndex:0];
+    
+    //NSLog(@"Buy Item %@",selectedItem.name);
 
     //MAX 10 Chars
     
     NSString *itemCostStr = [[NSString alloc] initWithFormat:@"%d",selectedItem.value];
     
-    CCLabelTTF *itemName = [CCLabelTTF labelWithString:selectedItem.name fontName:@"28DaysLater" fontSize:45];
+
+    
+    CCLabelTTF *itemName = [CCLabelTTF labelWithString:selectedItem.itemName fontName:@"28DaysLater" fontSize:45];
     CCLabelTTF *itemCost = [CCLabelTTF labelWithString:itemCostStr fontName:@"28DaysLater" fontSize:45];
     
-    CCLabelTTF *itemDescription = [CCLabelTTF labelWithString:selectedItem.description dimensions:CGSizeMake(300, 400) alignment:UITextAlignmentCenter fontName:@"28DaysLater" fontSize:35];
+    CCLabelTTF *itemDescription = [CCLabelTTF labelWithString:selectedItem.description fontName:@"28DaysLater" fontSize:45 dimensions:CGSizeMake(300, 400)];
+    
+    //CCLabelTTF *itemDescription = [CCLabelTTF labelWithString:selectedItem.description dimensions:CGSizeMake(300, 400) alignment:UITextAlignmentCenter fontName:@"28DaysLater" fontSize:35];
     
     
-    CCSprite *itemImage = [[CCSprite alloc] initWithFile:selectedItem.storeItemFrmName];
+    CCSprite *itemImage = [[CCSprite alloc] initWithImageNamed:selectedItem.storeItemFrmName];
     
-    itemSummaryBG = [[CCSprite alloc] initWithFile:@"itemBg.png"];
+    itemSummaryBG = [[CCSprite alloc] initWithImageNamed:@"itemBg.png"];
     
     [itemSummaryBG setPosition:itemSummaryPositionHide];
     [itemSummaryBG setScale:0.5];
     
-    CCMenuItemImage *closeSummaryButton = [CCMenuItemImage itemFromNormalImage:@"close.png"
-                                                         selectedImage: @"close.png"
-                                                                target:self
-                                                              selector:@selector(doCloseSummary:)];
+    //CCMenuItemImage *closeSummaryButton = [CCMenuItemImage itemFromNormalImage:@"close.png"
+    //                                                     selectedImage: @"close.png"
+    //                                                            target:self
+    //                                                          selector:@selector(doCloseSummary:)];
     
+    CCButton *closeSummaryButton = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"close.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"close.png"] disabledSpriteFrame:nil];
+    
+    
+    //CCMenuItemImage *buyItemButton = [CCMenuItemImage itemFromNormalImage:@"buyItem.png"
+    //                                                        selectedImage: @"buyItem.png"
+    //                                                               target:self
+    //                                                             selector:@selector(doBuyItem:)];
+    
+    
+    CCButton *buyItemButton = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"buyItem.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"buyItem.png"] disabledSpriteFrame:nil];
+    
+    
+    
+    //CCMenu *closeMenu = [CCMenu menuWithItems:closeSummaryButton, nil];
+    
+    //CCMenu *buyMenu = [CCMenu menuWithItems:buyItemButton, nil];
 
-    CCMenuItemImage *buyItemButton = [CCMenuItemImage itemFromNormalImage:@"buyItem.png"
-                                                            selectedImage: @"buyItem.png"
-                                                                   target:self
-                                                                 selector:@selector(doBuyItem:)];
+    CCNode *closeMenu = [[CCNode alloc] init];
+    [closeMenu addChild:closeSummaryButton];
     
-    CCMenu *closeMenu = [CCMenu menuWithItems:closeSummaryButton, nil];
+    CCNode *buyMenu = [[CCNode alloc] init];
+    [buyMenu addChild:buyItemButton];
     
-    CCMenu *buyMenu = [CCMenu menuWithItems:buyItemButton, nil];
-
-    [buyItemButton setTag:menuItem.tag];
+    //[buyItemButton setTag:menuItem.tag];
     
     [itemImage setPosition:ccp(220, 600)];
     
@@ -145,24 +176,25 @@ CGPoint const itemSummaryPositionShow = {485, 300};
     [itemSummaryBG addChild:spriteCoin];
     [self addChild:itemSummaryBG];
     
-    id moveInItemSummary = [CCMoveTo actionWithDuration:0.5 position:itemSummaryPositionShow];
-    id moveInItemSummaryElastic = [CCEaseBackInOut actionWithAction:moveInItemSummary];
+    id moveInItemSummary = [CCActionMoveTo actionWithDuration:0.5 position:itemSummaryPositionShow];
+    id moveInItemSummaryElastic = [CCActionEaseBackInOut actionWithAction:moveInItemSummary];
     [itemSummaryBG runAction:moveInItemSummaryElastic];
     
 }
 
--(void)doCloseSummary:(CCMenuItem *)menuItem
+-(void)doCloseSummary:(CCButton *)menuItem
 {
     NSLog(@"Close item summary");
     [self moveOutItemSummary];
 
 }
 
--(void)doBuyItem:(CCMenuItem *)menuItem
+-(void)doBuyItem:(CCButton *)menuItem
 {
     
-    BandStoreItem *itemTobuy = [shelfItems objectAtIndex:menuItem.tag];
+    //BandStoreItem *itemTobuy = [shelfItems objectAtIndex:menuItem.tag];
     
+    BandStoreItem *itemTobuy = [shelfItems objectAtIndex:0];
     NSLog(@"Buy Item ");
     
     if ([itemTobuy itemType] == BAND_COIN_PACK) {
@@ -180,7 +212,7 @@ CGPoint const itemSummaryPositionShow = {485, 300};
         if ([itemTobuy credits] <= [vault bandCoins]){
             [vault storeItem:[itemTobuy appStoreId]];
             [vault updateBandCoins:-[itemTobuy credits]];
-            NSNumber *bandCoins = [[[NSNumber alloc] initWithInt:[vault bandCoins]] autorelease];
+            NSNumber *bandCoins = [[NSNumber alloc] initWithInt:[vault bandCoins]];
             [bandCoinsLabel setString:[[UniversalInfo sharedInstance] addZeroesToNumber:[bandCoins stringValue]]];
             [self moveOutItemSummary];
         }else{
@@ -210,8 +242,8 @@ CGPoint const itemSummaryPositionShow = {485, 300};
 
 -(void)moveOutItemSummary
 {
-    id moveOutItemSummary = [CCMoveTo actionWithDuration:0.5 position:itemSummaryPositionHide];
-    id moveOutItemSummaryElastic = [CCEaseBackInOut actionWithAction:moveOutItemSummary];
+    id moveOutItemSummary = [CCActionMoveTo actionWithDuration:0.5 position:itemSummaryPositionHide];
+    id moveOutItemSummaryElastic = [CCActionEaseBackInOut actionWithAction:moveOutItemSummary];
     [itemSummaryBG runAction:moveOutItemSummaryElastic];
 }
 

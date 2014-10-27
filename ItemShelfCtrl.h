@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface ItemShelfCtrl : CCLayerColor
+@interface ItemShelfCtrl : CCNodeColor
 
 -(void)showNextItemShelf;
 -(id)initwithCoinLabel:(CCLabelTTF*)coinLabel;

@@ -14,7 +14,7 @@
 #import "HeroShoot.h"
 #import "GameHud.h"
 #import "EndGame.h"
-#import "SimpleAudioEngine.h"
+//#import "SimpleAudioEngine.h"
 #import "MotherScene.h"
 #import <GameKit/GameKit.h>
 #import <Foundation/Foundation.h>
@@ -72,6 +72,6 @@ typedef enum {
 -(id)initWithHudAndLevel:(GameHud *)hud level:(int)startLevel wave:(int)startWave;
 -(void)triggerRadioExplosion;
 -(void)clearEnemyFire;
--(void)raiseCooldownBar:(ccTime)dt;
+-(void)raiseCooldownBar;
 
 @end

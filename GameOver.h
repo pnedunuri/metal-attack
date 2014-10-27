@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "MainMenu.h"
 
-@interface GameOver : CCLayer
+@interface GameOver : CCNode
 
 +(CCScene *)sceneWithNextLevel:(int)number;
 

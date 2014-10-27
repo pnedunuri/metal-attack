@@ -10,7 +10,7 @@
 #import <StoreKit/StoreKit.h>
 #import "cocos2d.h"
 
-@interface ItemShelf : CCLayerColor <SKProductsRequestDelegate>
+@interface ItemShelf : CCNodeColor <SKProductsRequestDelegate>
 {
     NSArray *shelfItems;
 }

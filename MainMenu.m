@@ -17,7 +17,8 @@
 #import "MainMenu.h"
 #import "UniversalInfo.h"
 #import "BandStore.h"
-#import "CCParallaxNode-Extras.h"
+//#import "CCParallaxNode-Extras.h"
+#import "CCAnimation.h"
 
 @implementation MainMenu
 
@@ -79,9 +80,9 @@ CGSize winsize;
         [chestFrames addObject:chestframe];
     }
     
-    CCAnimation *chestanimation = [[CCAnimation animationWithFrames:chestFrames delay:0.5f] retain];
-    self.chestAnim = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:chestanimation restoreOriginalFrame:NO]] retain];
+    CCAnimation *chestanimation = [CCAnimation animationWithSpriteFrames:chestFrames delay:0.5f];
+    self.chestAnim = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:chestanimation]];
     
     
     //girl eyes animation
@@ -90,9 +91,9 @@ CGSize winsize;
         [girlEyesFrames addObject:girleyeframe];
     }
     
-    CCAnimation *girleyeanimation = [[CCAnimation animationWithFrames:girlEyesFrames delay:0.15f] retain];
-    self.girlEyeAnim = [[CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:girleyeanimation restoreOriginalFrame:NO]] retain];
+    CCAnimation *girleyeanimation = [CCAnimation animationWithSpriteFrames:girlEyesFrames delay:0.15f];
+    self.girlEyeAnim = [CCActionRepeatForever actionWithAction:
+                       [CCActionAnimate actionWithAnimation:girleyeanimation]];
     
     //guy eyes animation
     for(int i = 1; i <= 2; i++) {
@@ -100,9 +101,9 @@ CGSize winsize;
         [guyEyesFrames addObject:guyeyeframe];
     }
     
-    CCAnimation *guyeyeanimation = [[CCAnimation animationWithFrames:guyEyesFrames delay:0.15f] retain];
-    self.guyEyeAnim = [[CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:guyeyeanimation restoreOriginalFrame:NO]] retain];
+    CCAnimation *guyeyeanimation = [CCAnimation animationWithSpriteFrames:guyEyesFrames delay:0.15f];
+    self.guyEyeAnim = [CCActionRepeatForever actionWithAction:
+                         [CCActionAnimate actionWithAnimation:guyeyeanimation]];
     
     //play animation
     for(int i = 1; i <= 3; i++) {
@@ -110,9 +111,9 @@ CGSize winsize;
         [playFrames addObject:playframe];
     }
     
-    CCAnimation *playanimation = [[CCAnimation animationWithFrames:playFrames delay:0.25f] retain];
-    self.playAnim = [[CCRepeatForever actionWithAction:
-                        [CCAnimate actionWithAnimation:playanimation restoreOriginalFrame:NO]] retain];
+    CCAnimation *playanimation = [CCAnimation animationWithSpriteFrames:playFrames delay:0.25f];
+    self.playAnim = [CCActionRepeatForever actionWithAction:
+                        [CCActionAnimate actionWithAnimation:playanimation]];
     
     //tunning animation
     for(int i = 1; i <= 3; i++) {
@@ -120,9 +121,9 @@ CGSize winsize;
         [tunningFrames addObject:tunningframe];
     }
     
-    CCAnimation *tunninganimation = [[CCAnimation animationWithFrames:tunningFrames delay:0.30f] retain];
-    self.tuningAnim = [[CCRepeatForever actionWithAction:
-                      [CCAnimate actionWithAnimation:tunninganimation restoreOriginalFrame:NO]] retain];
+    CCAnimation *tunninganimation = [CCAnimation animationWithSpriteFrames:tunningFrames delay:0.30f];
+    self.tuningAnim = [CCActionRepeatForever actionWithAction:
+                      [CCActionAnimate actionWithAnimation:tunninganimation]];
     
     //Candle Fire
     for(int i = 1; i <= 3; i++) {
@@ -130,9 +131,9 @@ CGSize winsize;
         [flamesFrames addObject:flamesframe];
     }
     
-    CCAnimation *flameanimation = [[CCAnimation animationWithFrames:flamesFrames delay:0.10f] retain];
-    self.flamesAnim = [[CCRepeatForever actionWithAction:
-                        [CCAnimate actionWithAnimation:flameanimation restoreOriginalFrame:NO]] retain];
+    CCAnimation *flameanimation = [CCAnimation animationWithSpriteFrames:flamesFrames delay:0.10f];
+    self.flamesAnim = [CCActionRepeatForever actionWithAction:
+                        [CCActionAnimate actionWithAnimation:flameanimation]];
     
     //Bat Anim
     for(int i = 1; i <= 3; i++) {
@@ -140,15 +141,16 @@ CGSize winsize;
         [batFrames addObject:batframe];
     }
     
-    CCAnimation *batanimation = [[CCAnimation animationWithFrames:batFrames delay:0.15f] retain];
-    self.batAnim = [[CCRepeatForever actionWithAction:
-                        [CCAnimate actionWithAnimation:batanimation restoreOriginalFrame:NO]] retain];
+    CCAnimation *batanimation = [CCAnimation animationWithSpriteFrames:batFrames delay:0.15f];
+    self.batAnim = [CCActionRepeatForever actionWithAction:
+                        [CCActionAnimate actionWithAnimation:batanimation]];
     
     
     
     
 }
 
+/*
 -(void)movingBackGround
 {
     
@@ -162,15 +164,15 @@ CGSize winsize;
     
     DeviceType devtype = [[UniversalInfo sharedInstance] getDeviceType];
     if (devtype == IPHONE_5){
-        _spacedust1 = [CCSprite spriteWithFile:@"doodlefinal_iphone5.jpg"];
-        _spacedust2 = [CCSprite spriteWithFile:@"doodlefinal_iphone5.jpg"];
-        _spacedust3 = [CCSprite spriteWithFile:@"doodlefinal_iphone5.jpg"];
-        _spacedust4 = [CCSprite spriteWithFile:@"doodlefinal_iphone5.jpg"];
+        _spacedust1 = [CCSprite spriteWithImageNamed:@"doodlefinal_iphone5.jpg"];
+        _spacedust2 = [CCSprite spriteWithImageNamed:@"doodlefinal_iphone5.jpg"];
+        _spacedust3 = [CCSprite spriteWithImageNamed:@"doodlefinal_iphone5.jpg"];
+        _spacedust4 = [CCSprite spriteWithImageNamed:@"doodlefinal_iphone5.jpg"];
     }else{
-        _spacedust1 = [CCSprite spriteWithFile:@"doodlefinal.jpg"];
-        _spacedust2 = [CCSprite spriteWithFile:@"doodlefinal.jpg"];
-        _spacedust3 = [CCSprite spriteWithFile:@"doodlefinal.jpg"];
-        _spacedust4 = [CCSprite spriteWithFile:@"doodlefinal.jpg"];
+        _spacedust1 = [CCSprite spriteWithImageNamed:@"doodlefinal.jpg"];
+        _spacedust2 = [CCSprite spriteWithImageNamed:@"doodlefinal.jpg"];
+        _spacedust3 = [CCSprite spriteWithImageNamed:@"doodlefinal.jpg"];
+        _spacedust4 = [CCSprite spriteWithImageNamed:@"doodlefinal.jpg"];
     }
     
     // there is a fault on the iphone 5 background movement.
@@ -188,7 +190,7 @@ CGSize winsize;
     [_backgroundNode addChild:_spacedust4 z:0 parallaxRatio:dustSpeed positionOffset:ccp(_spacedust1.contentSize.width,_spacedust1.contentSize.height*1.5)];
     
 }
-
+*/
 
 -(id)init
 {
@@ -196,7 +198,7 @@ CGSize winsize;
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
         
-        winsize = [[CCDirector sharedDirector] winSize];
+        winsize = [[CCDirector sharedDirector] viewSize];
         LevelController *lvcontroller = [LevelController sharedInstance];
         
         [lvcontroller loadLevelJson];
@@ -226,29 +228,29 @@ CGSize winsize;
         DeviceType devtype = [[UniversalInfo sharedInstance] getDeviceType];
         
         if (devtype == IPHONE_5){
-            menu1BG = [[CCSprite alloc] initWithFile:@"menuIphone5.png"];
+            menu1BG = [[CCSprite alloc] initWithImageNamed:@"menuIphone5.png"];
         }else{
-            menu1BG = [[CCSprite alloc] initWithFile:@"newmenubg.png"];
+            menu1BG = [[CCSprite alloc] initWithImageNamed:@"newmenubg.png"];
         }
         
-        CCSprite *menugirl = [[CCSprite alloc] initWithFile:@"menu_girl.png"];
+        CCSprite *menugirl = [[CCSprite alloc] initWithImageNamed:@"menu_girl.png"];
         
-        CCSprite *menuchest = [[CCSprite alloc] initWithSpriteFrameName:@"menu_chest1.png"];
-        CCSprite *girlEyes = [[CCSprite alloc] initWithSpriteFrameName:@"menu_girleye1.png"];
-        CCSprite *guyEyes = [[CCSprite alloc] initWithSpriteFrameName:@"menu_guy_eye1.png"];
-        CCSprite *menuGuyTunning = [[CCSprite alloc] initWithSpriteFrameName:@"menu_guita_tune1.png"];
-        CCSprite *menuGuyPlay = [[CCSprite alloc] initWithSpriteFrameName:@"menu_guy_play1.png"];
+        CCSprite *menuchest = [[CCSprite alloc] initWithImageNamed:@"menu_chest1.png"];
+        CCSprite *girlEyes = [[CCSprite alloc] initWithImageNamed:@"menu_girleye1.png"];
+        CCSprite *guyEyes = [[CCSprite alloc] initWithImageNamed:@"menu_guy_eye1.png"];
+        CCSprite *menuGuyTunning = [[CCSprite alloc] initWithImageNamed:@"menu_guita_tune1.png"];
+        CCSprite *menuGuyPlay = [[CCSprite alloc] initWithImageNamed:@"menu_guy_play1.png"];
         
-        CCSprite *menuSkull = [[CCSprite alloc] initWithSpriteFrameName:@"menu_skull_head.png"];
-        CCSprite *menuChain = [[CCSprite alloc] initWithSpriteFrameName:@"menu_chain.png"];
+        CCSprite *menuSkull = [[CCSprite alloc] initWithImageNamed:@"menu_skull_head.png"];
+        CCSprite *menuChain = [[CCSprite alloc] initWithImageNamed:@"menu_chain.png"];
         
-        CCSprite *menuFlames = [[CCSprite alloc] initWithSpriteFrameName:@"menu_fire1.png"];
+        CCSprite *menuFlames = [[CCSprite alloc] initWithImageNamed:@"menu_fire1.png"];
         
-        CCSprite *menuFacebook = [[CCSprite alloc] initWithSpriteFrameName:@"menu_facebook.png"];
-        CCSprite *menuVolume = [[CCSprite alloc] initWithSpriteFrameName:@"menu_vol_buton.png"];
-        CCSprite *menuLogo = [[CCSprite alloc] initWithSpriteFrameName:@"menu_logo.png"];
+        CCSprite *menuFacebook = [[CCSprite alloc] initWithImageNamed:@"menu_facebook.png"];
+        CCSprite *menuVolume = [[CCSprite alloc] initWithImageNamed:@"menu_vol_buton.png"];
+        CCSprite *menuLogo = [[CCSprite alloc] initWithImageNamed:@"menu_logo.png"];
         
-        CCSprite *menuBat = [[CCSprite alloc] initWithSpriteFrameName:@"menu_bat1.png"];
+        CCSprite *menuBat = [[CCSprite alloc] initWithImageNamed:@"menu_bat1.png"];
         
 
         [girlEyes runAction:[self girlEyeAnim]];
@@ -264,31 +266,43 @@ CGSize winsize;
                                  [[UniversalInfo sharedInstance] screenCenter].y)];
         
         
-        CCMenuItemImage *menuItem1 = [CCMenuItemImage itemFromNormalImage:@"newgame.png"
-                                                             selectedImage: @"newgame.png"
-                                                                    target:self
-                                                                  selector:@selector(doNewGame:)];
-        
-        CCMenuItemImage *menuItem2 = [CCMenuItemImage itemFromNormalImage:@"credits.png"
-                                                             selectedImage: @"credits2.png"
-                                                                    target:self
-                                                                  selector:@selector(doCredits:)];
+        //CCMenuItemImage *menuItem1 = [CCMenuItemImage itemFromNormalImage:@"newgame.png"
+        //                                                     selectedImage: @"newgame.png"
+        //                                                            target:self
+        //                                                          selector:@selector(doNewGame:)];
         
         
+        CCButton *menuItem1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"newgame.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"newgame.png"] disabledSpriteFrame:nil];
+        
+        [menuItem1 setTarget:self selector:@selector(doNewGame:)];
+        
+        //CCMenuItemImage *menuItem2 = [CCMenuItemImage itemFromNormalImage:@"credits.png"
+        //                                                     selectedImage: @"credits2.png"
+        //                                                            target:self
+        //                                                          selector:@selector(doCredits:)];
+        
+        CCButton *menuItem2 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"credits.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"credits2.png"] disabledSpriteFrame:nil];
+        
+        [menuItem2 setTarget:self selector:@selector(doCredits:)];
         
         // changed to credits due to testing purposes
-        CCMenuItemImage *menuItem3 = [CCMenuItemImage itemFromNormalImage:@"continue.png"
-                                                             selectedImage: @"continue.png"
-                                                                    target:self
-                                                                  selector:@selector(doCredits:)];
+        //CCMenuItemImage *menuItem3 = [CCMenuItemImage itemFromNormalImage:@"continue.png"
+        //                                                     selectedImage: @"continue.png"
+        //                                                            target:self
+        //                                                          selector:@selector(doCredits:)];
         
+        CCButton *menuItem3 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"continue.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"continue.png"] disabledSpriteFrame:nil];
+        
+        [menuItem3 setTarget:self selector:@selector(doCredits:)];
 
-        CCMenuItemImage *storeMenuItem = [CCMenuItemImage itemFromNormalImage:@"menu_chest1.png"
-                                                            selectedImage: @"menu_chest2.png"
-                                                                   target:self
-                                                                 selector:@selector(doStore:)];
-    
+        //CCMenuItemImage *storeMenuItem = [CCMenuItemImage itemFromNormalImage:@"menu_chest1.png"
+        //                                                    selectedImage: @"menu_chest2.png"
+        //                                                           target:self
+        //                                                         selector:@selector(doStore:)];
         
+        CCButton *storeMenuItem = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"menu_chest1.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"menu_chest2.png"] disabledSpriteFrame:nil];
+        
+        [storeMenuItem setTarget:self selector:@selector(doStore)];
         
         
         menuItem1.scaleX = 0.5;
@@ -302,12 +316,19 @@ CGSize winsize;
         NSUserDefaults *userdef = [NSUserDefaults standardUserDefaults];
         levelNumber = [userdef integerForKey:@"Level"];
         
-        CCMenu * myMenu;
+        //CCMenu * myMenu;
+        
+        CCNode *myMenu;
+        
         if (!levelNumber == 0){
-            myMenu = [CCMenu menuWithItems:menuItem3, menuItem1, nil];
+            [myMenu addChild:menuItem3];
+            [myMenu addChild:menuItem1];
+            //myMenu = [CCMenu menuWithItems:menuItem3, menuItem1, nil];
         }else{
             // just for testing purposes menuItem3 is from credits remove it from new game.
-            myMenu = [CCMenu menuWithItems:menuItem3, menuItem1, nil];
+            [myMenu addChild:menuItem1];
+            [myMenu addChild:menuItem3];
+            //myMenu = [CCMenu menuWithItems:menuItem3, menuItem1, nil];
         }
         // Create a menu and add your menu items to it
         
@@ -315,15 +336,24 @@ CGSize winsize;
         
         [myMenu setPosition:ccp(0,0)];
         
-        CCMenuItemImage *handMenu1 = [CCMenuItemImage itemFromNormalImage:@"handbutton01.png"
-                                                            selectedImage: @"handbutton01.png"
-                                                                   target:self
-                                                                 selector:@selector(doLeftSlide:)];
+        //CCMenuItemImage *handMenu1 = [CCMenuItemImage itemFromNormalImage:@"handbutton01.png"
+        //                                                    selectedImage: @"handbutton01.png"
+        //                                                           target:self
+        //                                                         selector:@selector(doLeftSlide:)];
         
-        CCMenuItemImage *handMenu2 = [CCMenuItemImage itemFromNormalImage:@"handbutton02.png"
-                                                            selectedImage: @"handbutton02.png"
-                                                                   target:self
-                                                                 selector:@selector(doRightSlide:)];
+        CCButton *handMenu1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"handbutton01.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"handbutton01.png"]  disabledSpriteFrame:nil];
+        
+        
+        [handMenu1 setTarget:self selector:@selector(doLeftSlide:)];
+        
+        //CCMenuItemImage *handMenu2 = [CCMenuItemImage itemFromNormalImage:@"handbutton02.png"
+        //                                                    selectedImage: @"handbutton02.png"
+        //                                                           target:self
+        //                                                         selector:@selector(doRightSlide:)];
+        
+        CCButton *handMenu2 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"handbutton02.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"handbutton02.png"]  disabledSpriteFrame:nil];
+        
+        [handMenu2 setTarget:self selector:@selector(doRightSlide:)];
         
         if ([[UniversalInfo sharedInstance] getDeviceType] == IPHONE_5)  {
             [guyEyes setPosition:ccp(55, 285)];
@@ -364,19 +394,32 @@ CGSize winsize;
         [handMenu2 setPosition:ccp(winsize.width * 0.328, - winsize.height * 0.409)];
         [menuItem3 setPosition:ccp(300,100)]; // ajust to iphone
         [menuBat setPosition:ccp(200, 200)];
-        CCMenu *handMenu;
-        CCMenu *storeMenu;
+        //CCMenu *handMenu;
+        //CCMenu *storeMenu;
+       
+        CCNode *handMenu;
+        CCNode *storeMenu;
+        
         [storeMenuItem setPosition:ccp(330,-80)];
         
-        handMenu = [CCMenu menuWithItems:handMenu1, handMenu2, nil];
-        storeMenu = [CCMenu menuWithItems:storeMenuItem, nil];
+        handMenu = [[CCNode alloc] init];
+        storeMenu = [[CCNode alloc] init];;
+        
+        [handMenu addChild:handMenu1];
+        [handMenu addChild:handMenu2];
+        [storeMenu addChild:storeMenuItem];
+        
+        //handMenu = [CCMenu menuWithItems:handMenu1, handMenu2, nil];
+        //storeMenu = [CCMenu menuWithItems:storeMenuItem, nil];
         
         
         // Arrange the menu items vertically
         //[myMenu alignItemsVertically];
         
         [self loadBandVault];
-        [self scheduleUpdate];
+        //[self scheduleUpdate];
+        
+        [self schedule:@selector(update:) interval:0];
         
         // add the menu to your scene
         [self addChild:menu1BG z:1];
@@ -404,7 +447,7 @@ CGSize winsize;
 
 
 
-        [self movingBackGround];
+        //[self movingBackGround];
         
         
         
@@ -412,9 +455,9 @@ CGSize winsize;
 	return self;
 }
 
-- (void)update:(ccTime)dt
+- (void)update:(double)dt
 {
-
+    /*
     CGPoint backgroundScrollVel = ccp(0, 250);
     
     _backgroundNode.position = ccpAdd(_backgroundNode.position, ccpMult(backgroundScrollVel, dt));
@@ -438,56 +481,68 @@ CGSize winsize;
         if ([_backgroundNode convertToWorldSpace:spaceDust.position].y > spaceDust.contentSize.height*1.5) {
             [_backgroundNode incrementOffset:ccp(0,-2*spaceDust.contentSize.height) forChild:spaceDust];
         }
+     
     }
+     */
     
 }
 
--(void)doLeftSlide:(CCMenuItem *)menuItem
+-(void)doLeftSlide:(CCButton *)menuItem
 {
     NSLog(@"Do Left Slide");
-    id actionMove = [CCMoveTo actionWithDuration:2.5 position:ccp([[UniversalInfo sharedInstance] screenCenter].x + winsize.width/2,
+    id actionMove = [CCActionMoveTo actionWithDuration:2.5 position:ccp([[UniversalInfo sharedInstance] screenCenter].x + winsize.width/2,
                                                                 [[UniversalInfo sharedInstance] screenCenter].y)];
     //id actionElastic = [CCEaseElasticInOut actionWithAction:actionMove period:0.5];
-    id actionElastic = [CCEaseExponentialOut actionWithAction:actionMove];
+    id actionElastic = [CCActionEaseElasticOut actionWithAction:actionMove];
     //[CCEaseExponentialIn]
     bgOrientation = -1;
     [menu1BG runAction:actionElastic];
 
 }
 
--(void)doRightSlide:(CCMenuItem *)menuItem
+-(void)doRightSlide:(CCButton *)menuItem
 {
     NSLog(@"Do Right Slide");
-    id actionMove = [CCMoveTo actionWithDuration:2.5 position:ccp([[UniversalInfo sharedInstance] screenCenter].x - winsize.width/2,
+    id actionMove = [CCActionMoveTo actionWithDuration:2.5 position:ccp([[UniversalInfo sharedInstance] screenCenter].x - winsize.width/2,
                                                                 [[UniversalInfo sharedInstance] screenCenter].y)];
     
-    id actionElastic = [CCEaseExponentialOut actionWithAction:actionMove];
+    id actionElastic = [CCActionEaseElasticOut actionWithAction:actionMove];
     bgOrientation = 1;
     [menu1BG runAction:actionElastic];
 }
 
--(void)doNewGame:(CCMenuItem *)menuItem
+-(void)doNewGame:(CCButton *)menuItem
 {
 	NSLog(@"The first menu was called");
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[BandGamePlay sceneWithLevel:0 wave:0]]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[BandGamePlay sceneWithLevel:0 wave:0]]];
+    
+    
+    [[CCDirector sharedDirector] replaceScene:[BandGamePlay sceneWithLevel:0 wave:0] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
--(void)doCredits:(CCMenuItem *)menuItem
+-(void)doCredits:(CCButton *)menuItem
 {
 	NSLog(@"The second menu was called");
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[Credits scene]]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[Credits scene]]];
+
+    [[CCDirector sharedDirector] replaceScene:[Credits scene] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
--(void)doContinue:(CCMenuItem *)menuItem 
+-(void)doContinue:(CCButton *)menuItem
 {
     NSLog(@"Continue game");
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[BandGamePlay sceneWithLevel:levelNumber wave:0]]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[BandGamePlay sceneWithLevel:levelNumber wave:0]]];
+
+    [[CCDirector sharedDirector] replaceScene:[BandGamePlay sceneWithLevel:levelNumber wave:0] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
--(void)doStore:(CCMenuItem *)menuItem 
+-(void)doStore:(CCButton *)menuItem
 {
     NSLog(@"Store game");
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[BandStore scene]]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[BandStore scene]]];
+
+    [[CCDirector sharedDirector] replaceScene:[BandStore scene] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+
 }
 
 

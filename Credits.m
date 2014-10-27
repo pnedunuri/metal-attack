@@ -40,21 +40,22 @@
         
         
         label.position = labelposition;
-        
+        /*
         CCMenuItemImage * menuItem1 = [CCMenuItemImage itemFromNormalImage:@"handbutton01.png"
                                                              selectedImage: @"handbutton01.png"
                                                                     target:self
-                                                                  selector:@selector(doBack:)];
-        
-        CCMenu * myMenu = [CCMenu menuWithItems:menuItem1, nil];
+                                                                selector:@selector(doBack:)];
+        */
+         
+        //CCMenu * myMenu = [CCMenu menuWithItems:menuItem1, nil];
         
         CGPoint menuposition;
         menuposition.x = 40;
         menuposition.y = 40;
 
-        myMenu.position = menuposition;
+        //myMenu.position = menuposition;
         
-        [self addChild:myMenu];
+        //[self addChild:myMenu];
         [self addChild:label];
         
         
@@ -62,7 +63,7 @@
 	return self;
 }
 
-- (void) doBack: (CCMenuItem  *) menuItem 
+- (void) doBack: (CCButton  *) menuItem
 {
 	NSLog(@"Do Back");
     //[[CCDirector sharedDirector] replaceScene: [MainMenu scene]];
@@ -74,7 +75,7 @@
     //[[CCDirector sharedDirector] replaceScene: [MainMenu scene]];
     //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.8f scene:[MainMenu scene]]];
     
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionTurnOffTiles transitionWithDuration:1.5 scene:[MainMenu scene]]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionTurnOffTiles transitionWithDuration:1.5 scene:[MainMenu scene]]];
     
     //[[CCDirector sharedDirector] replaceScene:[CCTransitionShrinkGrow transitionWithDuration:0.8 scene:[MainMenu scene]]];
     
@@ -84,7 +85,7 @@
     
     //[[CCDirector sharedDirector] replaceScene:[CCTransitionSlideInL transitionWithDuration:0.8 scene:[MainMenu scene]]];
     
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionSplitCols transitionWithDuration:0.8 scene:[MainMenu scene]]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionSplitCols transitionWithDuration:0.8 scene:[MainMenu scene]]];
     
     
     

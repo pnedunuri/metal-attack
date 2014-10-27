@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface MotherScene : CCLayerColor
+@interface MotherScene : CCNodeColor
 {
     float userinfo;
 }

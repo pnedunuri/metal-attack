@@ -71,8 +71,8 @@
     }else{
         vaultItem = [[BandVaultItem alloc] init];
         vaultItem.appId = itemid;
-        vaultItem.owned = [[NSNumber alloc] initWithBool:YES];
-        vaultItem.selected = [[NSNumber alloc] initWithBool:NO];
+        vaultItem.ownedVaultItem = [[NSNumber alloc] initWithBool:YES];
+        vaultItem.selectedVaultItem = [[NSNumber alloc] initWithBool:NO];
         vaultItem.qtd = [[NSNumber alloc] initWithInt:1];
     }
     
@@ -90,7 +90,7 @@
     NSData *loadEncodedObject = [userdef objectForKey:itemid];
     BandVaultItem *vaultItem = [NSKeyedUnarchiver unarchiveObjectWithData:loadEncodedObject];
 
-    vaultItem.selected = [[NSNumber alloc] initWithBool:YES];
+    vaultItem.selectedVaultItem = [[NSNumber alloc] initWithBool:YES];
     
     NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:vaultItem];
     [userdef setObject:encodedObject forKey:itemid];
@@ -122,8 +122,8 @@
     BandVaultItem *vaultItem = [[BandVaultItem alloc] init];
     vaultItem = [[BandVaultItem alloc] init];
     vaultItem.appId = itemid;
-    vaultItem.owned = [[NSNumber alloc] initWithBool:YES];
-    vaultItem.selected = [[NSNumber alloc] initWithBool:NO];
+    vaultItem.ownedVaultItem = [[NSNumber alloc] initWithBool:YES];
+    vaultItem.selectedVaultItem = [[NSNumber alloc] initWithBool:NO];
     
     vaultItem.qtd = [[NSNumber alloc] initWithInt:1];
     vaultItem.indexPosition = [[NSNumber alloc] initWithInt:pos];

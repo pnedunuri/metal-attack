@@ -34,11 +34,11 @@ CCSprite *doorDown;
 {
     // first resolution for iphone 5 and ipad, this is only for iphone 5
     
-    if( (self=[super initWithColor:ccc4(236, 56, 57, 0)])) {
+    if( (self=[super initWithColor:[[CCColor alloc] initWithCcColor4b:ccc4(236, 56, 57, 0)]])) {
         NSLog(@"Init scrolling BG");
         
-        doorUp = [[CCSprite alloc] initWithFile:@"doorup_iphone5.png"];
-        doorDown = [[CCSprite alloc] initWithFile:@"doordown_iphone5.png"];
+        doorUp = [[CCSprite alloc] initWithImageNamed:@"doorup_iphone5.png"];
+        doorDown = [[CCSprite alloc] initWithImageNamed:@"doordown_iphone5.png"];
         
         [doorUp setAnchorPoint:ccp(0,0)];
         [doorDown setAnchorPoint:ccp(0,0)];
@@ -64,28 +64,15 @@ CCSprite *doorDown;
 {
     // call this method when entering the scene
     
-    id moveUpDoor = [CCMoveTo actionWithDuration:1.5 position:ccp(0,570)];
-    id endMoveUpDoor = [CCCallFuncN actionWithTarget:self selector:@selector(doEndMoveUpDoor:)];
-    //id moveUpDoorElastic = [CCEaseExponentialOut actionWithAction:moveUpDoor];
-     
-    //id moveUpDoorElastic = [CCEaseBounceInOut actionWithAction:moveUpDoor];
+    id moveUpDoor = [CCActionMoveTo actionWithDuration:1.5 position:ccp(0,570)];
+    id endMoveUpDoor = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveUpDoor:)];
+    id moveUpDoorElastic = [CCActionEaseBounceOut actionWithAction:moveUpDoor];
     
-    id moveUpDoorElastic = [CCEaseBounceOut actionWithAction:moveUpDoor];
-
-    //id moveUpDoorElastic = [CCEaseBackOut actionWithAction:moveUpDoor];
-
-    
-    id moveUpDoorSequence = [CCSequence actions:moveUpDoorElastic, endMoveUpDoor, nil];
+    id moveUpDoorSequence = [CCActionSequence actions:moveUpDoorElastic, endMoveUpDoor, nil];
     [doorUp runAction:moveUpDoorSequence];
 
-    id moveDownDoor = [CCMoveTo actionWithDuration:1.5 position:ccp(0,-320)];
-    //id endMoveDownDoor = [CCCallFuncN actionWithTarget:self selector:@selector(doEndMoveUpDoor:)];
-    //id moveDownDoorElastic = [CCEaseExponentialOut actionWithAction:moveDownDoor];
-    //id moveDownDoorElastic = [CCEaseBounceInOut actionWithAction:moveDownDoor];
-    id moveDownDoorElastic = [CCEaseBounceOut actionWithAction:moveDownDoor];
-    //id moveDownDoorElastic = [CCEaseBackOut actionWithAction:moveDownDoor];
-    
-    //id moveDownDoorSequence = [CCSequence actions:moveDownDoorElastic, nil];
+    id moveDownDoor = [CCActionMoveTo actionWithDuration:1.5 position:ccp(0,-320)];
+    id moveDownDoorElastic = [CCActionEaseBounceOut actionWithAction:moveDownDoor];
     [doorDown runAction:moveDownDoorElastic];
 }
 
@@ -94,19 +81,15 @@ CCSprite *doorDown;
 {
     // call this method when leaving the scene
     
-    id moveUpDoor = [CCMoveTo actionWithDuration:0.5 position:ccp(0,240)];
-    id endMoveUpDoor = [CCCallFuncN actionWithTarget:self selector:@selector(doEndMoveDownDoor:)];
+    id moveUpDoor = [CCActionMoveTo actionWithDuration:0.5 position:ccp(0,240)];
+    id endMoveUpDoor = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveDownDoor:)];
     
-    //id moveUpDoorElastic = [CCEaseExponentialOut actionWithAction:moveUpDoor];
-    id moveUpDoorElastic = [CCEaseBounceOut actionWithAction:moveUpDoor];
-    id moveUpDoorSequence = [CCSequence actions:moveUpDoorElastic, endMoveUpDoor, nil];
+    id moveUpDoorElastic = [CCActionEaseBounceOut actionWithAction:moveUpDoor];
+    id moveUpDoorSequence = [CCActionSequence actions:moveUpDoorElastic, endMoveUpDoor, nil];
     [doorUp runAction:moveUpDoorSequence];
     
-    id moveDownDoor = [CCMoveTo actionWithDuration:0.5 position:ccp(0,0)];
-    //id endMoveDownDoor = [CCCallFuncN actionWithTarget:self selector:@selector(doEndMoveDownDoor:)];
-    //id moveDownDoorElastic = [CCEaseExponentialOut actionWithAction:moveDownDoor];
-    id moveDownDoorElastic = [CCEaseBounceOut actionWithAction:moveDownDoor];
-    //id moveDownDoorSequence = [CCSequence actions:moveDownDoorElastic, endMoveDownDoor, nil];
+    id moveDownDoor = [CCActionMoveTo actionWithDuration:0.5 position:ccp(0,0)];
+    id moveDownDoorElastic = [CCActionEaseBounceOut actionWithAction:moveDownDoor];
     [doorDown runAction:moveDownDoorElastic];
     
 }
