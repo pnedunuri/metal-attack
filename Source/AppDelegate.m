@@ -29,6 +29,7 @@
 #import "CCBuilderReader.h"
 #import "MainMenu.h"
 #import "BandGamePlay.h"
+#import "BandStoreItemsCtrl.h"
 
 @implementation AppController
 
@@ -61,6 +62,31 @@
 
 - (CCScene*) startScene
 {
+    [[BandStoreItemsCtrl sharedInstance] loadBandItemsFromJson];
+    
+    LevelController *lvcontroller = [LevelController sharedInstance];
+    
+    [lvcontroller loadLevelJson];
+    
+    
+    // Load sprite sheet once.
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"enemySheetNew.plist"];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"heroSheetNew.plist"];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"stage1Sheet.plist"];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"menuSheet.plist"];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"schoolEnemySheet.plist"];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"barEnemySheet.plist"];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"prisionEnemySheet.plist"];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"gasStEnemySheet.plist"];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hudSheet.plist"];
     
     //return [MainMenu scene];
     //return [BandGamePlay sceneWithLevel:0 wave:0];

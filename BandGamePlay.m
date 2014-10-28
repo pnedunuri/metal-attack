@@ -272,10 +272,6 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
 
         [self initBandPositions];
     
-        //[self schedule:@selector(nextFrame:)];
-        
-        //[self schedule:@selector(nextFrame:) interval:0];
-        
         self.bandSprite = [[BandSprite alloc] initBand];
         [self.bandSprite setPosition:[[UniversalInfo sharedInstance] screenCenter]];
         
@@ -341,7 +337,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         //self.isTouchEnabled = YES;
         //[self schedule:@selector(nextFrame:)];
         
-        [self createScenarioDecoration:[currentLevel levelContext]];
+        //[self createScenarioDecoration:[currentLevel levelContext]];
         
         
         CGPoint location;
@@ -389,6 +385,8 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         //[[self bandSprite] bandCoins];
         
         self.userInteractionEnabled = TRUE;
+        
+        
         
     }
 	return self;
@@ -1169,7 +1167,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         }else{
             // level cleared !!!
             //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[Victory sceneWithNextLevel:[self levelNumber]]]];
-            [self closeDoor];
+            //[self closeDoor];
         }
         
     }else if ((self.waveEnemiesLeft == 0) && (self.state == GAME_STARTED)){
@@ -1479,6 +1477,28 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         //[self fireLaser:[self convertTouchToNodeSpace:touch]];
         [self fireLaser:[touch locationInNode:self]];
     }
+}
+
+-(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    NSLog(@"TouchBegan");
+    self.playerTouch = touch;
+    self.touchEnded = NO;
+    
+}
+
+-(void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    NSLog(@"TouchMoved");
+    self.playerTouch = touch;
+}
+
+
+-(void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    NSLog(@"TouchEnded");
+    self.playerTouch = touch;
+    self.touchEnded = YES;
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event

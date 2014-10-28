@@ -17,7 +17,7 @@
     
     if (self) {
         NSLog(@"MainScene init called !!!");
-        
+        /*
         LevelController *lvcontroller = [LevelController sharedInstance];
         
         [lvcontroller loadLevelJson];
@@ -41,11 +41,27 @@
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"gasStEnemySheet.plist"];
         
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hudSheet.plist"];
+         */
         
-        
+        self.userInteractionEnabled = TRUE;
     }
     
     return self;
+}
+
+-(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    NSLog(@"Touch began !!!");
+}
+
+-(void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    NSLog(@"Touch ended");
+}
+
+-(void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    NSLog(@"Touch moved");
 }
 
 -(void)doRight

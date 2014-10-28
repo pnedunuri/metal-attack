@@ -27,7 +27,8 @@ typedef enum {
     GAME_PAUSED
 } GameState;
 
-@interface BandGamePlay : MotherScene <spriteManager, hudProtocol>
+//@interface BandGamePlay : MotherScene <spriteManager, hudProtocol>
+@interface BandGamePlay : CCNode <spriteManager, hudProtocol>
 {
     CGPoint beginTouch;
     CGPoint endTouch;

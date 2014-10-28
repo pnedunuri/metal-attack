@@ -192,7 +192,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     }
     CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     id hit1anim = [CCActionAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndDrummerHitAnim:)];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndDrummerHitAnim)];
     self.drummerHitAnim = [CCActionSequence actions: hit1anim, hitcallback, nil];
     
     //death animation
@@ -260,7 +260,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     
     id hit1anim = [CCActionAnimate actionWithAnimation:hitanimation];
-    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGuita1Anim:)];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGuita1Anim)];
     self.gt1HitAnim = [CCActionSequence actions: hit1anim, hitcallback, nil];
     
     
@@ -345,7 +345,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     
     id hit2anim = [CCActionAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndBassAnim:)];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndBassAnim)];
     self.bassHitAnim = [CCActionSequence actions: hit2anim, hitcallback, nil];
     
     // death animation
@@ -432,7 +432,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     
     id hit2anim = [CCActionAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGuita2Anim:)];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGuita2Anim)];
     self.gt2HitAnim = [CCActionSequence actions: hit2anim, hitcallback, nil];
     
     // death animation
@@ -668,7 +668,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     CCAnimation *hitanimation = [CCAnimation animationWithSpriteFrames:hitFrames delay:0.15f];
     
     id hitanim = [CCActionAnimate actionWithAnimation: hitanimation];
-    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndVocalAnim:)];
+    id hitcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndVocalAnim)];
     self.vocalHitAnim = [CCActionSequence actions: hitanim, hitcallback, nil];
     
 
@@ -684,7 +684,7 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     id deathanim = [CCActionRepeat actionWithAction:
                             [CCActionAnimate actionWithAnimation:deathanimation] times:1];
     
-    id deathcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndDeathVocalAnim:)];
+    id deathcallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndDeathVocalAnim)];
    
     self.vocalDeathAnim = [CCActionSequence actions: deathanim, deathcallback, nil];
     
@@ -876,33 +876,34 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     NSLog(@"The Band has been destroyed launch game over");
 }
 
--(void)doEndDrummerHitAnim:(id)node
+-(void)doEndDrummerHitAnim
 {
     //NSLog(@"Drummer hit edded");
     [[self drummerSprite ] stopAllActions];
     [[self drummerSprite] runAction:[self drummerAnim]];
 }
 
+/*
 -(void)doEndGenHitAnim:(id)node
-{
-    [[self delegate] removeChild:node cleanup:YES];
-}
+{    
+    [[self delegate] removeChild:node];
+}*/
 
--(void)doEndGuita1Anim:(id)node
+-(void)doEndGuita1Anim
 {
     //NSLog(@"Guitar 1 hit edded");
     [[self gtBody1Sprite] stopAllActions];
     [[self gtBody1Sprite] runAction:[self gtBody1Anim]];
 }
 
--(void)doEndGuita2Anim:(id)node
+-(void)doEndGuita2Anim
 {
     //NSLog(@"Guitar 2 hit edded");
     [[self gtBody2Sprite] stopAllActions];
     [[self gtBody2Sprite] runAction:[self gtBody2Anim]];
 }
 
--(void)doEndBassAnim:(id)node
+-(void)doEndBassAnim
 {
     //NSLog(@"Bass hit edded");
     [[self bassSprite] stopAllActions];
@@ -910,14 +911,14 @@ const float SPRITE_SCALE_FACTOR = 0.55;
 
 }
 
--(void)doEndVocalAnim:(id)node
+-(void)doEndVocalAnim
 {
     //NSLog(@"Vocal hit ended");
     [[self vocalUpBodySprite] stopAllActions];
     [[self vocalUpBodySprite] runAction:[self vocalUpBodyAnim]];
 }
 
--(void)doEndDeathVocalAnim:(id)node
+-(void)doEndDeathVocalAnim
 {
     //NSLog(@"Vocal dead ended");
     [[self vocalLwBodySprite] stopAllActions];
@@ -943,7 +944,13 @@ const float SPRITE_SCALE_FACTOR = 0.55;
                               animationWithSpriteFrames:blastAnimFrames delay:0.03f];
     
     id animation = [CCActionAnimate actionWithAnimation: blastAnim];
-    id callback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGenHitAnim:)];
+    //id callback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGenHitAnim:)];
+    id callback =  [CCActionCallBlock actionWithBlock:^{
+                        [[self delegate] removeChild:hitSprite cleanup:YES];
+                    }];
+    
+    
+    
     id sequence = [CCActionSequence actions: animation, callback, nil];
     
     hitSprite.scaleY = 0.5;

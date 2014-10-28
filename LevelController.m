@@ -164,7 +164,7 @@
     for (int i = 0; i<groupCount; i++) {
         
         if (i == 0){
-            delay = 0;
+            delay = 1;
         }else{
             delay = 5;
         }

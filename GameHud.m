@@ -185,17 +185,24 @@
         [self createBandLifeIcons];
         [self createBandLifeBar];
 
-        [self schedule:@selector(raiseCooldownBar:) interval:0.01];
-        [self schedule:@selector(mockDoComboPresentation:) interval:2];
+        [self schedule:@selector(raiseCooldownBar) interval:0.01];
+        [self schedule:@selector(mockDoComboPresentation) interval:2];
         
         //[[CCScheduler sharedScheduler] scheduleSelector:@selector(raiseCooldownBar:) forTarget:self interval:0.01 paused:NO];
         //[[CCScheduler sharedScheduler] scheduleSelector:@selector(mockDoComboPresentation:) forTarget:self interval:2 paused:NO];
 
         
         self.isBandShooting = NO;
+        
+        self.userInteractionEnabled = TRUE;
 
     }
 	return self;
+}
+
+-(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    NSLog(@"Argggggg it come from the hud");
 }
 
 -(void)initHudCoin
@@ -313,11 +320,11 @@
     //[[CCScheduler sharedScheduler] unscheduleSelector:@selector(reverseComboPresentation:) forTarget:self];
 }
 
--(void)doEndComboBgAnim:(id)node
+-(void)doEndComboBgAnim
 {
     //NSLog(@"doEndComboBgAnim");
     
-    [self schedule:@selector(reverseComboPresentation:) interval:1];
+    [self schedule:@selector(reverseComboPresentation) interval:1];
     
     //[[CCScheduler sharedScheduler] scheduleSelector:@selector(reverseComboPresentation:) forTarget:self interval:1 paused:NO];
 }
@@ -326,7 +333,7 @@
 {
     //NSLog(@"mockDoComboPresentation");
     moveComboToScreen = [CCActionMoveBy actionWithDuration:0.1 position:ccp(80,80)];
-    endMoveCombo = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndComboBgAnim:)];
+    endMoveCombo = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndComboBgAnim)];
     comboBGSequence = [CCActionSequence actions:moveComboToScreen, endMoveCombo, nil];
     [self.comboBG runAction:self.comboBGSequence];
     self.snakeBar.percentage = self.snakeBar.percentage - 10;

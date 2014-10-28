@@ -145,7 +145,7 @@
         if (self.attackType == MEELEE){
             
             attackAnim = [CCActionAnimate actionWithAnimation: attackAnimation];
-            endAnimationCallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndMeeleAttackAnim:)];
+            endAnimationCallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndMeeleAttackAnim)];
             self.enemyAttack = [CCActionSequence actions: attackAnim, endAnimationCallback, nil];
 
         }else{
@@ -211,7 +211,7 @@
 
 -(void)doEndGenHitAnim:(id)node
 {
-    [[self delegate] removeChild:node cleanup:YES];
+    [[self delegate] removeChild:node];
 }
 
 -(void)performGeneralHitAnimation:(CGPoint) hitPoint
@@ -289,7 +289,7 @@
     [[self enemySprite] runAction:sequence];
 }
 
--(void)doEndMeeleAttackAnim:(id)node
+-(void)doEndMeeleAttackAnim
 {
     //NSLog(@"Do end meele attack anim");
     float updatedArmor = [self.bandsprite hitByEnemy:self.weaponDamage component:self.hitComponent rect:self.hitRect];
