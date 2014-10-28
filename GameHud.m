@@ -120,7 +120,7 @@
         [[self labelLevel] setPosition:ccp(160,350)];
         [labelLevel setVisible:NO];
         
-
+        /*
         self.menuItem1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"skull-01.png"] highlightedSpriteFrame:        [CCSprite spriteWithImageNamed:@"skull-01.png"] disabledSpriteFrame:nil];
         [self.menuItem1 setTarget:self selector:@selector(doRadioBlast:)];
         
@@ -134,16 +134,17 @@
         
         self.myMenu2 = [[CCNode alloc] init];
         [self.myMenu2 addChild:menuItem2];
+         */
         
 
          
         //blast button Iphone 5
-        self.myMenu.position = ccp(190,390); // 190,390
-        [self.myMenu setScale:0.5];
+        //self.myMenu.position = ccp(190,390); // 190,390
+        //[self.myMenu setScale:0.5];
         
         //pause button Iphone 5
-        [self.myMenu2 setScale:0.40];
-        self.myMenu2.position = ccp(207,375);
+        //[self.myMenu2 setScale:0.40];
+        //self.myMenu2.position = ccp(207,375);
         
         
         //[equipBG setPosition:ccp(290,30)];
@@ -176,8 +177,8 @@
         //[self addChild:equipBG];
         [self createCoolDownBar];
 
-        [self addChild:myMenu];
-        [self addChild:myMenu2];
+        //[self addChild:myMenu];
+        //[self addChild:myMenu2];
 
         [self mockCreateCombo];
         [self mockCreateSnakeToolBar];

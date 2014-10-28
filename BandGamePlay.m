@@ -274,7 +274,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     
         //[self schedule:@selector(nextFrame:)];
         
-        [self schedule:@selector(nextFrame:) interval:0];
+        //[self schedule:@selector(nextFrame:) interval:0];
         
         self.bandSprite = [[BandSprite alloc] initBand];
         [self.bandSprite setPosition:[[UniversalInfo sharedInstance] screenCenter]];
@@ -1113,6 +1113,88 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     return YES;
 }
 
+-(void)update:(CCTime)delta
+{
+    [self shootCollidedToTarget];
+    [self robotShootCollidedHero];
+    [self checkEnemyHeroColision];
+    
+    if ((!self.touchEnded) && ([[self bandSprite] guita1ReleaseFire] == YES)) {
+        [self performBandShoot:self.playerTouch];
+    }
+    
+    [hudLayer setIsBandShooting:!self.touchEnded];
+    
+    NSNumber *score = [[NSNumber alloc] initWithInt:[self scoreCount]];
+    NSNumber *armor = [[NSNumber alloc] initWithFloat:[[self bandSprite] getTotalArmor]];
+    NSNumber *heroCoins = [[NSNumber alloc] initWithFloat:[[self bandSprite] bandCoins]];
+    
+    [[hudLayer labelArmorPercent] setString:[armor stringValue]];
+    [[hudLayer labelScore] setString:[score stringValue]];
+    
+    
+    [[hudLayer labelCoinValue] setString:[[UniversalInfo sharedInstance] addZeroesToNumber:[heroCoins stringValue]]];
+    
+    
+    
+    if ([[self bandSprite] getTotalArmor] <= 0) {
+        [self setState:GAME_OVER];
+        //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[GameOver sceneWithNextLevel:[self levelNumber]]]];
+        
+        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithNextLevel:[self levelNumber]] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+        
+        [self clearEnemyFire];
+    }
+    
+    if ((self.levelEnemiesLeft == 0) && (self.state == GAME_STARTED)){
+        NSLog(@"Level cleared !!!");
+        // load the victory screen, on the victory screen implement a button to go to the next level.
+        self.state = LEVEL_CLEARED;
+        self.levelNumber++;
+        
+        NSUserDefaults *userdef = [NSUserDefaults standardUserDefaults];
+        [userdef setInteger:[[self bandSprite] bandCoins] forKey:@"coins"];
+        [userdef setInteger:[self scoreCount] forKey:@"highScore"];
+        
+        BandVault *vault = [BandVault sharedInstance];
+        vault.bandCoins = [[self bandSprite] bandCoins];
+        vault.highScore = scoreCount;
+        
+        [self reportScore:vault.highScore forCategory:@"main_leader_board"];
+        
+        if ([self levelNumber] == totalLevel) {
+            // the player finished the game
+            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[EndGame scene]]];
+            [[CCDirector sharedDirector] replaceScene:[EndGame scene] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+        }else{
+            // level cleared !!!
+            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[Victory sceneWithNextLevel:[self levelNumber]]]];
+            [self closeDoor];
+        }
+        
+    }else if ((self.waveEnemiesLeft == 0) && (self.state == GAME_STARTED)){
+        NSLog(@"Wave cleared !");
+        self.state = WAVE_CLEARED;
+        [[self hudLayer] doWaveClearedAnimation];
+        // show in the hud that the wave was cleared. At this point it necessary to load a new wave
+        self.waveNumber = self.waveNumber + 1;
+        NSNumber *waveNumberValue = [[NSNumber alloc] initWithInt:[self waveNumber] + 1];
+        
+        
+        
+        [[hudLayer labelWaveValue] setString:[waveNumberValue stringValue]];
+        
+        LevelController *lvcontroller = [LevelController sharedInstance];
+        currentLevel = [lvcontroller loadLevel:[self levelNumber] waveNumber:[self waveNumber] delegate:self];
+        self.waveEnemiesLeft = [(NSNumber *)[[currentLevel waves] objectAtIndex:[self waveNumber]] intValue];
+        self.state = GAME_STARTED;
+    }
+    
+    [self.hudLayer updateBandLifeBar:self.bandSprite];
+    
+}
+
+/*
 - (void) nextFrame:(float)dt
 {
     [self shootCollidedToTarget];
@@ -1191,7 +1273,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     }
     
     [self.hudLayer updateBandLifeBar:self.bandSprite];
-}
+}*/
 
 -(void)doEndMoveDownDoor:(id)node
 {

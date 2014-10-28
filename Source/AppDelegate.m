@@ -28,6 +28,7 @@
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 #import "MainMenu.h"
+#import "BandGamePlay.h"
 
 @implementation AppController
 
@@ -61,8 +62,9 @@
 - (CCScene*) startScene
 {
     
-    return [MainMenu scene];
-    //return [CCBReader loadAsScene:@"MainScene"];
+    //return [MainMenu scene];
+    //return [BandGamePlay sceneWithLevel:0 wave:0];
+    return [CCBReader loadAsScene:@"MainScene"];
 }
 
 @end

@@ -5,9 +5,9 @@
 	<key>cocos2dUpdateIgnoredVersions</key>
 	<array/>
 	<key>defaultOrientation</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>designTarget</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>deviceOrientationLandscapeLeft</key>
 	<true/>
 	<key>deviceOrientationLandscapeRight</key>
@@ -63,7 +63,7 @@
 	<key>publishToZipFile</key>
 	<false/>
 	<key>resourceAutoScaleFactor</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>resourcePaths</key>
 	<array>
 		<dict>
@@ -76,14 +76,14 @@
 		<key></key>
 		<dict>
 			<key>previewFolderHidden</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>Sprites</key>
 		<dict/>
 		<key>ccbResources</key>
 		<dict>
 			<key>previewFolderHidden</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>ccbResources/ccbButtonHighlighted.png</key>
 		<dict>
@@ -161,6 +161,31 @@
 			<integer>2</integer>
 			<key>tabletScale</key>
 			<integer>1</integer>
+		</dict>
+		<key>ccbResources/doodlefinal_iphone5.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>ccbResources/floor-normal.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/menuIphone5.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>ccbResources/wall right.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/wall-left.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>versionStr</key>

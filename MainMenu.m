@@ -272,7 +272,7 @@ CGSize winsize;
         //                                                          selector:@selector(doNewGame:)];
         
         
-        CCButton *menuItem1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"newgame.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"newgame.png"] disabledSpriteFrame:nil];
+        CCButton *menuItem1 = [CCButton buttonWithTitle:@"" spriteFrame:[[CCSprite spriteWithImageNamed:@"newgame.png"] spriteFrame] highlightedSpriteFrame:[[CCSprite spriteWithImageNamed:@"newgame.png"] spriteFrame] disabledSpriteFrame:nil];
         
         [menuItem1 setTarget:self selector:@selector(doNewGame:)];
         
@@ -281,7 +281,7 @@ CGSize winsize;
         //                                                            target:self
         //                                                          selector:@selector(doCredits:)];
         
-        CCButton *menuItem2 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"credits.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"credits2.png"] disabledSpriteFrame:nil];
+        CCButton *menuItem2 = [CCButton buttonWithTitle:@"" spriteFrame:[[CCSprite spriteWithImageNamed:@"credits.png"] spriteFrame]highlightedSpriteFrame:[[CCSprite spriteWithImageNamed:@"credits2.png"] spriteFrame] disabledSpriteFrame:nil];
         
         [menuItem2 setTarget:self selector:@selector(doCredits:)];
         
@@ -291,7 +291,7 @@ CGSize winsize;
         //                                                            target:self
         //                                                          selector:@selector(doCredits:)];
         
-        CCButton *menuItem3 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"continue.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"continue.png"] disabledSpriteFrame:nil];
+        CCButton *menuItem3 = [CCButton buttonWithTitle:@"" spriteFrame:[[CCSprite spriteWithImageNamed:@"continue.png"] spriteFrame]highlightedSpriteFrame:[[CCSprite spriteWithImageNamed:@"continue.png"] spriteFrame] disabledSpriteFrame:nil];
         
         [menuItem3 setTarget:self selector:@selector(doCredits:)];
 
@@ -300,7 +300,7 @@ CGSize winsize;
         //                                                           target:self
         //                                                         selector:@selector(doStore:)];
         
-        CCButton *storeMenuItem = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"menu_chest1.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"menu_chest2.png"] disabledSpriteFrame:nil];
+        CCButton *storeMenuItem = [CCButton buttonWithTitle:@"" spriteFrame:[[CCSprite spriteWithImageNamed:@"menu_chest1.png"] spriteFrame]highlightedSpriteFrame:[[CCSprite spriteWithImageNamed:@"menu_chest2.png"]spriteFrame] disabledSpriteFrame:nil];
         
         [storeMenuItem setTarget:self selector:@selector(doStore)];
         
@@ -318,7 +318,7 @@ CGSize winsize;
         
         //CCMenu * myMenu;
         
-        CCNode *myMenu;
+        CCNode *myMenu = [[CCNode alloc] init];
         
         if (!levelNumber == 0){
             [myMenu addChild:menuItem3];
@@ -341,7 +341,7 @@ CGSize winsize;
         //                                                           target:self
         //                                                         selector:@selector(doLeftSlide:)];
         
-        CCButton *handMenu1 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"handbutton01.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"handbutton01.png"]  disabledSpriteFrame:nil];
+        CCButton *handMenu1 = [CCButton buttonWithTitle:@"" spriteFrame:[[CCSprite spriteWithImageNamed:@"handbutton01.png"] spriteFrame ]highlightedSpriteFrame:[[CCSprite spriteWithImageNamed:@"handbutton01.png"] spriteFrame] disabledSpriteFrame:nil];
         
         
         [handMenu1 setTarget:self selector:@selector(doLeftSlide:)];
@@ -351,7 +351,7 @@ CGSize winsize;
         //                                                           target:self
         //                                                         selector:@selector(doRightSlide:)];
         
-        CCButton *handMenu2 = [CCButton buttonWithTitle:@"" spriteFrame:[CCSprite spriteWithImageNamed:@"handbutton02.png"] highlightedSpriteFrame:[CCSprite spriteWithImageNamed:@"handbutton02.png"]  disabledSpriteFrame:nil];
+        CCButton *handMenu2 = [CCButton buttonWithTitle:@"" spriteFrame:[[CCSprite spriteWithImageNamed:@"handbutton02.png"] spriteFrame] highlightedSpriteFrame:[[CCSprite spriteWithImageNamed:@"handbutton02.png"] spriteFrame]  disabledSpriteFrame:nil];
         
         [handMenu2 setTarget:self selector:@selector(doRightSlide:)];
         
@@ -419,7 +419,7 @@ CGSize winsize;
         [self loadBandVault];
         //[self scheduleUpdate];
         
-        [self schedule:@selector(update:) interval:0];
+        //[self schedule:@selector(update:) interval:0];
         
         // add the menu to your scene
         [self addChild:menu1BG z:1];
