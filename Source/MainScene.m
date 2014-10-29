@@ -72,7 +72,22 @@
 -(void)doContinue
 {
     NSLog(@"doContinue");
-    [[CCDirector sharedDirector] replaceScene:[BandGamePlay sceneWithLevel:0 wave:0] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+    //[[CCDirector sharedDirector] replaceScene:[BandGamePlay sceneWithLevel:0 wave:0] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+
+    //[[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Level1"] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+
+
+    
+    //[[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Level1"] withTransition:[CCTransition transitionCrossFadeWithDuration:0.05]];
+    
+    CCScene *level1 = [CCBReader loadAsScene:@"BandLevel2"];
+    
+    [[CCDirector sharedDirector] replaceScene:level1 withTransition:[CCTransition transitionFadeWithDuration:1]];
+    
+    //[[CCDirector sharedDirector] replaceScene:level1 withTransition:[CCTransition transitionMoveInWithDirection:CCTransitionDirectionRight duration:0.5]];
+    
+    
+    //return [CCBReader loadAsScene:@"MainScene"];
 
 }
 

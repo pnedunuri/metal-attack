@@ -202,7 +202,17 @@
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    NSLog(@"Argggggg it come from the hud");
+    [[self delegate] touchBegan:touch withEvent:event];
+}
+
+-(void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    [[self delegate] touchEnded:touch withEvent:event];
+}
+
+-(void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    [[self delegate] touchMoved:touch withEvent:event];
 }
 
 -(void)initHudCoin

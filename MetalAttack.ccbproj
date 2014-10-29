@@ -7,7 +7,7 @@
 	<key>defaultOrientation</key>
 	<integer>1</integer>
 	<key>designTarget</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>deviceOrientationLandscapeLeft</key>
 	<true/>
 	<key>deviceOrientationLandscapeRight</key>
@@ -63,7 +63,7 @@
 	<key>publishToZipFile</key>
 	<false/>
 	<key>resourceAutoScaleFactor</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>resourcePaths</key>
 	<array>
 		<dict>
@@ -84,6 +84,72 @@
 		<dict>
 			<key>previewFolderHidden</key>
 			<false/>
+		</dict>
+		<key>ccbResources/Level1/IpadRetina.png</key>
+		<dict>
+			<key>format_ios</key>
+			<integer>10</integer>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Level2/The School Fundo.png</key>
+		<dict>
+			<key>format_ios</key>
+			<integer>10</integer>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Level3/Floor.png</key>
+		<dict>
+			<key>format_ios</key>
+			<integer>10</integer>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Menu/Continue OFF.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Menu/Continue ON.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Menu/Hand-left OFF.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Menu/Hand-left ON.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Menu/doodlefinal_iphone5.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>ccbResources/Menu/floor-normal.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Menu/menuIphone5.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>ccbResources/Menu/wall right.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Menu/wall-left.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
 		</dict>
 		<key>ccbResources/ccbButtonHighlighted.png</key>
 		<dict>
@@ -161,31 +227,6 @@
 			<integer>2</integer>
 			<key>tabletScale</key>
 			<integer>1</integer>
-		</dict>
-		<key>ccbResources/doodlefinal_iphone5.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>2</integer>
-		</dict>
-		<key>ccbResources/floor-normal.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>4</integer>
-		</dict>
-		<key>ccbResources/menuIphone5.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>2</integer>
-		</dict>
-		<key>ccbResources/wall right.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>4</integer>
-		</dict>
-		<key>ccbResources/wall-left.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>versionStr</key>

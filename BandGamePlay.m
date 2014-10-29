@@ -1103,7 +1103,10 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         
         if ([[[[self bandSprite] activeShoots] objectAtIndex:i] removeObject] == YES){
             [[[bandSprite activeShoots] objectAtIndex:i] stopAllActions];
-            [self removeChild:[[bandSprite activeShoots] objectAtIndex:i] cleanup:YES];
+            
+            if (![[self children] containsObject:[[bandSprite activeShoots] objectAtIndex:i]]){
+                //[self removeChild:[[bandSprite activeShoots] objectAtIndex:i] cleanup:YES];
+            }
             [[bandSprite activeShoots] removeObjectAtIndex:i];
         }
     }
@@ -1426,7 +1429,12 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
                 [laserbean stopAllActions];
                 
                 id actionFire = [CCActionMoveTo actionWithDuration:0.5 position:targetPoint];
-                id endFireCallBack = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndFire:)];
+                //id endFireCallBack = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndFire:)];
+                
+                id endFireCallBack = [CCActionCallBlock actionWithBlock:^{
+                    [self doEndFire:laserbean];
+                }];
+                
                 id actionSequence = [CCActionSequence actions:actionFire, endFireCallBack, nil];
                 
                 [laserbean runAction:actionSequence];

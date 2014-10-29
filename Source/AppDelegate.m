@@ -90,6 +90,7 @@
     
     //return [MainMenu scene];
     //return [BandGamePlay sceneWithLevel:0 wave:0];
+    
     return [CCBReader loadAsScene:@"MainScene"];
 }
 

@@ -151,7 +151,7 @@
         }else{
         
             attackAnim = [CCActionAnimate actionWithAnimation: attackAnimation];
-            endAnimationCallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndAttackAnim:)];
+            endAnimationCallback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndAttackAnim)];
             self.enemyAttack = [CCActionSequence actions: attackAnim, endAnimationCallback, nil];
         }
         
@@ -231,7 +231,12 @@
                               animationWithSpriteFrames:blastAnimFrames delay:0.05f];
     
     id animation = [CCActionAnimate actionWithAnimation: blastAnim];
-    id callback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGenHitAnim:)];
+    //id callback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndGenHitAnim:)];
+    
+    id callback = [CCActionCallBlock actionWithBlock:^{
+        [self doEndGenHitAnim:hitSprite];
+    }];
+    
     id sequence = [CCActionSequence actions: animation, callback, nil];
     
     hitSprite.scaleX = 0.75;
@@ -283,7 +288,7 @@
                              animationWithSpriteFrames:blastAnimFrames delay:0.07f];
 
     id animation = [CCActionAnimate actionWithAnimation: blastAnim];
-    id callback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndDeathAnimation:)];
+    id callback = [CCActionCallFunc actionWithTarget:self selector: @selector(doEndDeathAnimation)];
     id sequence = [CCActionSequence actions: animation, callback, nil];
 
     [[self enemySprite] runAction:sequence];
@@ -306,7 +311,7 @@
     return CGRectMake(self.enemySprite.position.x + 20, self.enemySprite.position.y + 25, 20, 20);
 }
 
--(void)doEndAttackAnim:(id)node
+-(void)doEndAttackAnim
 {
     //NSLog(@"Do end attack anim");
     if (self.attackType == MEELEE){
@@ -359,7 +364,12 @@
             actionRobotFire = [CCActionMoveTo actionWithDuration:2 position:lowAccyrancyPoint];
         }
         
-        id endFireRobotCallBack = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndRobotFire:)];
+        //id endFireRobotCallBack = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndRobotFire:)];
+        
+        id endFireRobotCallBack = [CCActionCallBlock actionWithBlock:^{
+            [self doEndRobotFire:robotShootSprite];
+        }];
+        
         id actionSequence = [CCActionSequence actions:actionRobotFire, endFireRobotCallBack, nil];
         
         // add the shoot sprite to the array to be checked for collision
@@ -404,7 +414,7 @@
     [[self activeShoots] removeObject:node];
 }
 
--(void)doEndDeathAnimation:(id)node
+-(void)doEndDeathAnimation
 {
     [[self delegate] removeEnemySprite:[self enemySprite]];
 }
