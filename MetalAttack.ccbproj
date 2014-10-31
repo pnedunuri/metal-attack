@@ -63,7 +63,7 @@
 	<key>publishToZipFile</key>
 	<false/>
 	<key>resourceAutoScaleFactor</key>
-	<integer>4</integer>
+	<integer>1</integer>
 	<key>resourcePaths</key>
 	<array>
 		<dict>
@@ -116,12 +116,22 @@
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
+		<key>ccbResources/Menu/Guitar-man.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
 		<key>ccbResources/Menu/Hand-left OFF.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
 		<key>ccbResources/Menu/Hand-left ON.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/Menu/RIP.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>4</integer>
@@ -228,6 +238,186 @@
 			<key>tabletScale</key>
 			<integer>1</integer>
 		</dict>
+		<key>ccbResources/doorup01.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites</key>
+		<dict/>
+		<key>ccbResources/sprites/bandcomponents/baseguitar</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_Hit.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_arms01.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_arms02.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_arms03.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_arms04.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_body01.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_body02.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_body03.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_body04.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_die01.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Evil_Child_die02.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_Hit.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_arms01.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_arms02.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_arms03.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_arms04.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_body01.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_body02.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_body03.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_body04.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_die01.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/baseguitar/Guitar_base_01_die02.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/drummer</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/drummer/Ace_01.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/drummer/Ace_02.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/drummer/Ace_03.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/drummer/Ace_04.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/drummer/Ace_die01.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/drummer/Ace_die02.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/drummer/Ace_hit.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>ccbResources/sprites/bandcomponents/leadguitar/evilchild</key>
+		<dict/>
 	</dict>
 	<key>versionStr</key>
 	<string>Version: 1.2.1

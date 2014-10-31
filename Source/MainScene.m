@@ -80,7 +80,7 @@
     
     //[[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Level1"] withTransition:[CCTransition transitionCrossFadeWithDuration:0.05]];
     
-    CCScene *level1 = [CCBReader loadAsScene:@"BandLevel2"];
+    CCScene *level1 = [CCBReader loadAsScene:@"BandLevel1"];
     
     [[CCDirector sharedDirector] replaceScene:level1 withTransition:[CCTransition transitionFadeWithDuration:1]];
     

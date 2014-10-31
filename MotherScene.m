@@ -37,8 +37,11 @@ CCSprite *doorDown;
     if( (self=[super initWithColor:[[CCColor alloc] initWithCcColor4b:ccc4(236, 56, 57, 0)]])) {
         NSLog(@"Init scrolling BG");
         
-        doorUp = [[CCSprite alloc] initWithImageNamed:@"doorup_iphone5.png"];
-        doorDown = [[CCSprite alloc] initWithImageNamed:@"doordown_iphone5.png"];
+        doorUp = [[CCSprite alloc] initWithImageNamed:@"doorUp.png"];
+        doorDown = [[CCSprite alloc] initWithImageNamed:@"doorDown.png"];
+        
+        [doorUp setScale:0.5];
+        [doorDown setScale:0.5];
         
         [doorUp setAnchorPoint:ccp(0,0)];
         [doorDown setAnchorPoint:ccp(0,0)];
@@ -65,7 +68,7 @@ CCSprite *doorDown;
     // call this method when entering the scene
     
     id moveUpDoor = [CCActionMoveTo actionWithDuration:1.5 position:ccp(0,570)];
-    id endMoveUpDoor = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveUpDoor:)];
+    id endMoveUpDoor = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveUpDoor)];
     id moveUpDoorElastic = [CCActionEaseBounceOut actionWithAction:moveUpDoor];
     
     id moveUpDoorSequence = [CCActionSequence actions:moveUpDoorElastic, endMoveUpDoor, nil];
@@ -82,7 +85,7 @@ CCSprite *doorDown;
     // call this method when leaving the scene
     
     id moveUpDoor = [CCActionMoveTo actionWithDuration:0.5 position:ccp(0,240)];
-    id endMoveUpDoor = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveDownDoor:)];
+    id endMoveUpDoor = [CCActionCallFunc actionWithTarget:self selector:@selector(doEndMoveDownDoor)];
     
     id moveUpDoorElastic = [CCActionEaseBounceOut actionWithAction:moveUpDoor];
     id moveUpDoorSequence = [CCActionSequence actions:moveUpDoorElastic, endMoveUpDoor, nil];
@@ -98,14 +101,14 @@ CCSprite *doorDown;
 {
     [super onEnterTransitionDidFinish];
     NSLog(@"onEnterTransitionDidFinish");
-    [self openDoor];
+    //[self openDoor];
 }
 
 -(void)onEnter
 {
     [super onEnter];
     NSLog(@"onEnterScene");
-    //[self openDoor];
+    [self openDoor];
 }
 
 -(void)onExit
@@ -115,12 +118,12 @@ CCSprite *doorDown;
     //[self closeDoor];
 }
 
--(void)doEndMoveDownDoor:(id)node
+-(void)doEndMoveDownDoor
 {
     NSLog(@"doEndMoveDownDoor");
 }
 
--(void)doEndMoveUpDoor:(id)node
+-(void)doEndMoveUpDoor
 {
     NSLog(@"doEndMoveUpDoor");
 }

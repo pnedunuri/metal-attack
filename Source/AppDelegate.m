@@ -56,6 +56,8 @@
     //[cocos2dSetup setObject:kEAGLColorFormatRGB565 forKey:CCConfigPixelFormat];
     
     [self setupCocos2dWithOptions:cocos2dSetup];
+    // show fps with this set to YES
+    [[CCDirector sharedDirector] setDisplayStats:YES];
     
     return YES;
 }
@@ -91,7 +93,7 @@
     //return [MainMenu scene];
     //return [BandGamePlay sceneWithLevel:0 wave:0];
     
-    return [CCBReader loadAsScene:@"MainScene"];
+    return [CCBReader loadAsScene:@"BandLevel2"];
 }
 
 @end

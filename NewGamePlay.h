@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "BandSprite.h"
+#import "MotherScene.h"
 
-@interface NewGamePlay : CCNode {
+@interface NewGamePlay : MotherScene {
     
 }
 

@@ -123,7 +123,7 @@
 @synthesize totalGuitar2Armor;
 @synthesize totalVocalArmor;
 
-const float SPRITE_SCALE_FACTOR = 0.55;
+const float SPRITE_SCALE_FACTOR = 0.25;
 
 /**
  * Pivot calculation method
@@ -738,8 +738,8 @@ const float SPRITE_SCALE_FACTOR = 0.55;
     [[self vocalLwBodySprite] runAction:[self vocalLwBodyAnim]];
     
     
-    self.vocalLwBodySprite.scaleX = 0.40;
-    self.vocalLwBodySprite.scaleY = 0.40;
+    self.vocalLwBodySprite.scaleX = SPRITE_SCALE_FACTOR;
+    self.vocalLwBodySprite.scaleY = SPRITE_SCALE_FACTOR;
     
     self.vocalLwBodySprite.position = [[UniversalInfo sharedInstance] vocalPosition];
     

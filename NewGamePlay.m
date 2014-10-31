@@ -82,7 +82,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         //Another point to be paramitrized
         [[self bandSprite] setBandBlast:10];
         
-        /*
+        
         [self addChild:self.bandSprite];
         
         [self addChild:[[self bandSprite] drummerSprite] z:31];
@@ -100,12 +100,13 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
         
         [self addChild:[[self bandSprite] vocalLwBodySprite] z:38];
         [self addChild:[[self bandSprite] vocalUpBodySprite] z:39];
-         */
+        
         
         //LevelController *lvcontroller = [LevelController sharedInstance];
         self.activeEnemies = [[NSMutableArray alloc] init];
         
         //totalLevel = [lvcontroller totalLevels];
+        
         
         // Here we will have to load from user default settings but for now lets get start every
         // time
@@ -180,6 +181,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
 
 -(void)onEnterTransitionDidFinish
 {
+    /*
     [super onEnterTransitionDidFinish];
     [self addChild:self.bandSprite];
     
@@ -198,6 +200,7 @@ float const guita2_anchorLeftY = 0.04878f; //fixed
     
     [self addChild:[[self bandSprite] vocalLwBodySprite] z:38];
     [self addChild:[[self bandSprite] vocalUpBodySprite] z:39];
+     */
     
 }
 

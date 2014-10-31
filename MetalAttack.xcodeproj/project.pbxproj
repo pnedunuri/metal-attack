@@ -44,6 +44,14 @@
 		2801A4FF19FAA6B500BF3837 /* Victory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2801A4DB19FAA6B500BF3837 /* Victory.m */; };
 		280BFF081A00FB7B00E7BED8 /* Level1.m in Sources */ = {isa = PBXBuildFile; fileRef = 280BFF071A00FB7B00E7BED8 /* Level1.m */; };
 		280BFF0C1A01076100E7BED8 /* NewGamePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 280BFF0B1A01076100E7BED8 /* NewGamePlay.m */; };
+		280BFF0F1A0196A400E7BED8 /* doorDown-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 280BFF0D1A0196A400E7BED8 /* doorDown-ipad.png */; };
+		280BFF101A0196A400E7BED8 /* doorUp-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 280BFF0E1A0196A400E7BED8 /* doorUp-ipadhd.png */; };
+		280BFF181A01A32400E7BED8 /* doorUp-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 280BFF161A01A32400E7BED8 /* doorUp-hd.png */; };
+		280BFF191A01A32400E7BED8 /* doorDown-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 280BFF171A01A32400E7BED8 /* doorDown-hd.png */; };
+		280BFF1C1A01A3AF00E7BED8 /* doorUp-widehd.png in Resources */ = {isa = PBXBuildFile; fileRef = 280BFF1A1A01A3AF00E7BED8 /* doorUp-widehd.png */; };
+		280BFF1D1A01A3AF00E7BED8 /* doorDown-widehd.png in Resources */ = {isa = PBXBuildFile; fileRef = 280BFF1B1A01A3AF00E7BED8 /* doorDown-widehd.png */; };
+		280BFF231A01AF9500E7BED8 /* doorUp-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 280BFF221A01AF9500E7BED8 /* doorUp-ipad.png */; };
+		280BFF261A0283B300E7BED8 /* BandLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 280BFF251A0283B300E7BED8 /* BandLevelScene.m */; };
 		284D159619FE547800F27374 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284D159519FE547800F27374 /* StoreKit.framework */; };
 		284D159819FE549F00F27374 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284D159719FE549F00F27374 /* GameKit.framework */; };
 		284D16BE19FE5D3100F27374 /* barBgIphone5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D159919FE5D2F00F27374 /* barBgIphone5.jpg */; };
@@ -73,24 +81,10 @@
 		284D16D619FE5D3100F27374 /* prisionBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B119FE5D2F00F27374 /* prisionBG.jpg */; };
 		284D16D719FE5D3100F27374 /* prisionBGIphone5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B219FE5D2F00F27374 /* prisionBGIphone5.jpg */; };
 		284D16D819FE5D3100F27374 /* schoolBgIphone5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B319FE5D2F00F27374 /* schoolBgIphone5.jpg */; };
-		284D16D919FE5D3100F27374 /* ShotGame.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B419FE5D2F00F27374 /* ShotGame.jpg */; };
 		284D16DA19FE5D3100F27374 /* storebg_iphone5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B519FE5D2F00F27374 /* storebg_iphone5.jpg */; };
 		284D16DB19FE5D3100F27374 /* TheBarBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B619FE5D2F00F27374 /* TheBarBG.jpg */; };
 		284D16DC19FE5D3100F27374 /* TheBarRetinaBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B719FE5D2F00F27374 /* TheBarRetinaBG.jpg */; };
 		284D16DD19FE5D3100F27374 /* TheSchoolBgIpad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B819FE5D2F00F27374 /* TheSchoolBgIpad.jpg */; };
-		284D16DE19FE5D3100F27374 /* ammoUpInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15B919FE5D2F00F27374 /* ammoUpInApp.png */; };
-		284D16DF19FE5D3100F27374 /* arm1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15BA19FE5D2F00F27374 /* arm1.png */; };
-		284D16E019FE5D3100F27374 /* armor1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15BB19FE5D2F00F27374 /* armor1.png */; };
-		284D16E119FE5D3100F27374 /* armor2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15BC19FE5D2F00F27374 /* armor2.png */; };
-		284D16E219FE5D3100F27374 /* armor3.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15BD19FE5D2F00F27374 /* armor3.png */; };
-		284D16E319FE5D3100F27374 /* armor4.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15BE19FE5D2F00F27374 /* armor4.png */; };
-		284D16E419FE5D3100F27374 /* armorInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15BF19FE5D2F00F27374 /* armorInApp.png */; };
-		284D16E519FE5D3100F27374 /* armorStoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C019FE5D2F00F27374 /* armorStoreButton.png */; };
-		284D16E619FE5D3100F27374 /* armorStoreButtonClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C119FE5D2F00F27374 /* armorStoreButtonClk.png */; };
-		284D16E719FE5D3100F27374 /* back_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C219FE5D2F00F27374 /* back_retina.png */; };
-		284D16E819FE5D3100F27374 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C319FE5D2F00F27374 /* back.png */; };
-		284D16E919FE5D3100F27374 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C419FE5D2F00F27374 /* back2.png */; };
-		284D16EA19FE5D3100F27374 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C519FE5D2F00F27374 /* background.png */; };
 		284D16EB19FE5D3100F27374 /* BackWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C619FE5D2F00F27374 /* BackWall.png */; };
 		284D16EC19FE5D3100F27374 /* BackWallIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C719FE5D2F00F27374 /* BackWallIphone5.png */; };
 		284D16ED19FE5D3100F27374 /* BackWallRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15C819FE5D2F00F27374 /* BackWallRetina.png */; };
@@ -107,8 +101,6 @@
 		284D16F819FE5D3100F27374 /* BassOFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15D319FE5D2F00F27374 /* BassOFF.png */; };
 		284D16F919FE5D3100F27374 /* BassON.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15D419FE5D2F00F27374 /* BassON.png */; };
 		284D16FA19FE5D3100F27374 /* belt.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15D519FE5D2F00F27374 /* belt.png */; };
-		284D16FB19FE5D3100F27374 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15D619FE5D2F00F27374 /* BG.png */; };
-		284D16FC19FE5D3100F27374 /* bgTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15D719FE5D2F00F27374 /* bgTest.png */; };
 		284D16FD19FE5D3100F27374 /* blast1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15D819FE5D2F00F27374 /* blast1.png */; };
 		284D16FE19FE5D3100F27374 /* blast01.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15D919FE5D2F00F27374 /* blast01.png */; };
 		284D16FF19FE5D3100F27374 /* blast02.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15DA19FE5D2F00F27374 /* blast02.png */; };
@@ -126,9 +118,6 @@
 		284D170B19FE5D3100F27374 /* Button next ON.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15E619FE5D2F00F27374 /* Button next ON.png */; };
 		284D170C19FE5D3100F27374 /* Button store OFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15E719FE5D2F00F27374 /* Button store OFF.png */; };
 		284D170D19FE5D3100F27374 /* Button store ON.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15E819FE5D2F00F27374 /* Button store ON.png */; };
-		284D170E19FE5D3100F27374 /* buyBandBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15E919FE5D2F00F27374 /* buyBandBg.png */; };
-		284D170F19FE5D3100F27374 /* buyBnt.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15EA19FE5D2F00F27374 /* buyBnt.png */; };
-		284D171019FE5D3100F27374 /* buyBntClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15EB19FE5D2F00F27374 /* buyBntClk.png */; };
 		284D171119FE5D3100F27374 /* buyItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15EC19FE5D2F00F27374 /* buyItem.png */; };
 		284D171219FE5D3100F27374 /* cachier.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15ED19FE5D2F00F27374 /* cachier.png */; };
 		284D171319FE5D3100F27374 /* carleft.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15EE19FE5D2F00F27374 /* carleft.png */; };
@@ -137,36 +126,20 @@
 		284D171619FE5D3100F27374 /* carright.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F119FE5D2F00F27374 /* carright.png */; };
 		284D171719FE5D3100F27374 /* carrightIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F219FE5D2F00F27374 /* carrightIphone5.png */; };
 		284D171819FE5D3100F27374 /* carrightRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F319FE5D2F00F27374 /* carrightRetina.png */; };
-		284D171919FE5D3100F27374 /* checkPriceBnt.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F419FE5D2F00F27374 /* checkPriceBnt.png */; };
-		284D171A19FE5D3100F27374 /* checkPriceBntClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F519FE5D2F00F27374 /* checkPriceBntClk.png */; };
 		284D171B19FE5D3100F27374 /* Cheerleader_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F619FE5D2F00F27374 /* Cheerleader_bullet.png */; };
 		284D171C19FE5D3100F27374 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F719FE5D2F00F27374 /* close.png */; };
 		284D171D19FE5D3100F27374 /* coin-board.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F819FE5D2F00F27374 /* coin-board.png */; };
-		284D171E19FE5D3100F27374 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15F919FE5D2F00F27374 /* coin.png */; };
-		284D171F19FE5D3100F27374 /* coinMultInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15FA19FE5D2F00F27374 /* coinMultInApp.png */; };
-		284D172019FE5D3100F27374 /* continue.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15FB19FE5D2F00F27374 /* continue.png */; };
-		284D172119FE5D3100F27374 /* continueClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15FC19FE5D2F00F27374 /* continueClicked.png */; };
 		284D172219FE5D3100F27374 /* Conveniencia_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15FD19FE5D2F00F27374 /* Conveniencia_bullet.png */; };
-		284D172319FE5D3100F27374 /* cooldown_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15FE19FE5D2F00F27374 /* cooldown_blue.png */; };
-		284D172419FE5D3100F27374 /* cooldownBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D15FF19FE5D2F00F27374 /* cooldownBorder.png */; };
 		284D172519FE5D3100F27374 /* counter.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160019FE5D2F00F27374 /* counter.png */; };
 		284D172619FE5D3100F27374 /* counterIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160119FE5D2F00F27374 /* counterIphone5.png */; };
 		284D172719FE5D3100F27374 /* counterRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160219FE5D2F00F27374 /* counterRetina.png */; };
 		284D172819FE5D3100F27374 /* Cowboy_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160319FE5D2F00F27374 /* Cowboy_bullet.png */; };
 		284D172919FE5D3100F27374 /* CrazyTeacher_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160419FE5D2F00F27374 /* CrazyTeacher_bullet.png */; };
-		284D172A19FE5D3100F27374 /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160519FE5D2F00F27374 /* credits.png */; };
-		284D172B19FE5D3100F27374 /* credits2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160619FE5D2F00F27374 /* credits2.png */; };
 		284D172C19FE5D3100F27374 /* ctrlSound.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160719FE5D2F00F27374 /* ctrlSound.png */; };
 		284D172D19FE5D3100F27374 /* ctrlSoundClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160819FE5D2F00F27374 /* ctrlSoundClk.png */; };
-		284D172E19FE5D3100F27374 /* description.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160919FE5D2F00F27374 /* description.png */; };
 		284D172F19FE5D3100F27374 /* Director_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160A19FE5D2F00F27374 /* Director_bullet.png */; };
 		284D173019FE5D3100F27374 /* divorced_woman_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160B19FE5D2F00F27374 /* divorced_woman_bullet.png */; };
-		284D173119FE5D3100F27374 /* doodle3.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160C19FE5D2F00F27374 /* doodle3.png */; };
 		284D173219FE5D3100F27374 /* doodlefinal_iphone5_paint.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160D19FE5D2F00F27374 /* doodlefinal_iphone5_paint.png */; };
-		284D173319FE5D3100F27374 /* door down.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160E19FE5D2F00F27374 /* door down.png */; };
-		284D173419FE5D3100F27374 /* door up.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D160F19FE5D2F00F27374 /* door up.png */; };
-		284D173519FE5D3100F27374 /* doordown_iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D161019FE5D2F00F27374 /* doordown_iphone5.png */; };
-		284D173619FE5D3100F27374 /* doorup_iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D161119FE5D2F00F27374 /* doorup_iphone5.png */; };
 		284D173719FE5D3100F27374 /* DrumerOFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D161219FE5D2F00F27374 /* DrumerOFF.png */; };
 		284D173819FE5D3100F27374 /* DrumerON.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D161319FE5D2F00F27374 /* DrumerON.png */; };
 		284D173919FE5D3100F27374 /* Drunk_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D161419FE5D2F00F27374 /* Drunk_bullet.png */; };
@@ -189,17 +162,11 @@
 		284D174A19FE5D3100F27374 /* Guitar01ON.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162519FE5D3000F27374 /* Guitar01ON.png */; };
 		284D174B19FE5D3100F27374 /* Guitar02OFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162619FE5D3000F27374 /* Guitar02OFF.png */; };
 		284D174C19FE5D3100F27374 /* Guitar02ON.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162719FE5D3000F27374 /* Guitar02ON.png */; };
-		284D174D19FE5D3100F27374 /* gun_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162819FE5D3000F27374 /* gun_left.png */; };
-		284D174E19FE5D3100F27374 /* gunUp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162919FE5D3000F27374 /* gunUp1.png */; };
-		284D174F19FE5D3100F27374 /* gunUp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162A19FE5D3000F27374 /* gunUp2.png */; };
 		284D175019FE5D3100F27374 /* handbutton01.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162B19FE5D3000F27374 /* handbutton01.png */; };
 		284D175119FE5D3100F27374 /* handbutton02.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162C19FE5D3000F27374 /* handbutton02.png */; };
-		284D175219FE5D3100F27374 /* healthUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162D19FE5D3000F27374 /* healthUp.png */; };
 		284D175319FE5D3100F27374 /* hellGroundIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162E19FE5D3000F27374 /* hellGroundIphone5.png */; };
 		284D175419FE5D3100F27374 /* heroSheetNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D162F19FE5D3000F27374 /* heroSheetNew.png */; };
 		284D175519FE5D3100F27374 /* hideCracker.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D163019FE5D3000F27374 /* hideCracker.png */; };
-		284D175619FE5D3100F27374 /* hud.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D163119FE5D3000F27374 /* hud.png */; };
-		284D175719FE5D3100F27374 /* hud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D163219FE5D3000F27374 /* hud2.png */; };
 		284D175819FE5D3100F27374 /* hudSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D163319FE5D3000F27374 /* hudSheet.png */; };
 		284D175919FE5D3100F27374 /* item image.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D163419FE5D3000F27374 /* item image.png */; };
 		284D175A19FE5D3100F27374 /* item name.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D163519FE5D3000F27374 /* item name.png */; };
@@ -215,30 +182,17 @@
 		284D176419FE5D3100F27374 /* Mecanico_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D163F19FE5D3000F27374 /* Mecanico_bullet.png */; };
 		284D176519FE5D3100F27374 /* menu_chest1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164019FE5D3000F27374 /* menu_chest1.png */; };
 		284D176619FE5D3100F27374 /* menu_girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164119FE5D3000F27374 /* menu_girl.png */; };
-		284D176719FE5D3100F27374 /* menu1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164219FE5D3000F27374 /* menu1.png */; };
-		284D176819FE5D3100F27374 /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164319FE5D3000F27374 /* menu2.png */; };
 		284D176919FE5D3100F27374 /* menubgfinal.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164419FE5D3000F27374 /* menubgfinal.png */; };
 		284D176A19FE5D3100F27374 /* menuIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164519FE5D3000F27374 /* menuIphone5.png */; };
 		284D176B19FE5D3100F27374 /* menuSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164619FE5D3000F27374 /* menuSheet.png */; };
 		284D176C19FE5D3100F27374 /* menuShelfs.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164719FE5D3000F27374 /* menuShelfs.png */; };
-		284D176D19FE5D3100F27374 /* menuStore.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164819FE5D3000F27374 /* menuStore.png */; };
-		284D176E19FE5D3100F27374 /* moneyStoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164919FE5D3000F27374 /* moneyStoreButton.png */; };
-		284D176F19FE5D3100F27374 /* moneyStoreButtonClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164A19FE5D3000F27374 /* moneyStoreButtonClk.png */; };
-		284D177019FE5D3100F27374 /* moreItemsClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164B19FE5D3000F27374 /* moreItemsClosed.png */; };
 		284D177119FE5D3100F27374 /* moreItensOPENED.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164C19FE5D3000F27374 /* moreItensOPENED.png */; };
-		284D177219FE5D3100F27374 /* newgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164D19FE5D3000F27374 /* newgame.png */; };
-		284D177319FE5D3100F27374 /* newgame2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164E19FE5D3000F27374 /* newgame2.png */; };
 		284D177419FE5D3100F27374 /* newmenubg.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D164F19FE5D3000F27374 /* newmenubg.png */; };
-		284D177519FE5D3100F27374 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165019FE5D3000F27374 /* next.png */; };
-		284D177619FE5D3100F27374 /* nextClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165119FE5D3000F27374 /* nextClicked.png */; };
 		284D177719FE5D3100F27374 /* owned.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165219FE5D3000F27374 /* owned.png */; };
-		284D177819FE5D3100F27374 /* ownedTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165319FE5D3000F27374 /* ownedTag.png */; };
 		284D177919FE5D3100F27374 /* pause01.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165419FE5D3000F27374 /* pause01.png */; };
 		284D177A19FE5D3100F27374 /* pause02.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165519FE5D3000F27374 /* pause02.png */; };
 		284D177B19FE5D3100F27374 /* pauseBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165619FE5D3000F27374 /* pauseBg.png */; };
 		284D177C19FE5D3100F27374 /* pauseBg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165719FE5D3000F27374 /* pauseBg2.png */; };
-		284D177D19FE5D3100F27374 /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165819FE5D3000F27374 /* PauseButton.png */; };
-		284D177E19FE5D3100F27374 /* PauseButtonClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165919FE5D3000F27374 /* PauseButtonClk.png */; };
 		284D177F19FE5D3100F27374 /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165A19FE5D3000F27374 /* pool.png */; };
 		284D178019FE5D3100F27374 /* poolIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165B19FE5D3000F27374 /* poolIphone5.png */; };
 		284D178119FE5D3100F27374 /* poolRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D165C19FE5D3000F27374 /* poolRetina.png */; };
@@ -248,11 +202,6 @@
 		284D178519FE5D3100F27374 /* powerBarColor.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166019FE5D3000F27374 /* powerBarColor.png */; };
 		284D178619FE5D3100F27374 /* prisionEnemySheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166119FE5D3000F27374 /* prisionEnemySheet.png */; };
 		284D178719FE5D3100F27374 /* punk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166219FE5D3000F27374 /* punk.png */; };
-		284D178819FE5D3100F27374 /* radioButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166319FE5D3000F27374 /* radioButton.png */; };
-		284D178919FE5D3100F27374 /* radioButtonClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166419FE5D3000F27374 /* radioButtonClk.png */; };
-		284D178A19FE5D3100F27374 /* radioUP.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166519FE5D3000F27374 /* radioUP.png */; };
-		284D178B19FE5D3100F27374 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166619FE5D3000F27374 /* reload.png */; };
-		284D178C19FE5D3100F27374 /* reloadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166719FE5D3000F27374 /* reloadClicked.png */; };
 		284D178D19FE5D3100F27374 /* restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166819FE5D3000F27374 /* restart.png */; };
 		284D178E19FE5D3100F27374 /* restartClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166919FE5D3000F27374 /* restartClk.png */; };
 		284D178F19FE5D3100F27374 /* resume.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D166A19FE5D3000F27374 /* resume.png */; };
@@ -270,19 +219,9 @@
 		284D179B19FE5D3100F27374 /* roofupIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167619FE5D3000F27374 /* roofupIphone5.png */; };
 		284D179C19FE5D3100F27374 /* roofupRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167719FE5D3000F27374 /* roofupRetina.png */; };
 		284D179D19FE5D3100F27374 /* schoolEnemySheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167819FE5D3000F27374 /* schoolEnemySheet.png */; };
-		284D179E19FE5D3100F27374 /* scrollBnt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167919FE5D3000F27374 /* scrollBnt1.png */; };
-		284D179F19FE5D3100F27374 /* scrollBnt1Clk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167A19FE5D3000F27374 /* scrollBnt1Clk.png */; };
-		284D17A019FE5D3100F27374 /* scrollBnt2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167B19FE5D3000F27374 /* scrollBnt2.png */; };
-		284D17A119FE5D3100F27374 /* scrollBnt2Clk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167C19FE5D3000F27374 /* scrollBnt2Clk.png */; };
-		284D17A219FE5D3100F27374 /* selectBnt.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167D19FE5D3000F27374 /* selectBnt.png */; };
-		284D17A319FE5D3100F27374 /* selectBntClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167E19FE5D3000F27374 /* selectBntClk.png */; };
 		284D17A419FE5D3100F27374 /* selectItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D167F19FE5D3000F27374 /* selectItem.png */; };
 		284D17A519FE5D3100F27374 /* shelfs.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168019FE5D3000F27374 /* shelfs.png */; };
-		284D17A619FE5D3100F27374 /* ShowCase.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168119FE5D3000F27374 /* ShowCase.png */; };
-		284D17A719FE5D3100F27374 /* showCase1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168219FE5D3000F27374 /* showCase1.png */; };
 		284D17A819FE5D3100F27374 /* skate_guy_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168319FE5D3000F27374 /* skate_guy_bullet.png */; };
-		284D17A919FE5D3100F27374 /* skinStoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168419FE5D3000F27374 /* skinStoreButton.png */; };
-		284D17AA19FE5D3100F27374 /* skinStoreButtonClk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168519FE5D3000F27374 /* skinStoreButtonClk.png */; };
 		284D17AB19FE5D3100F27374 /* skull-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168619FE5D3000F27374 /* skull-01.png */; };
 		284D17AC19FE5D3100F27374 /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168719FE5D3000F27374 /* smoke.png */; };
 		284D17AD19FE5D3100F27374 /* snake-color-body.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168819FE5D3000F27374 /* snake-color-body.png */; };
@@ -291,14 +230,10 @@
 		284D17B019FE5D3100F27374 /* snake-flesh-body.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168B19FE5D3000F27374 /* snake-flesh-body.png */; };
 		284D17B119FE5D3100F27374 /* snakecolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168C19FE5D3000F27374 /* snakecolor.png */; };
 		284D17B219FE5D3100F27374 /* snakeflesh.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168D19FE5D3000F27374 /* snakeflesh.png */; };
-		284D17B319FE5D3100F27374 /* spacebg7.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168E19FE5D3000F27374 /* spacebg7.png */; };
 		284D17B419FE5D3100F27374 /* stage1Sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D168F19FE5D3000F27374 /* stage1Sheet.png */; };
 		284D17B519FE5D3100F27374 /* StageClearbase.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169019FE5D3000F27374 /* StageClearbase.png */; };
 		284D17B619FE5D3100F27374 /* StageClearCLEAR.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169119FE5D3000F27374 /* StageClearCLEAR.png */; };
 		284D17B719FE5D3100F27374 /* StageClearSTAGE.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169219FE5D3000F27374 /* StageClearSTAGE.png */; };
-		284D17B819FE5D3100F27374 /* storeBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169319FE5D3000F27374 /* storeBG.png */; };
-		284D17B919FE5D3100F27374 /* storeBGIpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169419FE5D3000F27374 /* storeBGIpad.png */; };
-		284D17BA19FE5D3100F27374 /* storeBGRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169519FE5D3000F27374 /* storeBGRetina.png */; };
 		284D17BB19FE5D3100F27374 /* storeFrontBG_iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169619FE5D3000F27374 /* storeFrontBG_iphone5.png */; };
 		284D17BC19FE5D3100F27374 /* tables.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169719FE5D3000F27374 /* tables.png */; };
 		284D17BD19FE5D3100F27374 /* tablesIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D169819FE5D3000F27374 /* tablesIphone5.png */; };
@@ -317,7 +252,6 @@
 		284D17CA19FE5D3100F27374 /* upwallrightIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16A519FE5D3100F27374 /* upwallrightIphone5.png */; };
 		284D17CB19FE5D3100F27374 /* upwallrightRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16A619FE5D3100F27374 /* upwallrightRetina.png */; };
 		284D17CC19FE5D3100F27374 /* userMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16A719FE5D3100F27374 /* userMoney.png */; };
-		284D17CD19FE5D3100F27374 /* value.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16A819FE5D3100F27374 /* value.png */; };
 		284D17CE19FE5D3100F27374 /* VocalOFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16A919FE5D3100F27374 /* VocalOFF.png */; };
 		284D17CF19FE5D3100F27374 /* VocalON.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16AA19FE5D3100F27374 /* VocalON.png */; };
 		284D17D019FE5D3100F27374 /* Waitress_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16AB19FE5D3100F27374 /* Waitress_bullet.png */; };
@@ -326,13 +260,6 @@
 		284D17D319FE5D3100F27374 /* walls.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16AE19FE5D3100F27374 /* walls.png */; };
 		284D17D419FE5D3100F27374 /* wallsIphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16AF19FE5D3100F27374 /* wallsIphone5.png */; };
 		284D17D519FE5D3100F27374 /* wallsRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B019FE5D3100F27374 /* wallsRetina.png */; };
-		284D17D619FE5D3100F27374 /* wep1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B119FE5D3100F27374 /* wep1.png */; };
-		284D17D719FE5D3100F27374 /* wep2.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B219FE5D3100F27374 /* wep2.png */; };
-		284D17D819FE5D3100F27374 /* wep3.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B319FE5D3100F27374 /* wep3.png */; };
-		284D17D919FE5D3100F27374 /* wep4.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B419FE5D3100F27374 /* wep4.png */; };
-		284D17DA19FE5D3100F27374 /* wepStoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B519FE5D3100F27374 /* wepStoreButton.png */; };
-		284D17DB19FE5D3100F27374 /* wepStoreButtonclk.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B619FE5D3100F27374 /* wepStoreButtonclk.png */; };
-		284D17DC19FE5D3100F27374 /* whiteBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B719FE5D3100F27374 /* whiteBG.png */; };
 		284D17DD19FE5D3100F27374 /* Whore_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B819FE5D3100F27374 /* Whore_bullet.png */; };
 		284D17DE19FE5D3100F27374 /* bandItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 284D16B919FE5D3100F27374 /* bandItems.json */; };
 		284D17DF19FE5D3100F27374 /* bandItemsBasic.json in Resources */ = {isa = PBXBuildFile; fileRef = 284D16BA19FE5D3100F27374 /* bandItemsBasic.json */; };
@@ -350,6 +277,7 @@
 		284D17F619FE5E1E00F27374 /* schoolEnemySheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 284D17EB19FE5E1E00F27374 /* schoolEnemySheet.plist */; };
 		284D17F719FE5E1E00F27374 /* Sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 284D17EC19FE5E1E00F27374 /* Sprites.plist */; };
 		284D17F819FE5E1E00F27374 /* stage1Sheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 284D17ED19FE5E1E00F27374 /* stage1Sheet.plist */; };
+		286A88881A0387250085E622 /* MockSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 286A88871A0387250085E622 /* MockSprite.m */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -477,6 +405,15 @@
 		280BFF071A00FB7B00E7BED8 /* Level1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level1.m; sourceTree = "<group>"; };
 		280BFF0A1A01076100E7BED8 /* NewGamePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGamePlay.h; sourceTree = "<group>"; };
 		280BFF0B1A01076100E7BED8 /* NewGamePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGamePlay.m; sourceTree = "<group>"; };
+		280BFF0D1A0196A400E7BED8 /* doorDown-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doorDown-ipad.png"; sourceTree = "<group>"; };
+		280BFF0E1A0196A400E7BED8 /* doorUp-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doorUp-ipadhd.png"; sourceTree = "<group>"; };
+		280BFF161A01A32400E7BED8 /* doorUp-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doorUp-hd.png"; sourceTree = "<group>"; };
+		280BFF171A01A32400E7BED8 /* doorDown-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doorDown-hd.png"; sourceTree = "<group>"; };
+		280BFF1A1A01A3AF00E7BED8 /* doorUp-widehd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doorUp-widehd.png"; sourceTree = "<group>"; };
+		280BFF1B1A01A3AF00E7BED8 /* doorDown-widehd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doorDown-widehd.png"; sourceTree = "<group>"; };
+		280BFF221A01AF9500E7BED8 /* doorUp-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doorUp-ipad.png"; sourceTree = "<group>"; };
+		280BFF241A0283B300E7BED8 /* BandLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandLevelScene.h; sourceTree = "<group>"; };
+		280BFF251A0283B300E7BED8 /* BandLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandLevelScene.m; sourceTree = "<group>"; };
 		284D159519FE547800F27374 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		284D159719FE549F00F27374 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		284D159919FE5D2F00F27374 /* barBgIphone5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = barBgIphone5.jpg; sourceTree = "<group>"; };
@@ -506,24 +443,10 @@
 		284D15B119FE5D2F00F27374 /* prisionBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prisionBG.jpg; sourceTree = "<group>"; };
 		284D15B219FE5D2F00F27374 /* prisionBGIphone5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prisionBGIphone5.jpg; sourceTree = "<group>"; };
 		284D15B319FE5D2F00F27374 /* schoolBgIphone5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = schoolBgIphone5.jpg; sourceTree = "<group>"; };
-		284D15B419FE5D2F00F27374 /* ShotGame.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ShotGame.jpg; sourceTree = "<group>"; };
 		284D15B519FE5D2F00F27374 /* storebg_iphone5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = storebg_iphone5.jpg; sourceTree = "<group>"; };
 		284D15B619FE5D2F00F27374 /* TheBarBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TheBarBG.jpg; sourceTree = "<group>"; };
 		284D15B719FE5D2F00F27374 /* TheBarRetinaBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TheBarRetinaBG.jpg; sourceTree = "<group>"; };
 		284D15B819FE5D2F00F27374 /* TheSchoolBgIpad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TheSchoolBgIpad.jpg; sourceTree = "<group>"; };
-		284D15B919FE5D2F00F27374 /* ammoUpInApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ammoUpInApp.png; sourceTree = "<group>"; };
-		284D15BA19FE5D2F00F27374 /* arm1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arm1.png; sourceTree = "<group>"; };
-		284D15BB19FE5D2F00F27374 /* armor1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor1.png; sourceTree = "<group>"; };
-		284D15BC19FE5D2F00F27374 /* armor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor2.png; sourceTree = "<group>"; };
-		284D15BD19FE5D2F00F27374 /* armor3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor3.png; sourceTree = "<group>"; };
-		284D15BE19FE5D2F00F27374 /* armor4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor4.png; sourceTree = "<group>"; };
-		284D15BF19FE5D2F00F27374 /* armorInApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armorInApp.png; sourceTree = "<group>"; };
-		284D15C019FE5D2F00F27374 /* armorStoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armorStoreButton.png; sourceTree = "<group>"; };
-		284D15C119FE5D2F00F27374 /* armorStoreButtonClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armorStoreButtonClk.png; sourceTree = "<group>"; };
-		284D15C219FE5D2F00F27374 /* back_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_retina.png; sourceTree = "<group>"; };
-		284D15C319FE5D2F00F27374 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		284D15C419FE5D2F00F27374 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
-		284D15C519FE5D2F00F27374 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		284D15C619FE5D2F00F27374 /* BackWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackWall.png; sourceTree = "<group>"; };
 		284D15C719FE5D2F00F27374 /* BackWallIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackWallIphone5.png; sourceTree = "<group>"; };
 		284D15C819FE5D2F00F27374 /* BackWallRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackWallRetina.png; sourceTree = "<group>"; };
@@ -540,8 +463,6 @@
 		284D15D319FE5D2F00F27374 /* BassOFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BassOFF.png; sourceTree = "<group>"; };
 		284D15D419FE5D2F00F27374 /* BassON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BassON.png; sourceTree = "<group>"; };
 		284D15D519FE5D2F00F27374 /* belt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = belt.png; sourceTree = "<group>"; };
-		284D15D619FE5D2F00F27374 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
-		284D15D719FE5D2F00F27374 /* bgTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgTest.png; sourceTree = "<group>"; };
 		284D15D819FE5D2F00F27374 /* blast1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blast1.png; sourceTree = "<group>"; };
 		284D15D919FE5D2F00F27374 /* blast01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blast01.png; sourceTree = "<group>"; };
 		284D15DA19FE5D2F00F27374 /* blast02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blast02.png; sourceTree = "<group>"; };
@@ -559,9 +480,6 @@
 		284D15E619FE5D2F00F27374 /* Button next ON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button next ON.png"; sourceTree = "<group>"; };
 		284D15E719FE5D2F00F27374 /* Button store OFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button store OFF.png"; sourceTree = "<group>"; };
 		284D15E819FE5D2F00F27374 /* Button store ON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button store ON.png"; sourceTree = "<group>"; };
-		284D15E919FE5D2F00F27374 /* buyBandBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyBandBg.png; sourceTree = "<group>"; };
-		284D15EA19FE5D2F00F27374 /* buyBnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyBnt.png; sourceTree = "<group>"; };
-		284D15EB19FE5D2F00F27374 /* buyBntClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyBntClk.png; sourceTree = "<group>"; };
 		284D15EC19FE5D2F00F27374 /* buyItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyItem.png; sourceTree = "<group>"; };
 		284D15ED19FE5D2F00F27374 /* cachier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cachier.png; sourceTree = "<group>"; };
 		284D15EE19FE5D2F00F27374 /* carleft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carleft.png; sourceTree = "<group>"; };
@@ -570,36 +488,20 @@
 		284D15F119FE5D2F00F27374 /* carright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carright.png; sourceTree = "<group>"; };
 		284D15F219FE5D2F00F27374 /* carrightIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrightIphone5.png; sourceTree = "<group>"; };
 		284D15F319FE5D2F00F27374 /* carrightRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrightRetina.png; sourceTree = "<group>"; };
-		284D15F419FE5D2F00F27374 /* checkPriceBnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkPriceBnt.png; sourceTree = "<group>"; };
-		284D15F519FE5D2F00F27374 /* checkPriceBntClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkPriceBntClk.png; sourceTree = "<group>"; };
 		284D15F619FE5D2F00F27374 /* Cheerleader_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cheerleader_bullet.png; sourceTree = "<group>"; };
 		284D15F719FE5D2F00F27374 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		284D15F819FE5D2F00F27374 /* coin-board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin-board.png"; sourceTree = "<group>"; };
-		284D15F919FE5D2F00F27374 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
-		284D15FA19FE5D2F00F27374 /* coinMultInApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coinMultInApp.png; sourceTree = "<group>"; };
-		284D15FB19FE5D2F00F27374 /* continue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continue.png; sourceTree = "<group>"; };
-		284D15FC19FE5D2F00F27374 /* continueClicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continueClicked.png; sourceTree = "<group>"; };
 		284D15FD19FE5D2F00F27374 /* Conveniencia_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Conveniencia_bullet.png; sourceTree = "<group>"; };
-		284D15FE19FE5D2F00F27374 /* cooldown_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooldown_blue.png; sourceTree = "<group>"; };
-		284D15FF19FE5D2F00F27374 /* cooldownBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooldownBorder.png; sourceTree = "<group>"; };
 		284D160019FE5D2F00F27374 /* counter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = counter.png; sourceTree = "<group>"; };
 		284D160119FE5D2F00F27374 /* counterIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = counterIphone5.png; sourceTree = "<group>"; };
 		284D160219FE5D2F00F27374 /* counterRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = counterRetina.png; sourceTree = "<group>"; };
 		284D160319FE5D2F00F27374 /* Cowboy_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cowboy_bullet.png; sourceTree = "<group>"; };
 		284D160419FE5D2F00F27374 /* CrazyTeacher_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CrazyTeacher_bullet.png; sourceTree = "<group>"; };
-		284D160519FE5D2F00F27374 /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits.png; sourceTree = "<group>"; };
-		284D160619FE5D2F00F27374 /* credits2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits2.png; sourceTree = "<group>"; };
 		284D160719FE5D2F00F27374 /* ctrlSound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ctrlSound.png; sourceTree = "<group>"; };
 		284D160819FE5D2F00F27374 /* ctrlSoundClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ctrlSoundClk.png; sourceTree = "<group>"; };
-		284D160919FE5D2F00F27374 /* description.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = description.png; sourceTree = "<group>"; };
 		284D160A19FE5D2F00F27374 /* Director_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Director_bullet.png; sourceTree = "<group>"; };
 		284D160B19FE5D2F00F27374 /* divorced_woman_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divorced_woman_bullet.png; sourceTree = "<group>"; };
-		284D160C19FE5D2F00F27374 /* doodle3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doodle3.png; sourceTree = "<group>"; };
 		284D160D19FE5D2F00F27374 /* doodlefinal_iphone5_paint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doodlefinal_iphone5_paint.png; sourceTree = "<group>"; };
-		284D160E19FE5D2F00F27374 /* door down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door down.png"; sourceTree = "<group>"; };
-		284D160F19FE5D2F00F27374 /* door up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door up.png"; sourceTree = "<group>"; };
-		284D161019FE5D2F00F27374 /* doordown_iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doordown_iphone5.png; sourceTree = "<group>"; };
-		284D161119FE5D2F00F27374 /* doorup_iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doorup_iphone5.png; sourceTree = "<group>"; };
 		284D161219FE5D2F00F27374 /* DrumerOFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DrumerOFF.png; sourceTree = "<group>"; };
 		284D161319FE5D2F00F27374 /* DrumerON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DrumerON.png; sourceTree = "<group>"; };
 		284D161419FE5D2F00F27374 /* Drunk_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drunk_bullet.png; sourceTree = "<group>"; };
@@ -622,17 +524,11 @@
 		284D162519FE5D3000F27374 /* Guitar01ON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guitar01ON.png; sourceTree = "<group>"; };
 		284D162619FE5D3000F27374 /* Guitar02OFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guitar02OFF.png; sourceTree = "<group>"; };
 		284D162719FE5D3000F27374 /* Guitar02ON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guitar02ON.png; sourceTree = "<group>"; };
-		284D162819FE5D3000F27374 /* gun_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gun_left.png; sourceTree = "<group>"; };
-		284D162919FE5D3000F27374 /* gunUp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gunUp1.png; sourceTree = "<group>"; };
-		284D162A19FE5D3000F27374 /* gunUp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gunUp2.png; sourceTree = "<group>"; };
 		284D162B19FE5D3000F27374 /* handbutton01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handbutton01.png; sourceTree = "<group>"; };
 		284D162C19FE5D3000F27374 /* handbutton02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handbutton02.png; sourceTree = "<group>"; };
-		284D162D19FE5D3000F27374 /* healthUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = healthUp.png; sourceTree = "<group>"; };
 		284D162E19FE5D3000F27374 /* hellGroundIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hellGroundIphone5.png; sourceTree = "<group>"; };
 		284D162F19FE5D3000F27374 /* heroSheetNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroSheetNew.png; sourceTree = "<group>"; };
 		284D163019FE5D3000F27374 /* hideCracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hideCracker.png; sourceTree = "<group>"; };
-		284D163119FE5D3000F27374 /* hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud.png; sourceTree = "<group>"; };
-		284D163219FE5D3000F27374 /* hud2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud2.png; sourceTree = "<group>"; };
 		284D163319FE5D3000F27374 /* hudSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hudSheet.png; sourceTree = "<group>"; };
 		284D163419FE5D3000F27374 /* item image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item image.png"; sourceTree = "<group>"; };
 		284D163519FE5D3000F27374 /* item name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item name.png"; sourceTree = "<group>"; };
@@ -648,30 +544,17 @@
 		284D163F19FE5D3000F27374 /* Mecanico_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mecanico_bullet.png; sourceTree = "<group>"; };
 		284D164019FE5D3000F27374 /* menu_chest1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_chest1.png; sourceTree = "<group>"; };
 		284D164119FE5D3000F27374 /* menu_girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_girl.png; sourceTree = "<group>"; };
-		284D164219FE5D3000F27374 /* menu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu1.png; sourceTree = "<group>"; };
-		284D164319FE5D3000F27374 /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
 		284D164419FE5D3000F27374 /* menubgfinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubgfinal.png; sourceTree = "<group>"; };
 		284D164519FE5D3000F27374 /* menuIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuIphone5.png; sourceTree = "<group>"; };
 		284D164619FE5D3000F27374 /* menuSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuSheet.png; sourceTree = "<group>"; };
 		284D164719FE5D3000F27374 /* menuShelfs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuShelfs.png; sourceTree = "<group>"; };
-		284D164819FE5D3000F27374 /* menuStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuStore.png; sourceTree = "<group>"; };
-		284D164919FE5D3000F27374 /* moneyStoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneyStoreButton.png; sourceTree = "<group>"; };
-		284D164A19FE5D3000F27374 /* moneyStoreButtonClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneyStoreButtonClk.png; sourceTree = "<group>"; };
-		284D164B19FE5D3000F27374 /* moreItemsClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreItemsClosed.png; sourceTree = "<group>"; };
 		284D164C19FE5D3000F27374 /* moreItensOPENED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreItensOPENED.png; sourceTree = "<group>"; };
-		284D164D19FE5D3000F27374 /* newgame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newgame.png; sourceTree = "<group>"; };
-		284D164E19FE5D3000F27374 /* newgame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newgame2.png; sourceTree = "<group>"; };
 		284D164F19FE5D3000F27374 /* newmenubg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newmenubg.png; sourceTree = "<group>"; };
-		284D165019FE5D3000F27374 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
-		284D165119FE5D3000F27374 /* nextClicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextClicked.png; sourceTree = "<group>"; };
 		284D165219FE5D3000F27374 /* owned.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = owned.png; sourceTree = "<group>"; };
-		284D165319FE5D3000F27374 /* ownedTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ownedTag.png; sourceTree = "<group>"; };
 		284D165419FE5D3000F27374 /* pause01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause01.png; sourceTree = "<group>"; };
 		284D165519FE5D3000F27374 /* pause02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause02.png; sourceTree = "<group>"; };
 		284D165619FE5D3000F27374 /* pauseBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseBg.png; sourceTree = "<group>"; };
 		284D165719FE5D3000F27374 /* pauseBg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseBg2.png; sourceTree = "<group>"; };
-		284D165819FE5D3000F27374 /* PauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseButton.png; sourceTree = "<group>"; };
-		284D165919FE5D3000F27374 /* PauseButtonClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseButtonClk.png; sourceTree = "<group>"; };
 		284D165A19FE5D3000F27374 /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = "<group>"; };
 		284D165B19FE5D3000F27374 /* poolIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poolIphone5.png; sourceTree = "<group>"; };
 		284D165C19FE5D3000F27374 /* poolRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poolRetina.png; sourceTree = "<group>"; };
@@ -681,11 +564,6 @@
 		284D166019FE5D3000F27374 /* powerBarColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerBarColor.png; sourceTree = "<group>"; };
 		284D166119FE5D3000F27374 /* prisionEnemySheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prisionEnemySheet.png; sourceTree = "<group>"; };
 		284D166219FE5D3000F27374 /* punk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = punk.png; sourceTree = "<group>"; };
-		284D166319FE5D3000F27374 /* radioButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioButton.png; sourceTree = "<group>"; };
-		284D166419FE5D3000F27374 /* radioButtonClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioButtonClk.png; sourceTree = "<group>"; };
-		284D166519FE5D3000F27374 /* radioUP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioUP.png; sourceTree = "<group>"; };
-		284D166619FE5D3000F27374 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
-		284D166719FE5D3000F27374 /* reloadClicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reloadClicked.png; sourceTree = "<group>"; };
 		284D166819FE5D3000F27374 /* restart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restart.png; sourceTree = "<group>"; };
 		284D166919FE5D3000F27374 /* restartClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restartClk.png; sourceTree = "<group>"; };
 		284D166A19FE5D3000F27374 /* resume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resume.png; sourceTree = "<group>"; };
@@ -703,19 +581,9 @@
 		284D167619FE5D3000F27374 /* roofupIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roofupIphone5.png; sourceTree = "<group>"; };
 		284D167719FE5D3000F27374 /* roofupRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roofupRetina.png; sourceTree = "<group>"; };
 		284D167819FE5D3000F27374 /* schoolEnemySheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schoolEnemySheet.png; sourceTree = "<group>"; };
-		284D167919FE5D3000F27374 /* scrollBnt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollBnt1.png; sourceTree = "<group>"; };
-		284D167A19FE5D3000F27374 /* scrollBnt1Clk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollBnt1Clk.png; sourceTree = "<group>"; };
-		284D167B19FE5D3000F27374 /* scrollBnt2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollBnt2.png; sourceTree = "<group>"; };
-		284D167C19FE5D3000F27374 /* scrollBnt2Clk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollBnt2Clk.png; sourceTree = "<group>"; };
-		284D167D19FE5D3000F27374 /* selectBnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectBnt.png; sourceTree = "<group>"; };
-		284D167E19FE5D3000F27374 /* selectBntClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectBntClk.png; sourceTree = "<group>"; };
 		284D167F19FE5D3000F27374 /* selectItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectItem.png; sourceTree = "<group>"; };
 		284D168019FE5D3000F27374 /* shelfs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shelfs.png; sourceTree = "<group>"; };
-		284D168119FE5D3000F27374 /* ShowCase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShowCase.png; sourceTree = "<group>"; };
-		284D168219FE5D3000F27374 /* showCase1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showCase1.png; sourceTree = "<group>"; };
 		284D168319FE5D3000F27374 /* skate_guy_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skate_guy_bullet.png; sourceTree = "<group>"; };
-		284D168419FE5D3000F27374 /* skinStoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skinStoreButton.png; sourceTree = "<group>"; };
-		284D168519FE5D3000F27374 /* skinStoreButtonClk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skinStoreButtonClk.png; sourceTree = "<group>"; };
 		284D168619FE5D3000F27374 /* skull-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull-01.png"; sourceTree = "<group>"; };
 		284D168719FE5D3000F27374 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = "<group>"; };
 		284D168819FE5D3000F27374 /* snake-color-body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snake-color-body.png"; sourceTree = "<group>"; };
@@ -724,14 +592,10 @@
 		284D168B19FE5D3000F27374 /* snake-flesh-body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snake-flesh-body.png"; sourceTree = "<group>"; };
 		284D168C19FE5D3000F27374 /* snakecolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snakecolor.png; sourceTree = "<group>"; };
 		284D168D19FE5D3000F27374 /* snakeflesh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snakeflesh.png; sourceTree = "<group>"; };
-		284D168E19FE5D3000F27374 /* spacebg7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacebg7.png; sourceTree = "<group>"; };
 		284D168F19FE5D3000F27374 /* stage1Sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1Sheet.png; sourceTree = "<group>"; };
 		284D169019FE5D3000F27374 /* StageClearbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StageClearbase.png; sourceTree = "<group>"; };
 		284D169119FE5D3000F27374 /* StageClearCLEAR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StageClearCLEAR.png; sourceTree = "<group>"; };
 		284D169219FE5D3000F27374 /* StageClearSTAGE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StageClearSTAGE.png; sourceTree = "<group>"; };
-		284D169319FE5D3000F27374 /* storeBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeBG.png; sourceTree = "<group>"; };
-		284D169419FE5D3000F27374 /* storeBGIpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeBGIpad.png; sourceTree = "<group>"; };
-		284D169519FE5D3000F27374 /* storeBGRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeBGRetina.png; sourceTree = "<group>"; };
 		284D169619FE5D3000F27374 /* storeFrontBG_iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeFrontBG_iphone5.png; sourceTree = "<group>"; };
 		284D169719FE5D3000F27374 /* tables.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tables.png; sourceTree = "<group>"; };
 		284D169819FE5D3000F27374 /* tablesIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tablesIphone5.png; sourceTree = "<group>"; };
@@ -750,7 +614,6 @@
 		284D16A519FE5D3100F27374 /* upwallrightIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upwallrightIphone5.png; sourceTree = "<group>"; };
 		284D16A619FE5D3100F27374 /* upwallrightRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upwallrightRetina.png; sourceTree = "<group>"; };
 		284D16A719FE5D3100F27374 /* userMoney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userMoney.png; sourceTree = "<group>"; };
-		284D16A819FE5D3100F27374 /* value.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = value.png; sourceTree = "<group>"; };
 		284D16A919FE5D3100F27374 /* VocalOFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VocalOFF.png; sourceTree = "<group>"; };
 		284D16AA19FE5D3100F27374 /* VocalON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VocalON.png; sourceTree = "<group>"; };
 		284D16AB19FE5D3100F27374 /* Waitress_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waitress_bullet.png; sourceTree = "<group>"; };
@@ -759,13 +622,6 @@
 		284D16AE19FE5D3100F27374 /* walls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walls.png; sourceTree = "<group>"; };
 		284D16AF19FE5D3100F27374 /* wallsIphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallsIphone5.png; sourceTree = "<group>"; };
 		284D16B019FE5D3100F27374 /* wallsRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallsRetina.png; sourceTree = "<group>"; };
-		284D16B119FE5D3100F27374 /* wep1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wep1.png; sourceTree = "<group>"; };
-		284D16B219FE5D3100F27374 /* wep2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wep2.png; sourceTree = "<group>"; };
-		284D16B319FE5D3100F27374 /* wep3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wep3.png; sourceTree = "<group>"; };
-		284D16B419FE5D3100F27374 /* wep4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wep4.png; sourceTree = "<group>"; };
-		284D16B519FE5D3100F27374 /* wepStoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wepStoreButton.png; sourceTree = "<group>"; };
-		284D16B619FE5D3100F27374 /* wepStoreButtonclk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wepStoreButtonclk.png; sourceTree = "<group>"; };
-		284D16B719FE5D3100F27374 /* whiteBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteBG.png; sourceTree = "<group>"; };
 		284D16B819FE5D3100F27374 /* Whore_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whore_bullet.png; sourceTree = "<group>"; };
 		284D16B919FE5D3100F27374 /* bandItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bandItems.json; sourceTree = "<group>"; };
 		284D16BA19FE5D3100F27374 /* bandItemsBasic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bandItemsBasic.json; sourceTree = "<group>"; };
@@ -783,6 +639,8 @@
 		284D17EB19FE5E1E00F27374 /* schoolEnemySheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = schoolEnemySheet.plist; sourceTree = "<group>"; };
 		284D17EC19FE5E1E00F27374 /* Sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sprites.plist; sourceTree = "<group>"; };
 		284D17ED19FE5E1E00F27374 /* stage1Sheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stage1Sheet.plist; sourceTree = "<group>"; };
+		286A88861A0387250085E622 /* MockSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockSprite.h; sourceTree = "<group>"; };
+		286A88871A0387250085E622 /* MockSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockSprite.m; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
@@ -843,6 +701,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280BFF111A019C2E00E7BED8 /* door */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = door;
+			sourceTree = "<group>";
+		};
 		9222E2B918734FF800A246C7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -854,6 +719,10 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				280BFF241A0283B300E7BED8 /* BandLevelScene.h */,
+				280BFF251A0283B300E7BED8 /* BandLevelScene.m */,
+				286A88861A0387250085E622 /* MockSprite.h */,
+				286A88871A0387250085E622 /* MockSprite.m */,
 				2801A4B819FAA6B500BF3837 /* BandBuyPoster.m */,
 				2801A4B919FAA6B500BF3837 /* BandGamePlay.m */,
 				2801A4BA19FAA6B500BF3837 /* BandSprite.m */,
@@ -1012,6 +881,14 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				280BFF221A01AF9500E7BED8 /* doorUp-ipad.png */,
+				280BFF1A1A01A3AF00E7BED8 /* doorUp-widehd.png */,
+				280BFF1B1A01A3AF00E7BED8 /* doorDown-widehd.png */,
+				280BFF161A01A32400E7BED8 /* doorUp-hd.png */,
+				280BFF171A01A32400E7BED8 /* doorDown-hd.png */,
+				280BFF0D1A0196A400E7BED8 /* doorDown-ipad.png */,
+				280BFF0E1A0196A400E7BED8 /* doorUp-ipadhd.png */,
+				280BFF111A019C2E00E7BED8 /* door */,
 				284D17E319FE5E1E00F27374 /* barEnemySheet.plist */,
 				284D17E419FE5E1E00F27374 /* enemySheetNew.plist */,
 				284D17E519FE5E1E00F27374 /* ExplodingRing.plist */,
@@ -1050,24 +927,10 @@
 				284D15B119FE5D2F00F27374 /* prisionBG.jpg */,
 				284D15B219FE5D2F00F27374 /* prisionBGIphone5.jpg */,
 				284D15B319FE5D2F00F27374 /* schoolBgIphone5.jpg */,
-				284D15B419FE5D2F00F27374 /* ShotGame.jpg */,
 				284D15B519FE5D2F00F27374 /* storebg_iphone5.jpg */,
 				284D15B619FE5D2F00F27374 /* TheBarBG.jpg */,
 				284D15B719FE5D2F00F27374 /* TheBarRetinaBG.jpg */,
 				284D15B819FE5D2F00F27374 /* TheSchoolBgIpad.jpg */,
-				284D15B919FE5D2F00F27374 /* ammoUpInApp.png */,
-				284D15BA19FE5D2F00F27374 /* arm1.png */,
-				284D15BB19FE5D2F00F27374 /* armor1.png */,
-				284D15BC19FE5D2F00F27374 /* armor2.png */,
-				284D15BD19FE5D2F00F27374 /* armor3.png */,
-				284D15BE19FE5D2F00F27374 /* armor4.png */,
-				284D15BF19FE5D2F00F27374 /* armorInApp.png */,
-				284D15C019FE5D2F00F27374 /* armorStoreButton.png */,
-				284D15C119FE5D2F00F27374 /* armorStoreButtonClk.png */,
-				284D15C219FE5D2F00F27374 /* back_retina.png */,
-				284D15C319FE5D2F00F27374 /* back.png */,
-				284D15C419FE5D2F00F27374 /* back2.png */,
-				284D15C519FE5D2F00F27374 /* background.png */,
 				284D15C619FE5D2F00F27374 /* BackWall.png */,
 				284D15C719FE5D2F00F27374 /* BackWallIphone5.png */,
 				284D15C819FE5D2F00F27374 /* BackWallRetina.png */,
@@ -1084,8 +947,6 @@
 				284D15D319FE5D2F00F27374 /* BassOFF.png */,
 				284D15D419FE5D2F00F27374 /* BassON.png */,
 				284D15D519FE5D2F00F27374 /* belt.png */,
-				284D15D619FE5D2F00F27374 /* BG.png */,
-				284D15D719FE5D2F00F27374 /* bgTest.png */,
 				284D15D819FE5D2F00F27374 /* blast1.png */,
 				284D15D919FE5D2F00F27374 /* blast01.png */,
 				284D15DA19FE5D2F00F27374 /* blast02.png */,
@@ -1103,9 +964,6 @@
 				284D15E619FE5D2F00F27374 /* Button next ON.png */,
 				284D15E719FE5D2F00F27374 /* Button store OFF.png */,
 				284D15E819FE5D2F00F27374 /* Button store ON.png */,
-				284D15E919FE5D2F00F27374 /* buyBandBg.png */,
-				284D15EA19FE5D2F00F27374 /* buyBnt.png */,
-				284D15EB19FE5D2F00F27374 /* buyBntClk.png */,
 				284D15EC19FE5D2F00F27374 /* buyItem.png */,
 				284D15ED19FE5D2F00F27374 /* cachier.png */,
 				284D15EE19FE5D2F00F27374 /* carleft.png */,
@@ -1114,36 +972,20 @@
 				284D15F119FE5D2F00F27374 /* carright.png */,
 				284D15F219FE5D2F00F27374 /* carrightIphone5.png */,
 				284D15F319FE5D2F00F27374 /* carrightRetina.png */,
-				284D15F419FE5D2F00F27374 /* checkPriceBnt.png */,
-				284D15F519FE5D2F00F27374 /* checkPriceBntClk.png */,
 				284D15F619FE5D2F00F27374 /* Cheerleader_bullet.png */,
 				284D15F719FE5D2F00F27374 /* close.png */,
 				284D15F819FE5D2F00F27374 /* coin-board.png */,
-				284D15F919FE5D2F00F27374 /* coin.png */,
-				284D15FA19FE5D2F00F27374 /* coinMultInApp.png */,
-				284D15FB19FE5D2F00F27374 /* continue.png */,
-				284D15FC19FE5D2F00F27374 /* continueClicked.png */,
 				284D15FD19FE5D2F00F27374 /* Conveniencia_bullet.png */,
-				284D15FE19FE5D2F00F27374 /* cooldown_blue.png */,
-				284D15FF19FE5D2F00F27374 /* cooldownBorder.png */,
 				284D160019FE5D2F00F27374 /* counter.png */,
 				284D160119FE5D2F00F27374 /* counterIphone5.png */,
 				284D160219FE5D2F00F27374 /* counterRetina.png */,
 				284D160319FE5D2F00F27374 /* Cowboy_bullet.png */,
 				284D160419FE5D2F00F27374 /* CrazyTeacher_bullet.png */,
-				284D160519FE5D2F00F27374 /* credits.png */,
-				284D160619FE5D2F00F27374 /* credits2.png */,
 				284D160719FE5D2F00F27374 /* ctrlSound.png */,
 				284D160819FE5D2F00F27374 /* ctrlSoundClk.png */,
-				284D160919FE5D2F00F27374 /* description.png */,
 				284D160A19FE5D2F00F27374 /* Director_bullet.png */,
 				284D160B19FE5D2F00F27374 /* divorced_woman_bullet.png */,
-				284D160C19FE5D2F00F27374 /* doodle3.png */,
 				284D160D19FE5D2F00F27374 /* doodlefinal_iphone5_paint.png */,
-				284D160E19FE5D2F00F27374 /* door down.png */,
-				284D160F19FE5D2F00F27374 /* door up.png */,
-				284D161019FE5D2F00F27374 /* doordown_iphone5.png */,
-				284D161119FE5D2F00F27374 /* doorup_iphone5.png */,
 				284D161219FE5D2F00F27374 /* DrumerOFF.png */,
 				284D161319FE5D2F00F27374 /* DrumerON.png */,
 				284D161419FE5D2F00F27374 /* Drunk_bullet.png */,
@@ -1166,17 +1008,11 @@
 				284D162519FE5D3000F27374 /* Guitar01ON.png */,
 				284D162619FE5D3000F27374 /* Guitar02OFF.png */,
 				284D162719FE5D3000F27374 /* Guitar02ON.png */,
-				284D162819FE5D3000F27374 /* gun_left.png */,
-				284D162919FE5D3000F27374 /* gunUp1.png */,
-				284D162A19FE5D3000F27374 /* gunUp2.png */,
 				284D162B19FE5D3000F27374 /* handbutton01.png */,
 				284D162C19FE5D3000F27374 /* handbutton02.png */,
-				284D162D19FE5D3000F27374 /* healthUp.png */,
 				284D162E19FE5D3000F27374 /* hellGroundIphone5.png */,
 				284D162F19FE5D3000F27374 /* heroSheetNew.png */,
 				284D163019FE5D3000F27374 /* hideCracker.png */,
-				284D163119FE5D3000F27374 /* hud.png */,
-				284D163219FE5D3000F27374 /* hud2.png */,
 				284D163319FE5D3000F27374 /* hudSheet.png */,
 				284D163419FE5D3000F27374 /* item image.png */,
 				284D163519FE5D3000F27374 /* item name.png */,
@@ -1192,30 +1028,17 @@
 				284D163F19FE5D3000F27374 /* Mecanico_bullet.png */,
 				284D164019FE5D3000F27374 /* menu_chest1.png */,
 				284D164119FE5D3000F27374 /* menu_girl.png */,
-				284D164219FE5D3000F27374 /* menu1.png */,
-				284D164319FE5D3000F27374 /* menu2.png */,
 				284D164419FE5D3000F27374 /* menubgfinal.png */,
 				284D164519FE5D3000F27374 /* menuIphone5.png */,
 				284D164619FE5D3000F27374 /* menuSheet.png */,
 				284D164719FE5D3000F27374 /* menuShelfs.png */,
-				284D164819FE5D3000F27374 /* menuStore.png */,
-				284D164919FE5D3000F27374 /* moneyStoreButton.png */,
-				284D164A19FE5D3000F27374 /* moneyStoreButtonClk.png */,
-				284D164B19FE5D3000F27374 /* moreItemsClosed.png */,
 				284D164C19FE5D3000F27374 /* moreItensOPENED.png */,
-				284D164D19FE5D3000F27374 /* newgame.png */,
-				284D164E19FE5D3000F27374 /* newgame2.png */,
 				284D164F19FE5D3000F27374 /* newmenubg.png */,
-				284D165019FE5D3000F27374 /* next.png */,
-				284D165119FE5D3000F27374 /* nextClicked.png */,
 				284D165219FE5D3000F27374 /* owned.png */,
-				284D165319FE5D3000F27374 /* ownedTag.png */,
 				284D165419FE5D3000F27374 /* pause01.png */,
 				284D165519FE5D3000F27374 /* pause02.png */,
 				284D165619FE5D3000F27374 /* pauseBg.png */,
 				284D165719FE5D3000F27374 /* pauseBg2.png */,
-				284D165819FE5D3000F27374 /* PauseButton.png */,
-				284D165919FE5D3000F27374 /* PauseButtonClk.png */,
 				284D165A19FE5D3000F27374 /* pool.png */,
 				284D165B19FE5D3000F27374 /* poolIphone5.png */,
 				284D165C19FE5D3000F27374 /* poolRetina.png */,
@@ -1225,11 +1048,6 @@
 				284D166019FE5D3000F27374 /* powerBarColor.png */,
 				284D166119FE5D3000F27374 /* prisionEnemySheet.png */,
 				284D166219FE5D3000F27374 /* punk.png */,
-				284D166319FE5D3000F27374 /* radioButton.png */,
-				284D166419FE5D3000F27374 /* radioButtonClk.png */,
-				284D166519FE5D3000F27374 /* radioUP.png */,
-				284D166619FE5D3000F27374 /* reload.png */,
-				284D166719FE5D3000F27374 /* reloadClicked.png */,
 				284D166819FE5D3000F27374 /* restart.png */,
 				284D166919FE5D3000F27374 /* restartClk.png */,
 				284D166A19FE5D3000F27374 /* resume.png */,
@@ -1247,19 +1065,9 @@
 				284D167619FE5D3000F27374 /* roofupIphone5.png */,
 				284D167719FE5D3000F27374 /* roofupRetina.png */,
 				284D167819FE5D3000F27374 /* schoolEnemySheet.png */,
-				284D167919FE5D3000F27374 /* scrollBnt1.png */,
-				284D167A19FE5D3000F27374 /* scrollBnt1Clk.png */,
-				284D167B19FE5D3000F27374 /* scrollBnt2.png */,
-				284D167C19FE5D3000F27374 /* scrollBnt2Clk.png */,
-				284D167D19FE5D3000F27374 /* selectBnt.png */,
-				284D167E19FE5D3000F27374 /* selectBntClk.png */,
 				284D167F19FE5D3000F27374 /* selectItem.png */,
 				284D168019FE5D3000F27374 /* shelfs.png */,
-				284D168119FE5D3000F27374 /* ShowCase.png */,
-				284D168219FE5D3000F27374 /* showCase1.png */,
 				284D168319FE5D3000F27374 /* skate_guy_bullet.png */,
-				284D168419FE5D3000F27374 /* skinStoreButton.png */,
-				284D168519FE5D3000F27374 /* skinStoreButtonClk.png */,
 				284D168619FE5D3000F27374 /* skull-01.png */,
 				284D168719FE5D3000F27374 /* smoke.png */,
 				284D168819FE5D3000F27374 /* snake-color-body.png */,
@@ -1268,14 +1076,10 @@
 				284D168B19FE5D3000F27374 /* snake-flesh-body.png */,
 				284D168C19FE5D3000F27374 /* snakecolor.png */,
 				284D168D19FE5D3000F27374 /* snakeflesh.png */,
-				284D168E19FE5D3000F27374 /* spacebg7.png */,
 				284D168F19FE5D3000F27374 /* stage1Sheet.png */,
 				284D169019FE5D3000F27374 /* StageClearbase.png */,
 				284D169119FE5D3000F27374 /* StageClearCLEAR.png */,
 				284D169219FE5D3000F27374 /* StageClearSTAGE.png */,
-				284D169319FE5D3000F27374 /* storeBG.png */,
-				284D169419FE5D3000F27374 /* storeBGIpad.png */,
-				284D169519FE5D3000F27374 /* storeBGRetina.png */,
 				284D169619FE5D3000F27374 /* storeFrontBG_iphone5.png */,
 				284D169719FE5D3000F27374 /* tables.png */,
 				284D169819FE5D3000F27374 /* tablesIphone5.png */,
@@ -1294,7 +1098,6 @@
 				284D16A519FE5D3100F27374 /* upwallrightIphone5.png */,
 				284D16A619FE5D3100F27374 /* upwallrightRetina.png */,
 				284D16A719FE5D3100F27374 /* userMoney.png */,
-				284D16A819FE5D3100F27374 /* value.png */,
 				284D16A919FE5D3100F27374 /* VocalOFF.png */,
 				284D16AA19FE5D3100F27374 /* VocalON.png */,
 				284D16AB19FE5D3100F27374 /* Waitress_bullet.png */,
@@ -1303,13 +1106,6 @@
 				284D16AE19FE5D3100F27374 /* walls.png */,
 				284D16AF19FE5D3100F27374 /* wallsIphone5.png */,
 				284D16B019FE5D3100F27374 /* wallsRetina.png */,
-				284D16B119FE5D3100F27374 /* wep1.png */,
-				284D16B219FE5D3100F27374 /* wep2.png */,
-				284D16B319FE5D3100F27374 /* wep3.png */,
-				284D16B419FE5D3100F27374 /* wep4.png */,
-				284D16B519FE5D3100F27374 /* wepStoreButton.png */,
-				284D16B619FE5D3100F27374 /* wepStoreButtonclk.png */,
-				284D16B719FE5D3100F27374 /* whiteBG.png */,
 				284D16B819FE5D3100F27374 /* Whore_bullet.png */,
 				284D16B919FE5D3100F27374 /* bandItems.json */,
 				284D16BA19FE5D3100F27374 /* bandItemsBasic.json */,
@@ -1413,23 +1209,16 @@
 			files = (
 				284D170419FE5D3100F27374 /* Bus.png in Resources */,
 				284D16C219FE5D3100F27374 /* doodlefinal_iphone5_green.jpg in Resources */,
-				284D17A019FE5D3100F27374 /* scrollBnt2.png in Resources */,
-				284D16EA19FE5D3100F27374 /* background.png in Resources */,
-				284D16E919FE5D3100F27374 /* back2.png in Resources */,
-				284D16E519FE5D3100F27374 /* armorStoreButton.png in Resources */,
 				284D176219FE5D3100F27374 /* lifeGauge.png in Resources */,
 				284D172719FE5D3100F27374 /* counterRetina.png in Resources */,
 				284D17B419FE5D3100F27374 /* stage1Sheet.png in Resources */,
 				284D175519FE5D3100F27374 /* hideCracker.png in Resources */,
 				284D179A19FE5D3100F27374 /* roofup.png in Resources */,
-				284D16E219FE5D3100F27374 /* armor3.png in Resources */,
-				284D16E019FE5D3100F27374 /* armor1.png in Resources */,
-				284D179F19FE5D3100F27374 /* scrollBnt1Clk.png in Resources */,
+				280BFF1C1A01A3AF00E7BED8 /* doorUp-widehd.png in Resources */,
+				280BFF181A01A32400E7BED8 /* doorUp-hd.png in Resources */,
 				284D16C719FE5D3100F27374 /* doodlefinal_iphone5.jpg in Resources */,
 				284D179D19FE5D3100F27374 /* schoolEnemySheet.png in Resources */,
-				284D177519FE5D3100F27374 /* next.png in Resources */,
 				284D171419FE5D3100F27374 /* carleftIphone5.png in Resources */,
-				284D17DA19FE5D3100F27374 /* wepStoreButton.png in Resources */,
 				284D175319FE5D3100F27374 /* hellGroundIphone5.png in Resources */,
 				284D170719FE5D3100F27374 /* Button back ON.png in Resources */,
 				284D175819FE5D3100F27374 /* hudSheet.png in Resources */,
@@ -1440,50 +1229,35 @@
 				284D16BF19FE5D3100F27374 /* doodle.jpg in Resources */,
 				284D16D019FE5D3100F27374 /* garagebgIpad.jpg in Resources */,
 				284D170119FE5D3100F27374 /* Borracheiro_bullet.png in Resources */,
-				284D172B19FE5D3100F27374 /* credits2.png in Resources */,
 				284D17AC19FE5D3100F27374 /* smoke.png in Resources */,
 				284D17DD19FE5D3100F27374 /* Whore_bullet.png in Resources */,
 				284D173F19FE5D3100F27374 /* frontPlateIphone5.png in Resources */,
-				284D176819FE5D3100F27374 /* menu2.png in Resources */,
 				284D178019FE5D3100F27374 /* poolIphone5.png in Resources */,
 				284D178219FE5D3100F27374 /* portaGaragem.png in Resources */,
-				284D173419FE5D3100F27374 /* door up.png in Resources */,
 				284D170019FE5D3100F27374 /* bomb3.png in Resources */,
 				284D177C19FE5D3100F27374 /* pauseBg2.png in Resources */,
 				284D17AB19FE5D3100F27374 /* skull-01.png in Resources */,
 				284D171319FE5D3100F27374 /* carleft.png in Resources */,
 				284D16C319FE5D3100F27374 /* doodlefinal_iphone5_paint.jpg in Resources */,
 				284D175D19FE5D3100F27374 /* laser.png in Resources */,
-				284D172019FE5D3100F27374 /* continue.png in Resources */,
 				284D17CC19FE5D3100F27374 /* userMoney.png in Resources */,
 				284D174C19FE5D3100F27374 /* Guitar02ON.png in Resources */,
 				284D176419FE5D3100F27374 /* Mecanico_bullet.png in Resources */,
 				284D170819FE5D3100F27374 /* Button menu OFF.png in Resources */,
-				284D177D19FE5D3100F27374 /* PauseButton.png in Resources */,
-				284D178819FE5D3100F27374 /* radioButton.png in Resources */,
 				284D177B19FE5D3100F27374 /* pauseBg.png in Resources */,
-				284D177319FE5D3100F27374 /* newgame2.png in Resources */,
-				284D176F19FE5D3100F27374 /* moneyStoreButtonClk.png in Resources */,
 				284D17BE19FE5D3100F27374 /* tablesRetina.png in Resources */,
 				284D179219FE5D3100F27374 /* rightBuildPart.png in Resources */,
-				284D172419FE5D3100F27374 /* cooldownBorder.png in Resources */,
-				284D175619FE5D3100F27374 /* hud.png in Resources */,
 				284D16F319FE5D3100F27374 /* Banda03.png in Resources */,
 				284D16F619FE5D3100F27374 /* bandBG.png in Resources */,
 				284D17A519FE5D3100F27374 /* shelfs.png in Resources */,
-				284D173519FE5D3100F27374 /* doordown_iphone5.png in Resources */,
+				280BFF231A01AF9500E7BED8 /* doorUp-ipad.png in Resources */,
+				280BFF101A0196A400E7BED8 /* doorUp-ipadhd.png in Resources */,
 				284D172619FE5D3100F27374 /* counterIphone5.png in Resources */,
-				284D178919FE5D3100F27374 /* radioButtonClk.png in Resources */,
 				284D17C519FE5D3100F27374 /* upwallcenterRetina.png in Resources */,
 				284D16EB19FE5D3100F27374 /* BackWall.png in Resources */,
 				284D17D119FE5D3100F27374 /* wallLeftIphone5.png in Resources */,
-				284D171E19FE5D3100F27374 /* coin.png in Resources */,
-				284D17B919FE5D3100F27374 /* storeBGIpad.png in Resources */,
 				284D16EC19FE5D3100F27374 /* BackWallIphone5.png in Resources */,
-				284D16FC19FE5D3100F27374 /* bgTest.png in Resources */,
-				284D16E819FE5D3100F27374 /* back.png in Resources */,
 				284D17F619FE5E1E00F27374 /* schoolEnemySheet.plist in Resources */,
-				284D172319FE5D3100F27374 /* cooldown_blue.png in Resources */,
 				284D177F19FE5D3100F27374 /* pool.png in Resources */,
 				284D173E19FE5D3100F27374 /* frontPlate.png in Resources */,
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
@@ -1494,50 +1268,38 @@
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				284D170B19FE5D3100F27374 /* Button next ON.png in Resources */,
 				284D17D419FE5D3100F27374 /* wallsIphone5.png in Resources */,
-				284D17DB19FE5D3100F27374 /* wepStoreButtonclk.png in Resources */,
 				284D173919FE5D3100F27374 /* Drunk_bullet.png in Resources */,
 				284D17C719FE5D3100F27374 /* upwallleftIphone5.png in Resources */,
 				284D17CE19FE5D3100F27374 /* VocalOFF.png in Resources */,
 				284D16FE19FE5D3100F27374 /* blast01.png in Resources */,
-				284D172E19FE5D3100F27374 /* description.png in Resources */,
 				284D170219FE5D3100F27374 /* bullet3.png in Resources */,
 				284D173D19FE5D3100F27374 /* FlagsRetina.png in Resources */,
-				284D16E719FE5D3100F27374 /* back_retina.png in Resources */,
 				284D17F819FE5E1E00F27374 /* stage1Sheet.plist in Resources */,
 				284D174419FE5D3100F27374 /* Ghost_bullet.png in Resources */,
 				284D16D619FE5D3100F27374 /* prisionBG.jpg in Resources */,
 				284D175419FE5D3100F27374 /* heroSheetNew.png in Resources */,
 				284D179319FE5D3100F27374 /* rightBuildPartRetina.png in Resources */,
-				284D171019FE5D3100F27374 /* buyBntClk.png in Resources */,
-				284D175719FE5D3100F27374 /* hud2.png in Resources */,
 				284D173819FE5D3100F27374 /* DrumerON.png in Resources */,
 				284D171219FE5D3100F27374 /* cachier.png in Resources */,
-				284D16DF19FE5D3100F27374 /* arm1.png in Resources */,
 				284D178719FE5D3100F27374 /* punk.png in Resources */,
 				284D177419FE5D3100F27374 /* newmenubg.png in Resources */,
 				284D17EF19FE5E1E00F27374 /* enemySheetNew.plist in Resources */,
-				284D17A919FE5D3100F27374 /* skinStoreButton.png in Resources */,
 				284D17F419FE5E1E00F27374 /* menuSheet.plist in Resources */,
 				284D174619FE5D3100F27374 /* goMenuClk.png in Resources */,
-				284D16E619FE5D3100F27374 /* armorStoreButtonClk.png in Resources */,
 				284D174819FE5D3100F27374 /* guitar-normal.png in Resources */,
 				284D171C19FE5D3100F27374 /* close.png in Resources */,
 				284D174219FE5D3100F27374 /* Gang_bullet.png in Resources */,
 				284D170519FE5D3100F27374 /* BusRetina.png in Resources */,
-				284D17D919FE5D3100F27374 /* wep4.png in Resources */,
 				284D178319FE5D3100F27374 /* posterBand.png in Resources */,
 				284D17C419FE5D3100F27374 /* upwallcenterIphone5.png in Resources */,
 				284D17B719FE5D3100F27374 /* StageClearSTAGE.png in Resources */,
 				284D171D19FE5D3100F27374 /* coin-board.png in Resources */,
 				284D170C19FE5D3100F27374 /* Button store OFF.png in Resources */,
-				284D17AA19FE5D3100F27374 /* skinStoreButtonClk.png in Resources */,
 				284D17CF19FE5D3100F27374 /* VocalON.png in Resources */,
 				284D17D319FE5D3100F27374 /* walls.png in Resources */,
-				284D177819FE5D3100F27374 /* ownedTag.png in Resources */,
 				284D16CB19FE5D3100F27374 /* floorNormalIphone5.jpg in Resources */,
 				284D171119FE5D3100F27374 /* buyItem.png in Resources */,
 				284D16ED19FE5D3100F27374 /* BackWallRetina.png in Resources */,
-				284D177019FE5D3100F27374 /* moreItemsClosed.png in Resources */,
 				284D170D19FE5D3100F27374 /* Button store ON.png in Resources */,
 				284D172819FE5D3100F27374 /* Cowboy_bullet.png in Resources */,
 				284D17C119FE5D3100F27374 /* tree.png in Resources */,
@@ -1547,10 +1309,7 @@
 				284D178E19FE5D3100F27374 /* restartClk.png in Resources */,
 				284D170A19FE5D3100F27374 /* Button next OFF.png in Resources */,
 				284D171519FE5D3100F27374 /* carleftRetina.png in Resources */,
-				284D17D819FE5D3100F27374 /* wep3.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
-				284D16FB19FE5D3100F27374 /* BG.png in Resources */,
-				284D17A119FE5D3100F27374 /* scrollBnt2Clk.png in Resources */,
 				284D176619FE5D3100F27374 /* menu_girl.png in Resources */,
 				284D16D319FE5D3100F27374 /* gasStationBGIphone5.jpg in Resources */,
 				284D177719FE5D3100F27374 /* owned.png in Resources */,
@@ -1558,61 +1317,43 @@
 				284D17A819FE5D3100F27374 /* skate_guy_bullet.png in Resources */,
 				284D179719FE5D3100F27374 /* roofdown.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
-				284D178C19FE5D3100F27374 /* reloadClicked.png in Resources */,
-				284D17D719FE5D3100F27374 /* wep2.png in Resources */,
 				284D171819FE5D3100F27374 /* carrightRetina.png in Resources */,
 				284D16CE19FE5D3100F27374 /* garagebg.jpg in Resources */,
 				284D171619FE5D3100F27374 /* carright.png in Resources */,
 				284D175E19FE5D3100F27374 /* laser1.png in Resources */,
 				284D17E019FE5D3100F27374 /* enemies.json in Resources */,
 				284D17F519FE5E1E00F27374 /* prisionEnemySheet.plist in Resources */,
-				284D175219FE5D3100F27374 /* healthUp.png in Resources */,
 				284D17C219FE5D3100F27374 /* treeRetina.png in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				284D175B19FE5D3100F27374 /* item.png in Resources */,
-				284D170E19FE5D3100F27374 /* buyBandBg.png in Resources */,
-				284D17B819FE5D3100F27374 /* storeBG.png in Resources */,
 				284D17BB19FE5D3100F27374 /* storeFrontBG_iphone5.png in Resources */,
 				284D172219FE5D3100F27374 /* Conveniencia_bullet.png in Resources */,
-				284D17CD19FE5D3100F27374 /* value.png in Resources */,
 				284D16C619FE5D3100F27374 /* doodlefinal_iphone5_yellow.jpg in Resources */,
-				284D174F19FE5D3100F27374 /* gunUp2.png in Resources */,
 				284D17F319FE5E1E00F27374 /* hudSheet.plist in Resources */,
 				284D16F919FE5D3100F27374 /* BassON.png in Resources */,
 				284D16D819FE5D3100F27374 /* schoolBgIphone5.jpg in Resources */,
 				284D17E219FE5D3100F27374 /* mockItems.json in Resources */,
 				284D17BF19FE5D3100F27374 /* The School Fundo.png in Resources */,
-				284D17A319FE5D3100F27374 /* selectBntClk.png in Resources */,
-				284D171F19FE5D3100F27374 /* coinMultInApp.png in Resources */,
-				284D178B19FE5D3100F27374 /* reload.png in Resources */,
-				284D176D19FE5D3100F27374 /* menuStore.png in Resources */,
 				284D16F419FE5D3100F27374 /* Banda04.png in Resources */,
 				284D16BE19FE5D3100F27374 /* barBgIphone5.jpg in Resources */,
 				284D178519FE5D3100F27374 /* powerBarColor.png in Resources */,
 				284D17AE19FE5D3100F27374 /* snake-color-closed.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
-				284D179E19FE5D3100F27374 /* scrollBnt1.png in Resources */,
 				284D175A19FE5D3100F27374 /* item name.png in Resources */,
-				284D17A619FE5D3100F27374 /* ShowCase.png in Resources */,
 				284D170619FE5D3100F27374 /* Button back OFF.png in Resources */,
-				284D177619FE5D3100F27374 /* nextClicked.png in Resources */,
 				284D174119FE5D3100F27374 /* Furious_bullet.png in Resources */,
 				284D17AF19FE5D3100F27374 /* snake-color-opened.png in Resources */,
 				284D17AD19FE5D3100F27374 /* snake-color-body.png in Resources */,
 				284D16CA19FE5D3100F27374 /* fixbg.jpg in Resources */,
 				284D178D19FE5D3100F27374 /* restart.png in Resources */,
 				284D17C319FE5D3100F27374 /* upwallcenter.png in Resources */,
-				284D176719FE5D3100F27374 /* menu1.png in Resources */,
 				284D17BC19FE5D3100F27374 /* tables.png in Resources */,
-				284D177E19FE5D3100F27374 /* PauseButtonClk.png in Resources */,
 				284D16F119FE5D3100F27374 /* Banda01.png in Resources */,
 				284D175019FE5D3100F27374 /* handbutton01.png in Resources */,
 				284D16EF19FE5D3100F27374 /* backwallsIphone5.png in Resources */,
 				284D17F119FE5E1E00F27374 /* gasStEnemySheet.plist in Resources */,
 				284D171B19FE5D3100F27374 /* Cheerleader_bullet.png in Resources */,
-				284D16E419FE5D3100F27374 /* armorInApp.png in Resources */,
 				284D174919FE5D3100F27374 /* Guitar01OFF.png in Resources */,
-				284D16E119FE5D3100F27374 /* armor2.png in Resources */,
 				284D17F719FE5E1E00F27374 /* Sprites.plist in Resources */,
 				284D179519FE5D3100F27374 /* robot_laser.png in Resources */,
 				284D176C19FE5D3100F27374 /* menuShelfs.png in Resources */,
@@ -1620,7 +1361,6 @@
 				284D16DB19FE5D3100F27374 /* TheBarBG.jpg in Resources */,
 				284D178F19FE5D3100F27374 /* resume.png in Resources */,
 				284D173719FE5D3100F27374 /* DrumerOFF.png in Resources */,
-				284D176E19FE5D3100F27374 /* moneyStoreButton.png in Resources */,
 				284D170919FE5D3100F27374 /* Button menu ON.png in Resources */,
 				284D173B19FE5D3100F27374 /* exp1.png in Resources */,
 				284D170319FE5D3100F27374 /* Bully_bullet.png in Resources */,
@@ -1638,11 +1378,8 @@
 				284D16F719FE5D3100F27374 /* barEnemySheet.png in Resources */,
 				284D16FA19FE5D3100F27374 /* belt.png in Resources */,
 				284D17F019FE5E1E00F27374 /* ExplodingRing.plist in Resources */,
-				284D171A19FE5D3100F27374 /* checkPriceBntClk.png in Resources */,
-				284D173119FE5D3100F27374 /* doodle3.png in Resources */,
 				284D16D719FE5D3100F27374 /* prisionBGIphone5.jpg in Resources */,
 				284D178419FE5D3100F27374 /* powerBar.png in Resources */,
-				284D172A19FE5D3100F27374 /* credits.png in Resources */,
 				284D16DA19FE5D3100F27374 /* storebg_iphone5.jpg in Resources */,
 				284D16DD19FE5D3100F27374 /* TheSchoolBgIpad.jpg in Resources */,
 				284D17DE19FE5D3100F27374 /* bandItems.json in Resources */,
@@ -1654,15 +1391,13 @@
 				284D179619FE5D3100F27374 /* robot_laser2.png in Resources */,
 				284D172C19FE5D3100F27374 /* ctrlSound.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
-				284D178A19FE5D3100F27374 /* radioUP.png in Resources */,
-				284D17D619FE5D3100F27374 /* wep1.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
-				284D174E19FE5D3100F27374 /* gunUp1.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
+				280BFF1D1A01A3AF00E7BED8 /* doorDown-widehd.png in Resources */,
+				280BFF191A01A32400E7BED8 /* doorDown-hd.png in Resources */,
 				284D179419FE5D3100F27374 /* rightWall.png in Resources */,
 				284D17F219FE5E1E00F27374 /* heroSheetNew.plist in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
-				284D16D919FE5D3100F27374 /* ShotGame.jpg in Resources */,
 				284D17D519FE5D3100F27374 /* wallsRetina.png in Resources */,
 				284D173219FE5D3100F27374 /* doodlefinal_iphone5_paint.png in Resources */,
 				284D176319FE5D3100F27374 /* lifeGaugeBorder.png in Resources */,
@@ -1674,9 +1409,7 @@
 				284D16C019FE5D3100F27374 /* doodle2.jpg in Resources */,
 				284D16F819FE5D3100F27374 /* BassOFF.png in Resources */,
 				284D174019FE5D3100F27374 /* frontPlateRetina.png in Resources */,
-				284D17A719FE5D3100F27374 /* showCase1.png in Resources */,
 				284D17BD19FE5D3100F27374 /* tablesIphone5.png in Resources */,
-				284D17B319FE5D3100F27374 /* spacebg7.png in Resources */,
 				284D179019FE5D3100F27374 /* resumeClk.png in Resources */,
 				284D176919FE5D3100F27374 /* menubgfinal.png in Resources */,
 				284D176519FE5D3100F27374 /* menu_chest1.png in Resources */,
@@ -1687,49 +1420,38 @@
 				284D16D419FE5D3100F27374 /* IpadSt1BG.jpg in Resources */,
 				284D179C19FE5D3100F27374 /* roofupRetina.png in Resources */,
 				284D172D19FE5D3100F27374 /* ctrlSoundClk.png in Resources */,
-				284D17DC19FE5D3100F27374 /* whiteBG.png in Resources */,
 				284D176A19FE5D3100F27374 /* menuIphone5.png in Resources */,
 				284D16F519FE5D3100F27374 /* Banda05.png in Resources */,
-				284D16E319FE5D3100F27374 /* armor4.png in Resources */,
 				284D172F19FE5D3100F27374 /* Director_bullet.png in Resources */,
-				284D17A219FE5D3100F27374 /* selectBnt.png in Resources */,
 				284D16C119FE5D3100F27374 /* doodlefinal_iphone5_blue.jpg in Resources */,
 				284D17D219FE5D3100F27374 /* wallRightIphone5.png in Resources */,
-				284D177219FE5D3100F27374 /* newgame.png in Resources */,
 				284D17C819FE5D3100F27374 /* upwallleftRetina.png in Resources */,
 				284D17B119FE5D3100F27374 /* snakecolor.png in Resources */,
 				284D176B19FE5D3100F27374 /* menuSheet.png in Resources */,
 				284D16CF19FE5D3100F27374 /* garagebgfull.jpg in Resources */,
 				284D179819FE5D3100F27374 /* roofdownIphone5.png in Resources */,
 				284D178619FE5D3100F27374 /* prisionEnemySheet.png in Resources */,
-				284D171919FE5D3100F27374 /* checkPriceBnt.png in Resources */,
 				284D171719FE5D3100F27374 /* carrightIphone5.png in Resources */,
-				284D172119FE5D3100F27374 /* continueClicked.png in Resources */,
-				284D170F19FE5D3100F27374 /* buyBnt.png in Resources */,
 				284D17B219FE5D3100F27374 /* snakeflesh.png in Resources */,
 				284D17E119FE5D3100F27374 /* level1.json in Resources */,
-				284D16DE19FE5D3100F27374 /* ammoUpInApp.png in Resources */,
 				284D16D119FE5D3100F27374 /* garageBgIphone5.jpg in Resources */,
 				284D172519FE5D3100F27374 /* counter.png in Resources */,
 				284D17CB19FE5D3100F27374 /* upwallrightRetina.png in Resources */,
 				284D175C19FE5D3100F27374 /* itemBg.png in Resources */,
 				284D16D219FE5D3100F27374 /* GasStationBG.jpg in Resources */,
-				284D174D19FE5D3100F27374 /* gun_left.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				284D179B19FE5D3100F27374 /* roofupIphone5.png in Resources */,
 				284D16DC19FE5D3100F27374 /* TheBarRetinaBG.jpg in Resources */,
 				284D16D519FE5D3100F27374 /* lifebar.jpg in Resources */,
 				284D176019FE5D3100F27374 /* leftArrow.png in Resources */,
 				284D177A19FE5D3100F27374 /* pause02.png in Resources */,
-				284D17BA19FE5D3100F27374 /* storeBGRetina.png in Resources */,
 				284D17CA19FE5D3100F27374 /* upwallrightIphone5.png in Resources */,
+				280BFF0F1A0196A400E7BED8 /* doorDown-ipad.png in Resources */,
 				284D175919FE5D3100F27374 /* item image.png in Resources */,
 				284D17B019FE5D3100F27374 /* snake-flesh-body.png in Resources */,
-				284D173619FE5D3100F27374 /* doorup_iphone5.png in Resources */,
 				284D17C919FE5D3100F27374 /* upwallright.png in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 				284D174319FE5D3100F27374 /* gasStEnemySheet.png in Resources */,
-				284D173319FE5D3100F27374 /* door down.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1763,6 +1485,8 @@
 				2801A4F719FAA6B500BF3837 /* PauseLayer.m in Sources */,
 				2801A4FF19FAA6B500BF3837 /* Victory.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				286A88881A0387250085E622 /* MockSprite.m in Sources */,
+				280BFF261A0283B300E7BED8 /* BandLevelScene.m in Sources */,
 				2801A4E119FAA6B500BF3837 /* BandStoreItemsCtrl.m in Sources */,
 				2801A4EA19FAA6B500BF3837 /* GameNaveBar.m in Sources */,
 				2801A4F219FAA6B500BF3837 /* LevelController.m in Sources */,
